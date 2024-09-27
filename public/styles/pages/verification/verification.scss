@@ -1,0 +1,71 @@
+#analytics-board {
+    margin-bottom: 0;
+}
+
+.responsive-table {
+    .col-1 {
+        flex-basis: 18%;
+    }
+
+    .col-2 {
+        flex-basis: 28%;
+    }
+
+    .col-3 {
+        flex-basis: 19%;
+    }
+
+    .col-4 {
+        flex-basis: 20%;
+    }
+
+    .col-5 {
+        display: flex;
+        justify-content: center;
+        flex-basis: 15%;
+    }
+}
+
+.selected {
+    background-color: #aae78e !important;
+}
+
+.to-delete {
+    background-color: #ff9b9b !important;
+}
+
+#notes-pannel {
+    display: flex;
+    justify-content: center;
+    transition: all 0.15s ease-out;
+
+    #notes {
+        width: 100%;
+        margin: 25px 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 0 5px #ccc;
+    }
+}
+
+.valide_button {
+    margin-bottom: 45px;
+}
+
+#month-brief {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+
+    #total-outcome {
+        color: #e23333;
+        font-weight: bold;
+    }
+    #total-income {
+        color: #308d05;
+        font-weight: bold;
+    }
+}

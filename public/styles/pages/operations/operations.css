@@ -1,0 +1,101 @@
+.flex-inline {
+  display: flex;
+  flex-direction: row;
+}
+
+#account_selection {
+  margin-top: 25px;
+}
+#account_selection #selected-account {
+  width: 100%;
+}
+
+#add-pannel {
+  margin-top: 3vw;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#add-pannel #add-form {
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+#add-pannel #add-form #add-field {
+  display: none;
+  opacity: 0;
+  transition: 0.3s;
+  transform: translate(50px, 0);
+  width: 80%;
+  height: 80%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: 0px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
+  margin: 25px;
+  background-color: #f7f4f4;
+}
+#add-pannel #add-form #add-field div {
+  display: flex;
+  flex-direction: column;
+}
+#add-pannel #add-form #add-field div * {
+  margin: 5px;
+}
+#add-pannel #add-form #add-field .flex-div {
+  display: flex;
+  flex-direction: row;
+}
+
+.responsive-table .col-1 {
+  flex-basis: 18%;
+}
+.responsive-table .col-2 {
+  flex-basis: 28%;
+}
+.responsive-table .col-3 {
+  flex-basis: 19%;
+}
+.responsive-table .col-4 {
+  flex-basis: 20%;
+}
+.responsive-table .col-5 {
+  display: flex;
+  justify-content: center;
+  flex-basis: 15%;
+}
+
+#note-box {
+  position: absolute;
+  z-index: 1000;
+  top: 25%;
+  left: 10%;
+  width: 35%;
+  height: 25%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.7607843137);
+  box-shadow: 0 0 5px #ccc;
+  cursor: grab;
+}
+
+#note-box:hover {
+  background-color: rgba(255, 255, 255, 0.8980392157);
+  transform: scale(1.01);
+}
+
+@media all and (max-width: 767px) {
+  #note-box {
+    display: none;
+  }
+  .flex-inline {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=operations.css.map */

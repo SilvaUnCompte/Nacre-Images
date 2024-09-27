@@ -1,0 +1,22 @@
+{
+    "name": "Epargne Controle",
+    "short_name": "Epargne Controle",
+    "start_url": "/controler/pages/index.php",
+    "display": "standalone",
+    "background_color": "#424549",
+    "theme_color": "#424549",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/assets/images/icon_b.png",
+            "type": "image/png",
+            "sizes": "256x256",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/assets/images/icon512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}
