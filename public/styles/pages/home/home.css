@@ -55,6 +55,7 @@ body::before {
   font-size: 8em;
   text-align: center;
   font-family: "Icons";
+  padding: 2%;
 }
 
 @media all and (max-width: 767px) {

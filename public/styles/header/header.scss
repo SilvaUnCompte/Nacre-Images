@@ -34,26 +34,27 @@ header {
     height: $header-height;
     background-color: $dark-gray;
 
-    nav {
+    #first-header {
         width: 100%;
         display: flex;
-        align-items: center;
+        align-items: flex-end;
+        justify-content: center;
         padding: 0 20px;
-    }
+        list-style: none;
+        
+        li {
+            display: inline;
+            margin: 0 10px;
+            
+            a {
+                color: #fff;
+                text-decoration: none;
+            }
 
-    div {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-    }
-
-    #page-name {
-        color: $secondary-color;
-        font-size: 1.5em;
-        font-weight: bold;
-        // margin: 0 10px;
-        white-space: nowrap;
+            a:hover {
+                color: $primary-color;
+            }
+        }
     }
 
     #navicon {

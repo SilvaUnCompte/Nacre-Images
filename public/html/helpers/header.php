@@ -19,13 +19,15 @@
 </head>
 
 <header id="header">
-	<nav class="first-header">
+	<nav id="first-header">
 		<img id="navicon" src="/assets/images/navicon.webp" alt="navicon" loading="lazy" onclick="show_navbar()">
-		<a id="page-name"><?php echo $page_name ?></a>
-		<a id="page-name"><?php echo $page_name ?></a>
-		<a id="page-name"><?php echo $page_name ?></a>
-		<a id="page-name"><?php echo $page_name ?></a>
-		<a id="page-name"><?php echo $page_name ?></a>
+		<li><a id="page-name"><?php echo $page_name ?></a></li>
+		<li><a href="/controler/pages/accounts.php">Accounts</a></li>
+		<li><a href="/controler/pages/budget.php">Budget</a></li>
+		<li><a href="/controler/pages/analytics.php">Analytics</a></li>
+		<li><a href="/controler/pages/operations.php">Operations</a></li>
+		<li><a href="/controler/pages/verification.php">Verification</a></li>
+		<li><a href="/controler/pages/events.php">Events</a></li>
 	</nav>
 </header>
 
