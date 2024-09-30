@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /hello*
+
+sitemap: https://example.com/sitemap-file.xml

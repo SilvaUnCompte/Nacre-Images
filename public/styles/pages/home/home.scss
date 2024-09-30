@@ -6,7 +6,7 @@ $light-black: #33334c;
 body {
     background-color: #2c2d30;
     background-attachment: fixed;
-    background-image: url('/assets/images/home-background/avril.jpg');
+    background-image: url('/assets/images/home-background/macrocrea.jpg'); // TODO: penser à tout mettre ne webp
     background-size: cover;
     background-repeat: no-repeat;
     transition: background-image 0.7s ease-in-out;
@@ -51,7 +51,7 @@ body {
 }
 
 .space-empty {
-    height: 70vh;
+    height: 72vh;
     display: flex;
     justify-content: center;
     align-items: center;
