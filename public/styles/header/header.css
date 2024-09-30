@@ -73,12 +73,17 @@ header #navicon {
 }
 
 footer {
+  height: 25px;
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
   bottom: 0;
   width: 100vw;
   padding: 5px 10px;
   background-color: #17171a;
+  font: 1em sans-serif;
 }
 
 @media all and (max-width: 767px) {

@@ -98,12 +98,17 @@ header {
 }
 
 footer {
+    height: 25px;
     position: fixed;
+    display: flex;
+    justify-content: center; // TODO: décidé si on veut le mettre à droite ou au centre
+    align-items: center;
     color: #fff;
     bottom: 0;
     width: 100vw;
     padding: 5px 10px;
     background-color: $light-black;
+    font: 1em sans-serif;
 }
 
 @media all and (max-width: $phone-width) {

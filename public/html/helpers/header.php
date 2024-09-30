@@ -19,12 +19,14 @@
 </head>
 
 <header id="header">
-	<!-- <nav class="first-header">
+	<nav class="first-header">
 		<img id="navicon" src="/assets/images/navicon.webp" alt="navicon" loading="lazy" onclick="show_navbar()">
 		<a id="page-name"><?php echo $page_name ?></a>
-
-
-	</nav> -->
+		<a id="page-name"><?php echo $page_name ?></a>
+		<a id="page-name"><?php echo $page_name ?></a>
+		<a id="page-name"><?php echo $page_name ?></a>
+		<a id="page-name"><?php echo $page_name ?></a>
+	</nav>
 </header>
 
 <body>

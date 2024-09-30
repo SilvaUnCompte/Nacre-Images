@@ -9,7 +9,7 @@ body {
     background-image: url('/assets/images/home-background/macrocrea.jpg'); // TODO: penser à tout mettre ne webp
     background-size: cover;
     background-repeat: no-repeat;
-    transition: background-image 0.7s ease-in-out;
+    transition: background-image 0.7s ease-in-out; // TODO: faire le robot.txt
     background-position: center center;
 
     &::before { // Add a pseudo-element to create the overlay effect on the background image
