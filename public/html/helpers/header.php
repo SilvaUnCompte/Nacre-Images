@@ -14,25 +14,22 @@
 	<link rel="stylesheet" href="/public/styles/header/header.css">
 	<link rel="stylesheet" href="/public/styles/generics/generics.css">
 	<link rel="stylesheet" href="/public/styles/popup/popup.css">
-	<title><?php echo 'Nacre-Image - '.$page_name?></title>
+	<link rel="stylesheet" href="/assets/fonts/Fonts.css">
+	<title><?php echo 'Nacre-Image - ' . $page_name ?></title>
 </head>
+
+<header id="header">
+	<!-- <nav class="first-header">
+		<img id="navicon" src="/assets/images/navicon.webp" alt="navicon" loading="lazy" onclick="show_navbar()">
+		<a id="page-name"><?php echo $page_name ?></a>
+
+
+	</nav> -->
+</header>
 
 <body>
 
-	<div id="dark"></div>
-
-	<header id="header">
-		<nav class="first-header">
-			<img id="navicon" src="/assets/images/navicon.webp" alt="navicon" loading="lazy" onclick="show_navbar()">
-			<a id="page-name"><?php echo $page_name?></a>
-
-			<div id="account">
-				<a href="/controler/login/logout.php">
-					<img id="exit_icon" src="/assets/images/exit.png" alt="exit" width="50" height="50" loading="lazy">
-				</a>
-			</div>
-		</nav>
-	</header>
+	<!-- <div id="dark"></div>
 
 	<div class="corner-back"></div>
 	<ul id="side-menu">
@@ -44,4 +41,4 @@
 		<li><a href="/controler/pages/operations.php">Operations</a></li>
 		<li><a href="/controler/pages/verification.php">Verification</a></li>
 		<li><a href="/controler/pages/events.php">Events</a></li>
-</ul>
+</ul> -->

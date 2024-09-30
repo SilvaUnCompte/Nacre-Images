@@ -10,13 +10,14 @@
 }
 
 header {
-  background-color: #c5c5c5;
-  height: 80px;
   top: 0;
   right: 0;
-  margin: 0;
-  width: 100%;
   display: flex;
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+  height: 3vh;
+  background-color: #1b1d20;
 }
 header nav {
   width: 100%;
@@ -30,38 +31,15 @@ header div {
   justify-content: flex-end;
   align-items: center;
 }
-header #username {
-  text-align: end;
-  margin: 0 10px;
-  text-decoration: none;
-  color: #464646;
-  font-weight: bold;
-}
 header #page-name {
   color: #464646;
   font-size: 1.5em;
   font-weight: bold;
-  margin: 0 10px;
   white-space: nowrap;
 }
 header #navicon {
   display: none;
   width: 50px;
-  height: 50px;
-}
-
-#account {
-  font-size: larger;
-}
-
-.corner-back {
-  background-color: #c5c5c5;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 175px;
-  height: 80px;
 }
 
 #side-menu {
@@ -74,7 +52,7 @@ header #navicon {
   left: 0;
   margin: 0;
   padding: 0;
-  padding-top: 90px;
+  padding-top: 3vh;
   transition: all 0.3s ease-in-out;
 }
 #side-menu .corner {
@@ -82,7 +60,7 @@ header #navicon {
   position: absolute;
   top: 0;
   width: 175px;
-  height: 80px;
+  height: 3vh;
 }
 #side-menu a {
   color: #fff;
@@ -96,10 +74,11 @@ header #navicon {
 
 footer {
   position: fixed;
+  color: #fff;
   bottom: 0;
-  width: 100%;
+  width: 100vw;
   padding: 5px 10px;
-  background-color: #d4d4d4;
+  background-color: #17171a;
 }
 
 @media all and (max-width: 767px) {

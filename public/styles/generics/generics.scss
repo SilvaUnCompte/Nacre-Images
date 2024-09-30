@@ -1,36 +1,93 @@
-$margin-left: 175px;
+$header-height: 3vh;
+
+$main-color: #ffffff;
+$second-color: #d3d3d3;
+$third-color: #252525;
+
+$light-gray: #f5f5f5;
+$mid-gray: #2f3238;
+$dark-gray: #1b1d20;
+$light-black: #33334c;
 
 html,
 body {
-    overflow-x: hidden !important;
+    margin: 0;
+    padding: 0;
 }
 
 body {
+    overflow-x: hidden;
     position: relative;
     height: 100%;
-    margin: 0;
-    padding: 0;
     font-family: 'lato', sans-serif;
-    background-color: #e7e7e7;
-    margin-left: $margin-left;
+    background-color: $main-color;
+    margin-top: $header-height;
+}
+
+.scroll-trigger {
+    opacity: 0;
+    transition: all 0.5s;
+    transform: translate(0, 15%);
+}
+
+.scroll-active {
+    opacity: 1;
+    transform: translate(0, 0);
 }
 
 .container {
-    width: 42%;
-    margin: 2vw;
-    margin-bottom: 20px;
-}
-
-.card-button {
-    width: 25px;
-    cursor: pointer;
-}
-
-.dashboard {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
     width: 100%;
+    background-color: #2c2d30;
+    box-shadow: inset 1px 1px 3px 0px rgba(0, 0, 0, 0.5);
+    padding: 3%;
+
+    >* {
+        margin: 30px;
+    }
+}
+
+.inline-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-cadre {
+    width: 70%;
+    margin-bottom: 5%;
+}
+
+a {
+    color: #ddd4d4;
+    text-decoration: none;
+
+    &:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
+}
+
+.paragraph {
+    width: 100%;
+    font-size: 1.2em;
+    font-weight: 300;
+    color: #dadada;
+    text-align: justify;
+}
+
+.place-right {
+    margin-left: auto;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #ececec;
+}
+
+img {
+    width: 70%;
+    max-width: 500px;
 }
 
 input,
@@ -96,33 +153,23 @@ input[type=number] {
     -ms-user-select: none;
     /* Internet Explorer/Edge */
     user-select: none;
-    /* Non-prefixed version, currently
-                                    supported by Chrome, Edge, Opera and Firefox */
+    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
-@media all and (max-width: 767px) {
-    * {
-        font-size: small;
-    }
-
-    div {
-        font-size: 10px;
-    }
-
+@media all and (max-width: 1400px) {
     .container {
         width: 90%;
-    }
-
-    .dashboard {
-        align-items: center;
-        flex-direction: column;
     }
 
     body {
         margin-left: 0;
     }
 
-    .card-button {
-        width: 15px;
+    .inline-container {
+        flex-direction: column;
+    }
+
+    .place-right {
+        margin-left: 0;
     }
 }

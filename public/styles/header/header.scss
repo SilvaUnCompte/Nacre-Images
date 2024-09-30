@@ -1,6 +1,11 @@
 $margin-left: 175px;
-$header-height: 80px;
+$header-height: 3vh;
 $phone-width: 767px;
+
+$light-gray: #f5f5f5;
+$mid-gray: #2f3238;
+$dark-gray: #1b1d20;
+$light-black: #17171a;
 
 $primary-color: #c5c5c5; // c5c5c5
 $secondary-color: #464646; // 464646
@@ -20,13 +25,14 @@ $side-secondary-color: #212147; // 212147
 }
 
 header {
-    background-color: $primary-color;
-    height: $header-height;
     top: 0;
     right: 0;
-    margin: 0;
-    width: 100%;
     display: flex;
+    position: fixed;
+    z-index: 100;
+    width: 100vw;
+    height: $header-height;
+    background-color: $dark-gray;
 
     nav {
         width: 100%;
@@ -42,41 +48,19 @@ header {
         align-items: center;
     }
 
-    #username {
-        text-align: end;
-        margin: 0 10px;
-        text-decoration: none;
-        color: $secondary-color;
-        font-weight: bold;
-    }
-
     #page-name {
         color: $secondary-color;
         font-size: 1.5em;
         font-weight: bold;
-        margin: 0 10px;
+        // margin: 0 10px;
         white-space: nowrap;
     }
 
     #navicon {
         display: none;
         width: 50px;
-        height: 50px;
+        // height: 50px;
     }
-}
-
-#account {
-    font-size: larger;
-}
-
-.corner-back {
-    background-color: $primary-color;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: $margin-left;
-    height: $header-height;
 }
 
 #side-menu {
@@ -89,7 +73,7 @@ header {
     left: 0;
     margin: 0;
     padding: 0;
-    padding-top: $header-height+10px;
+    padding-top: $header-height;
     transition: all 0.3s ease-in-out;
 
     .corner {
@@ -115,10 +99,11 @@ header {
 
 footer {
     position: fixed;
+    color: #fff;
     bottom: 0;
-    width: 100%;
+    width: 100vw;
     padding: 5px 10px;
-    background-color: #d4d4d4;
+    background-color: $light-black;
 }
 
 @media all and (max-width: $phone-width) {
