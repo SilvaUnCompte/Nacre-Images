@@ -1,3 +1,6 @@
+const header = document.getElementById("first-header");
+const sticky = header.offsetTop;
+
 window.onscroll = stickyheader;
 
 function stickyheader() {
@@ -9,6 +12,4 @@ function stickyheader() {
     }
 }
 
-var header = document.getElementById("first-header");
-var sticky = header.offsetTop;
 stickyheader();

@@ -8,26 +8,23 @@
 	<link rel="icon" href="/assets/images/logo325.jpg" />
 	<link rel="manifest" href="/public/manifest.json">
 	<meta name="theme-color" content="#424549" />
-
-	<script src="/public/js/navbar.js" type="text/javascript"></script>
-	<script src="/public/js/popup.js" type="text/javascript"></script>
+	<meta name="description" content=<?php echo $description ?>>
 	<link rel="stylesheet" href="/public/styles/header/header.css">
 	<link rel="stylesheet" href="/public/styles/generics/generics.css">
-	<link rel="stylesheet" href="/public/styles/popup/popup.css">
-	<link rel="stylesheet" href="/assets/fonts/Fonts.css">
 	<title><?php echo 'Nacre-Image - ' . $page_name ?></title>
 </head>
 
 <header id="header">
 	<nav id="first-header">
-		<img id="navicon" src="/assets/images/navicon.webp" alt="navicon" loading="lazy" onclick="show_navbar()">
-		<li><a id="page-name"><?php echo $page_name ?></a></li>
-		<li><a href="/controler/pages/accounts.php">Accounts</a></li>
-		<li><a href="/controler/pages/budget.php">Budget</a></li>
-		<li><a href="/controler/pages/analytics.php">Analytics</a></li>
-		<li><a href="/controler/pages/operations.php">Operations</a></li>
-		<li><a href="/controler/pages/verification.php">Verification</a></li>
-		<li><a href="/controler/pages/events.php">Events</a></li>
+		<img id="navicon" src="/assets/images/icons/navicon.webp" alt="navicon" loading="lazy" onclick="show_navbar()">
+		<ul id="ul-header">
+			<li><a href="/controler/pages/index.php">ACCUEIL</a></li>
+			<li><a href="/controler/pages/contact.php">CONTACT</a></li>
+			<li><a href="/controler/pages/prices.php">TARTIFS STAGES</a></li>
+			<li><a href="/controler/pages/cheque.php">CHÈQUE CADEAU</a></li>
+			<li><a href="/controler/pages/services.php">PRESTATIONS</a></li>
+			<li><a href="/controler/pages/calendar.php">CALENDRIER STAGES</a></li>
+		</ul>
 	</nav>
 </header>
 

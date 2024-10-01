@@ -1,3 +1,4 @@
+const lazyLoader = document.getElementById('lazy-loader');
 const imageDirectory = '/assets/images/home-background/'; // Path to the image directory
 const delay = 7000; // Delay in milliseconds
 let databaseImg = null;
@@ -12,7 +13,7 @@ function init() {
         })
         .then(data => {
             databaseImg = data;
-            // setTimeout(preloadImages, 1000);
+            setTimeout(preloadImages, 2000);
         })
         .catch(error => {
             console.error('There has been a problem with your fetch operation:', error);
@@ -23,14 +24,17 @@ function init() {
     setTimeout(setRandomBackground, delay);
 }
 
-// function preloadImages() {
-//     databaseImg = Object.values(databaseImg); // TODO: laisy charge bg image en avance
-//     if (!databaseImg) return;
-//     databaseImg.forEach(image => { // TODO: convertir toutes les images en webp
-//         const img = new Image();
-//         img.src = `${imageDirectory}${image}`;
-//     });
-// }
+function preloadImages() {
+    for (let i = 0; i < Object.keys(databaseImg).length; i++) {
+        const img = new Image();
+        img.src = `${imageDirectory}${databaseImg[i + 2]}`;
+        img.loading = 'lazy';
+        img.alt = 'Lazy load random background ' + i;
+        img.width = "1px";
+        img.height = "1px";
+        lazyLoader.appendChild(img);
+    }
+}
 
 // Function to get a random image from the 'image' directory
 function setRandomBackground() {

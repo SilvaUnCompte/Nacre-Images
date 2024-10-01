@@ -6,7 +6,7 @@ $light-black: #33334c;
 body {
     background-color: #2c2d30;
     background-attachment: fixed;
-    background-image: url('/assets/images/home-background/macrocrea.jpg'); // TODO: penser à tout mettre ne webp
+    background-image: url('/assets/images/home-background/macrocrea.webp'); // TODO: penser à tout mettre ne webp
     background-size: cover;
     background-repeat: no-repeat;
     transition: background-image 0.7s ease-in-out; // TODO: faire le robot.txt
@@ -23,7 +23,6 @@ body {
         background: rgba(0, 0, 0, 0.6); // Adjust the opacity as needed
         z-index: -1; // Ensure it stays behind other content
     }
-
 }
 
 .triangle-mid {
@@ -31,7 +30,7 @@ body {
     width: 0;
     margin: 0;
     padding: 0;
-    border-right: 98vw solid transparent;
+    border-right: 100vw solid transparent;
     border-bottom: 100px solid $dark-gray;
 }
 
@@ -49,6 +48,11 @@ body {
     height: 100%;
     padding: 4% 10%;
     margin: 0;
+
+    #lazy-loader {
+        position: fixed;
+        z-index: -1;
+    }
 }
 
 .space-empty {
@@ -64,6 +68,7 @@ body {
         text-align: center;
         font-family: "Icons";
         padding: 2%;
+        text-shadow: #1b1d20 2px 2px 2px;  // TODO: à voir si on garde
     }
 }
 
