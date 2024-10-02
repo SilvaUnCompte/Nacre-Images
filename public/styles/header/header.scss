@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $margin-left: 175px;
 $header-height: 3vh;
 $phone-width: 767px;
@@ -37,7 +39,7 @@ header {
     #first-header {
         width: 100%;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
         padding: 0 20px;
         list-style: none;
@@ -98,7 +100,7 @@ header {
     a {
         color: #fff;
         text-decoration: none;
-        padding: 20px $margin-left/4;
+        padding: 20px math.div($margin-left,4);
         display: block;
     }
 

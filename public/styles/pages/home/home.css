@@ -1,3 +1,7 @@
+header {
+  box-shadow: none !important;
+}
+
 body {
   background-color: #2c2d30;
   background-attachment: fixed;

@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="/assets/images/logo325.jpg" />
 	<link rel="manifest" href="/public/manifest.json">
-	<meta name="theme-color" content="#424549" />
+	<meta name="theme-color" content="#1b1d20" />
 	<meta name="description" content=<?php echo $description ?>>
 	<link rel="stylesheet" href="/public/styles/header/header.css">
 	<link rel="stylesheet" href="/public/styles/generics/generics.css">

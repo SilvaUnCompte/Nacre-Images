@@ -1,6 +1,5 @@
 <?php
 
-
 $page_name = 'Home';
 $description = 'Gilles Quesnot, photographe professionel, donne des cours de photographie à Caen, en Normandie.';
 

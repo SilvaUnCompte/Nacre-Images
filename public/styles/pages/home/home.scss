@@ -1,10 +1,13 @@
 $light-gray: #f5f5f5;
-$mid-gray: #2f3238;
+$mid-gray: #2c2d30;
 $dark-gray: #1b1d20;
-$light-black: #33334c;
+
+header {
+    box-shadow: none !important;
+}
 
 body {
-    background-color: #2c2d30;
+    background-color: $mid-gray;
     background-attachment: fixed;
     background-image: url('/assets/images/home-background/macrocrea.webp'); // TODO: penser à tout mettre ne webp
     background-size: cover;
@@ -68,7 +71,7 @@ body {
         text-align: center;
         font-family: "Icons";
         padding: 2%;
-        text-shadow: #1b1d20 2px 2px 2px;  // TODO: à voir si on garde
+        text-shadow: #1b1d20 2px 2px 2px; // TODO: à voir si on garde
     }
 }
 
