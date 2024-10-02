@@ -11,11 +11,21 @@ body {
 }
 .main-section .container {
   width: 65%;
-  height: 65%;
+}
+.main-section .container > * {
+  padding: 0 30px;
+}
+.main-section .container .big-h1 {
+  font-size: 3em;
+  color: #2c2d30;
+  margin-bottom: 20px;
 }
 
-@media all and (max-width: 767px) {
-  .main-section {
-    padding: 1% 2%;
+@media all and (max-width: 1400px) {
+  .main-section .container {
+    width: 90%;
+  }
+  .inline-container {
+    flex-direction: column-reverse !important;
   }
 }/*# sourceMappingURL=topics.css.map */

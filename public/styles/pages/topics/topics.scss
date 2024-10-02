@@ -17,12 +17,26 @@ body {
 
     .container {
         width: 65%;
-        height: 65%;
+        >* {
+            padding: 0 30px;
+        }
+
+        .big-h1 {
+            font-size: 3em;
+            color: $mid-gray;
+            margin-bottom: 20px;
+        }
     }
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: 1400px) {
     .main-section {
-        padding: 1% 2%;
+        .container {
+            width: 90%;
+        }
+    }
+
+    .inline-container {
+        flex-direction: column-reverse !important;
     }
 }
