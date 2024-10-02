@@ -40,6 +40,11 @@ body::before {
   border-top: 100px solid #1b1d20;
 }
 
+img {
+  width: 70%;
+  max-width: 500px;
+}
+
 .grey-section {
   background-color: #1b1d20;
   height: 100%;

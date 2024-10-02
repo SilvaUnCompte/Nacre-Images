@@ -11,28 +11,60 @@ body {
 
 .main-section {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    height: 100%;
+    align-items: center;
+    min-height: 100%;
     width: 100%;
 
+    #title-container {
+        width: 60%;
+
+        .big-h1 {
+            font-size: 3em;
+            font-weight: bold;
+            color: $light-gray;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+    }
+
+    hr {
+        display: block;
+        height: 3px;
+        width: 50%;
+        border: 0;
+        border-top: 1px solid #a5b5e0;
+        margin: 1em 0;
+        padding: 0;
+    }
+
     .container {
+        padding: 0;
+        margin-bottom: 35px;
         width: 65%;
         >* {
             padding: 0 30px;
         }
 
-        .big-h1 {
-            font-size: 3em;
-            color: $mid-gray;
-            margin-bottom: 20px;
+        img {
+            width: 50%;
+            max-width: 700px;
         }
     }
 }
 
 @media all and (max-width: 1400px) {
     .main-section {
-        .container {
-            width: 90%;
+        .container, #title-container {
+            width: 80%;
+            >* {
+                padding: 10px 0;
+            }
+
+            img {
+                width: 100%;
+            }
         }
     }
 

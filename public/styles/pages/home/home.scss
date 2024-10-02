@@ -46,6 +46,11 @@ body {
     border-top: 100px solid $dark-gray;
 }
 
+img {
+    width: 70%;
+    max-width: 500px;
+}
+
 .grey-section {
     background-color: $dark-gray;
     height: 100%;

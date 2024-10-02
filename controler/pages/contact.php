@@ -5,7 +5,7 @@ $description = 'Contacter Gilles Quesnot pour une prestation ou un stage photo, 
 
 $image = '/assets/images/illustrations/contact.webp';
 $alt_image = 'Gilles Quesnot, photographe professionnel à Caen';
-$topic = '';
+$topic = 'Me contacter';
 $title = 'Un interlocuteur principal et unique';
 $paragraph = 'Gilles Quesnot: <br>
                 <br>
