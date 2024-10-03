@@ -9,6 +9,7 @@ body {
   align-items: center;
   min-height: 100%;
   width: 100%;
+  padding-top: 40px;
 }
 .main-section #title-container {
   width: 65%;
@@ -58,4 +59,4 @@ body {
   .inline-container {
     flex-direction: column-reverse !important;
   }
-}/*# sourceMappingURL=topics.css.map */
+}/*# sourceMappingURL=gift.css.map */

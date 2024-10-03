@@ -11,14 +11,15 @@ $paragraph = 'Composer une image, régler son appareil en fonction de la situati
             <br> 
             Rejoignez nous pour jouer avec les lumières de la côte de nacre et vous initier au paysage en mettant à profit tout ce que le littoral a à offrir. 
             (La mer mais aussi le mobilier urbain, les dunes etc..) <br>
-            <br><br>
-            8 personnes maximum <br>
-            Public concerné&#x202F: débutant et confirmé <br>
-            <span style="text-decoration: underline;">Tarif&#x202F:</span> "journée", durée: environ 6h <br>
-            <span style="text-decoration: underline;">Lieu variable&#x202F:</span> Entre Ouistreham et Grandcamp Maisy, Normandie, Calvados.<br>
             <br>
-            <span style="text-decoration: underline;">Connaissances requises :</span> <br>
-            Gestion de la profondeur de champ et de l\'exposition.';
+            8 personnes maximum <br>
+            <br>
+            <span style="text-decoration: underline;">Public concerné&#x202F:</span> débutant et confirmé <br>
+            <span style="text-decoration: underline;">Tarif&#x202F:</span> "journée", durée: environ 6h <br>
+            <span style="text-decoration: underline;">Lieu&#x202Fvariable&#x202F:</span> Entre Ouistreham et Grandcamp Maisy, Normandie, Calvados.<br>
+            <br>
+            <span style="text-decoration: underline;">Pré-requis :</span> <br>
+            Notions de profondeur de champ et d\'exposition.';
 
 include($_SERVER['DOCUMENT_ROOT'] . "/public/html/helpers/header.php");
 include($_SERVER['DOCUMENT_ROOT'] . "/public/html/topic.php");

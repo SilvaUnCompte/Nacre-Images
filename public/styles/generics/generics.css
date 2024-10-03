@@ -3,6 +3,11 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
+  min-height: 97vh;
+}
+html p,
+body p {
+  line-height: 1.25;
 }
 
 header {
@@ -13,10 +18,9 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   position: relative;
-  height: 100%;
   font-family: "lato", sans-serif;
   background-color: #1b1d20;
-  margin-top: 3vh;
+  margin-top: 3vh !important;
 }
 
 .scroll-trigger {

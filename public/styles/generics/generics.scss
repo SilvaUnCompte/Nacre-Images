@@ -10,6 +10,11 @@ body {
     margin: 0;
     padding: 0;
     width: 100vw;
+    min-height: 100vh - $header-height;
+
+    p {
+        line-height: 1.25;
+    }
 }
 
 header { // TODO: bouton s'inscrire qui redirige vers la page contact
@@ -20,10 +25,9 @@ body {
     overflow-x: hidden;
     overflow-y: scroll;
     position: relative;
-    height: 100%;
     font-family: 'lato', sans-serif;
     background-color: $dark-gray;
-    margin-top: $header-height;
+    margin-top: $header-height !important;
 }
 
 .scroll-trigger {
