@@ -9,7 +9,7 @@ $DB_PORT = "3306";
 $DB_HOST = "host";
 $DB_USERNAME = "user";
 $DB_PASSWORD = "password";
-$DB_NAME = "epargne-controle";
+$DB_NAME = "db";
 
 global $db;
 
