@@ -15,5 +15,5 @@ switch ($request) {
 
     default:
         http_response_code(404);
-        require __DIR__ . '/controler/404.php';
+        require __DIR__ . '/controler/404.php'; // TODO: faire tout le routing + changer les url dans les fichiers html
 }

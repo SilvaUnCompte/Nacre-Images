@@ -10,7 +10,7 @@
 	<meta name="description" content=<?php echo $description ?>>
 	<link rel="stylesheet" href="/public/styles/header/header.css">
 	<link rel="stylesheet" href="/public/styles/generics/generics.css">
-	<title><?php echo 'Nacre-Image - ' . $page_name ?></title>
+	<title><?php echo 'Nacre-Images - ' . $page_name ?></title>
 </head>
 
 <body>

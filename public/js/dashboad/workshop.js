@@ -6,7 +6,7 @@
 // $title = $_POST['title'];
 // $paragraph = $_POST['paragraph'];
 
-function overview() {  
+function overview() {
     var form = document.createElement("form");
     form.id = "reg-form";
     form.name = "reg-form";
@@ -24,16 +24,25 @@ function overview() {
         title: "Overview",
         paragraph: "This is the overview page for the workshop"
     };
-    
+
     Object.keys(parameters).forEach(function (key) {
-      var input = document.createElement("input");
-      input.type = "text";
-      input.name = key;
-      input.value = parameters[key];
-      form.appendChild(input);
+        var input = document.createElement("input");
+        input.type = "text";
+        input.name = key;
+        input.value = parameters[key];
+        form.appendChild(input);
     });
-  
+
     document.body.appendChild(form);
     form.submit();
     document.body.removeChild(form);
+}
+
+
+function page_compiler() {
+    // Faire les traitements \n -> <br> etc
+}
+
+function create_or_update_page() {
+    // Faire les traitements pour la création ou la modification de la page
 }
