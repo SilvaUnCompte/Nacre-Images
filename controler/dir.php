@@ -1,6 +1,5 @@
 <?php
 
-
 if (!isset($_GET['path'])) {
     echo json_encode(['error' => 'Missing path']);
     exit;

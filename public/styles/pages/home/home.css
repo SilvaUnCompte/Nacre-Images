@@ -62,13 +62,24 @@ img {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
 .space-empty h1 {
   color: #f5f5f5;
   font-size: 8em;
   text-align: center;
   font-family: "Icons";
-  padding: 2%;
+  padding: 0;
+  margin: 0;
+  text-shadow: #1b1d20 2px 2px 2px;
+}
+.space-empty p {
+  color: #f5f5f5;
+  font-size: 1.5em;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  margin: 0;
   text-shadow: #1b1d20 2px 2px 2px;
 }
 
