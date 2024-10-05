@@ -2,3 +2,7 @@ User-agent: *
 Disallow: /hello*
 
 sitemap: https://example.com/sitemap-file.xml
+
+
+// TODO: faire la site map
+// TODO: mettre list des pages dashboad à ne pas aller voir
