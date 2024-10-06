@@ -1,13 +1,8 @@
 <?php
 
-if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    echo json_encode(['error' => 'Missing id']);
-    exit;
-}
-
 require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/workshop_type.php');
 
-$workshop_type = new WorkshopType($_GET['id']);
+$workshop_type = new WorkshopType($topic_id);
 
 $page_name = $workshop_type->getPageName();
 $description = $workshop_type->getSeoDesc();

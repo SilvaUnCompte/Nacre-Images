@@ -42,6 +42,16 @@ class WorkshopType
         exit;
     }
 
+    public static function get_all()
+    {
+        global $db;
+
+        $query = $db->query('SELECT * FROM workshop_type');
+        $result = $query->fetchAll();
+
+        return $result;
+    }
+
     public function update()
     {
         global $db;

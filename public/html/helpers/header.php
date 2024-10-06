@@ -19,19 +19,19 @@
 		<nav id="first-header">
 			<img id="navicon" src="/assets/images/icons/navicon.webp" alt="navicon" loading="lazy" onclick="show_navbar()">
 			<ul id="ul-header">
-				<li><a href="/controler/pages/index.php">ACCUEIL</a></li>
-				<li><a href="/controler/pages/contact.php">CONTACT</a></li>
-				<li><a href="/controler/pages/prices.php">INFOS STAGES</a></li> // TODO: faire tarif + list des stages
-				<li><a href="/controler/pages/gift.php">CHÈQUE CADEAU</a></li>
-				<li><a href="/controler/pages/services.php">PRESTATIONS</a></li>
-				<li><a href="/controler/pages/calendar.php">CALENDRIER STAGES</a></li>
+				<li><a href="/">ACCUEIL</a></li>
+				<li><a href="/contact">CONTACT</a></li>
+				<li><a href="/infos-stage">INFOS STAGES</a></li>
+				<li><a href="/cheque-cadeau">CHÈQUE CADEAU</a></li>
+				<li><a href="/prestations">PRESTATIONS</a></li>
+				<li><a href="/calendrier">CALENDRIER STAGES</a></li>
 			</ul>
 		</nav>
 	</header>
 
 	<!-- <div id="dark"></div>
 
-	<div class="corner-back"></div>
+	<div class="corner-back"></div> // TODO: faire tarif + list des stages
 	<ul id="side-menu">
 		<div class="corner"></div>
 		<li><a href="/controler/pages/index.php">Overview</a></li>
