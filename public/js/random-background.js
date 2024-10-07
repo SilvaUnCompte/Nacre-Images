@@ -1,10 +1,10 @@
 const lazyLoader = document.getElementById('lazy-loader');
-const imageDirectory = '/assets/images/home-background/'; // Path to the image directory
+const imageDirectory = 'home-background'; // Path to the image directory
 const delay = 7000; // Delay in milliseconds
 let databaseImg = null;
 
 function init() {
-    fetch(`/controler/dir.php?path=${imageDirectory}`)
+    fetch(`/database/api/image-dir.php?path=${imageDirectory}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -27,7 +27,7 @@ function init() {
 function preloadImages() {
     for (let i = 0; i < Object.keys(databaseImg).length; i++) {
         const img = new Image();
-        img.src = `${imageDirectory}${databaseImg[i + 2]}`;
+        img.src = `/assets/images/${imageDirectory}/${databaseImg[i + 2]}`;
         img.loading = 'lazy';
         img.alt = 'Lazy load random background ' + i;
         img.width = "1px";
@@ -39,7 +39,7 @@ function preloadImages() {
 // Function to get a random image from the 'image' directory
 function setRandomBackground() {
     const randomImage = databaseImg[Math.floor(Math.random() * Object.keys(databaseImg).length) + 2];
-    document.body.style.backgroundImage = `url('${imageDirectory}${randomImage}')`;
+    document.body.style.backgroundImage = `url('/assets/images/${imageDirectory}/${randomImage}')`;
 
     // recall the function
     setTimeout(setRandomBackground, delay);

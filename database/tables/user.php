@@ -112,15 +112,8 @@ class User
             $user->setPassword($new_password['hash']);
             $user->setSalt($new_password['salt']);
             $user->update();
-
-            require($_SERVER['DOCUMENT_ROOT'] . "/assets/vendors/smarty/libs/Smarty.class.php");
-            $smarty = new Smarty();
-            $smarty->setTemplateDir($_SERVER['DOCUMENT_ROOT'] . '/public/templates/');
-            $smarty->assign("title", "Epargne-controle - Login");
-            $smarty->assign("error", 2);
-            $smarty->display("login.tpl");
         }
-
+        
         return self::checkPassword($password, $salt, $hash);
     }
 }

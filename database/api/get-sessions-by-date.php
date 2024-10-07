@@ -3,6 +3,9 @@ header('Content-Type: application/json');
 
 require($_SERVER['DOCUMENT_ROOT'] . '/database/connexion.php');
 
+if (!isset($_start_date) || !isset($_end_date)) {
+    exit;
+}
 
 // $arg = json_decode($_GET["accounts"]);
 

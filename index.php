@@ -3,10 +3,11 @@
 $request = $_SERVER['REQUEST_URI'];
 // $_SERVER['DOCUMENT_ROOT'] = __DIR__;
 
-switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topics + faire 
+switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topics
     case '':
     case '/':
     case '/index.htm':
+    case '/accueil':
         require __DIR__ . '/controler/pages/index.php';
         break;
 
@@ -56,6 +57,16 @@ switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topi
         require __DIR__ . '/controler/pages/faq.php';
         break;
 
+    case '/dashboard':
+    case '/dashboard/':
+    case '/mon-fils-cest-le-meilleur':
+        require __DIR__ . '/controler/dashboard/home.php';
+        break;
+    
+    case '/dashboard/login':
+        require __DIR__ . '/controler/dashboard/login/login-page.php';
+        break;
+
     default:
         if (str_starts_with($request, '/topic/')) {
             require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/workshop_type.php');
@@ -66,14 +77,12 @@ switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topi
             foreach ($workshop_types as $workshop_type) {
                 if ($workshop_type['url'] === $url) {
                     $topic_id = $workshop_type['id'];
-                    break;
+                    require __DIR__ . '/controler/pages/topic.php';
+                    return;
                 }
             }
-
-            require __DIR__ . '/controler/pages/topic.php';
-
-        } else {
-            http_response_code(404);
-            require __DIR__ . '/controler/404.php';
         }
+
+        http_response_code(404);
+        require __DIR__ . '/controler/404.php';
 }

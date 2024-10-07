@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/public/styles/pages/topics/topics.css">
 
-<section class="main-section">
+<main class="main-section">
 
     <div id="title-container">
         <h1 class="big-h1"><?php echo $topic ?></h1>
@@ -19,4 +19,4 @@
         </div>
     </div>
 
-</section>
+</main>

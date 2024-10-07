@@ -7,10 +7,10 @@ $image = '/assets/images/illustrations/contact.webp';
 $alt_image = 'Gilles Quesnot, photographe professionnel à Caen';
 $topic = 'Me contacter';
 $title = 'Un interlocuteur principal et unique';
-$paragraph = 'Gilles Quesnot: <br>
+$paragraph = 'Gilles Quesnot :<br>
                 <br>
-                06.61.75.55.13 <br>
-                contact@nacre-images.fr <br>
+                06.61.75.55.13<br>
+                contact@nacre-images.fr<br>
                 <br>
                 Si votre email ne reçoit pas de réponse RAPIDE, consultez vos spams ou appelez moi ! Je 
                 tâche généralement de répondre très vite. Ne cherchez pas ma boutique, afin de garantir 

@@ -2,6 +2,12 @@
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/workshop_type.php');
 
+if(!isset($topic_id)) {
+    http_response_code(404);
+    require $_SERVER['DOCUMENT_ROOT'] . '/controler/404.php';
+    return;
+}
+
 $workshop_type = new WorkshopType($topic_id);
 
 $page_name = $workshop_type->getPageName();

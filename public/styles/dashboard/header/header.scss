@@ -1,0 +1,133 @@
+@use "sass:math";
+
+$margin-left: 175px;
+$header-height: 7vh;
+$phone-width: 767px;
+
+$light-gray: #f5f5f5;
+$mid-gray: #2f3238;
+$dark-gray: #1b1d20;
+$light-black: #17171a;
+
+$primary-color: #c5c5c5; // c5c5c5
+$secondary-color: #464646; // 464646
+
+$side-primary-color: #33334c; // 33334c
+$side-secondary-color: #212147; // 212147
+
+header {
+    top: 0;
+    right: 0;
+    display: flex;
+    position: fixed;
+    z-index: 100;
+    width: 100vw;
+    height: $header-height;
+    background-color: $dark-gray;
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.5);
+
+    .log-data {
+        position: absolute;
+        right: 0;
+        width: 15%;
+        height: 100%;
+        margin-right: 10px;
+    }
+
+    #first-header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        list-style: none;
+
+        ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                display: inline;
+                margin: 0 15px;
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                    font-size: large;
+                }
+
+                a:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+
+
+    }
+
+    #navicon {
+        display: none;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+#side-menu {
+    z-index: 100;
+    background-color: $side-primary-color;
+    height: 100vh;
+    width: $margin-left;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    padding-top: $header-height;
+    transition: all 0.3s ease-in-out;
+
+    .corner {
+        background-color: $side-secondary-color;
+        position: absolute;
+        top: 0;
+        width: $margin-left;
+        height: $header-height;
+    }
+
+    a {
+        color: #fff;
+        text-decoration: none;
+        padding: 20px math.div($margin-left, 4);
+        display: block;
+    }
+
+    li {
+        list-style: none;
+    }
+
+}
+
+footer {
+    height: 25px;
+    position: fixed;
+    display: flex;
+    justify-content: center; // TODO: décidé si on veut le mettre à droite ou au centre
+    align-items: center;
+    color: #fff;
+    bottom: 0;
+    width: 100vw;
+    padding: 5px 10px;
+    background-color: $light-black;
+    font: 1em sans-serif;
+}
+
+@media all and (max-width: $phone-width) {
+    #side-menu {
+        left: -$margin-left;
+    }
+
+    #navicon {
+        display: block !important;
+    }
+}

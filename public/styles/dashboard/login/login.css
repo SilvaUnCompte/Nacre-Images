@@ -1,0 +1,111 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #ffffff;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+  box-shadow: inset 0 0 20px 20px rgba(35, 35, 35, 0);
+}
+
+html,
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-color: #1b1d20;
+}
+
+#section-core {
+  position: absolute;
+  z-index: 150;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+#section-core .form-box {
+  position: relative;
+  width: 400px;
+  height: 450px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#section-core h2 {
+  font-size: 2em;
+  color: #fff;
+  text-align: center;
+}
+#section-core .input-box {
+  position: relative;
+  margin: 30px 0;
+  width: 310px;
+  border-bottom: 2px solid #fff;
+}
+#section-core .input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 1em;
+  pointer-events: none;
+  transition: 0.3s;
+}
+#section-core .input-box input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  padding: 0 35px 0 5px;
+  color: #fff;
+}
+#section-core .input-box input:not(:-moz-placeholder-shown) ~ label {
+  top: 0px;
+  font-size: 0.9em;
+}
+#section-core .input-box input:focus ~ label,
+#section-core .input-box input:not(:placeholder-shown) ~ label {
+  top: 0px;
+  font-size: 0.9em;
+}
+#section-core .input-box ion-icon {
+  position: absolute;
+  right: 8px;
+  color: #fff;
+  font-size: 1.2em;
+  top: 20px;
+}
+#section-core input[type=submit] {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  background: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+@media all and (max-width: 767px) {
+  #section-core {
+    margin-left: 0;
+  }
+  div {
+    font-size: 15px;
+  }
+}/*# sourceMappingURL=login.css.map */
