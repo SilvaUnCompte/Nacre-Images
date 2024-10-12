@@ -7,7 +7,7 @@ if (isset($_POST['input_email']) && isset($_POST['input_password'])) {
 	$email = $_POST['input_email'];
 	$password = $_POST['input_password'];
 	
-	if (User::checkLogin($email, $password)) { // TODO: check if email and password are correct
+	if (User::checkLogin($email, $password)) {
 
 		if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 

@@ -70,7 +70,7 @@ img {
   text-align: center;
   font-family: "Icons";
   padding: 0;
-  margin: 0;
+  margin: 0 20px;
   text-shadow: #1b1d20 2px 2px 2px;
 }
 .space-empty p {
@@ -83,11 +83,17 @@ img {
   text-shadow: #1b1d20 2px 2px 2px;
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: 1000px) {
   .flex-inline {
     flex-direction: column;
   }
+  .space-empty {
+    height: 50vh;
+  }
   .space-empty h1 {
-    font-size: 6em;
+    font-size: 4em;
+  }
+  .space-empty p {
+    font-size: 1em;
   }
 }/*# sourceMappingURL=home.css.map */

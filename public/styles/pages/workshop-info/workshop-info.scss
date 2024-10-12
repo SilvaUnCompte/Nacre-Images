@@ -25,7 +25,7 @@ $dark-gray: #1b1d20;
                 &:hover {
                     transform: scale(1.015);
                 }
-                
+
                 &::after {
                     content: '';
                     position: absolute;
@@ -43,7 +43,7 @@ $dark-gray: #1b1d20;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                
+
                 color: white;
                 font-size: 2em;
                 font-weight: bold;
@@ -54,4 +54,4 @@ $dark-gray: #1b1d20;
     }
 }
 
-@media all and (max-width: 1200px) {}
+@media all and (max-width: 1000px) {}

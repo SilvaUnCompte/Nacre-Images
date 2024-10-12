@@ -2,18 +2,18 @@
 
 $margin-left: 175px;
 $header-height: 3vh;
-$phone-width: 767px;
+$header-height-phone: 6vh;
 
 $light-gray: #f5f5f5;
 $mid-gray: #2f3238;
 $dark-gray: #1b1d20;
 $light-black: #17171a;
 
-$primary-color: #c5c5c5; // c5c5c5
-$secondary-color: #464646; // 464646
+$primary-color: #c5c5c5;
+$secondary-color: #464646;
 
-$side-primary-color: #33334c; // 33334c
-$side-secondary-color: #212147; // 212147
+$side-primary-color: #1b1d20;
+$side-secondary-color: #141618;
 
 #dark {
     position: fixed;
@@ -21,7 +21,7 @@ $side-secondary-color: #212147; // 212147
     left: 0;
     width: 100%;
     height: 100vh;
-    transition: all 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
     background-color: #00000000;
     z-index: -1;
 }
@@ -31,7 +31,7 @@ header {
     right: 0;
     display: flex;
     position: fixed;
-    z-index: 100;
+    z-index: 80;
     width: 100vw;
     height: $header-height;
     background-color: $dark-gray;
@@ -41,7 +41,6 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0 20px;
         list-style: none;
 
         ul {
@@ -66,17 +65,17 @@ header {
             }
         }
 
-
-    }
-
-    #navicon {
-        display: none;
-        width: 50px;
-        height: 50px;
+        #navicon {
+            display: none;
+            width: 50px;
+            height: 50px;
+        }
     }
 }
 
 #side-menu {
+    display: none;
+
     z-index: 100;
     background-color: $side-primary-color;
     height: 100vh;
@@ -86,7 +85,7 @@ header {
     left: 0;
     margin: 0;
     padding: 0;
-    padding-top: $header-height;
+    padding-top: $header-height-phone;
     transition: all 0.3s ease-in-out;
 
     .corner {
@@ -94,13 +93,13 @@ header {
         position: absolute;
         top: 0;
         width: $margin-left;
-        height: $header-height;
+        height: $header-height-phone;
     }
 
     a {
         color: #fff;
         text-decoration: none;
-        padding: 20px math.div($margin-left,4);
+        padding: 20px math.div($margin-left, 4);
         display: block;
     }
 
@@ -124,12 +123,45 @@ footer {
     font: 1em sans-serif;
 }
 
-@media all and (max-width: $phone-width) {
+@media all and (max-width: 1000px) {
     #side-menu {
+        display: block;
         left: -$margin-left;
     }
 
-    #navicon {
-        display: block !important;
+    header {
+        height: $header-height-phone !important;
+
+        #first-header {
+            display: flex;
+            justify-content: right;
+
+            #ul-header {
+                display: none;
+            }
+
+            #navicon {
+                display: block !important; // A voir si utilisé ?
+                margin-right: 5px;
+            }
+        }
+    }
+
+    footer {
+        position: relative;
+        height: 40px;
+        padding: 5px 0px;
+
+        .footer-text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 0.8em;
+
+            .footer-separator {
+                display: none;
+            }
+        }
     }
 }

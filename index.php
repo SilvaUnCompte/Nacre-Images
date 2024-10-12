@@ -49,7 +49,7 @@ switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topi
 
     case '/cgv':
     case '/cgv.htm':
-        require __DIR__ . '/controler/pages/terms.php';
+        require __DIR__ . '/controler/pages/cgv.php';
         break;
 
     case '/faq':

@@ -22,5 +22,6 @@ Page global dashboad : Cadre avec workshop_type, workshop_session, tarif, presta
 Page de création & edition de workshop :
  > Avec overview en temps réel
 Page de création & edition de workshop_session
+Gestion de la FAQ
 ...
 -->

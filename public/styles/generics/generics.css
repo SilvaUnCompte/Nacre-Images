@@ -152,12 +152,13 @@ input[type=number] {
   /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
-@media all and (max-width: 1400px) {
+@media all and (max-width: 1000px) {
   .container {
     width: 90%;
   }
   body {
     margin-left: 0;
+    margin-top: 6vh !important;
   }
   .inline-container {
     flex-direction: column;

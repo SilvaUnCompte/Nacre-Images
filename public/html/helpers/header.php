@@ -29,16 +29,13 @@
 		</nav>
 	</header>
 
-	<!-- <div id="dark"></div>
-
-	<div class="corner-back"></div> // TODO: faire tarif + list des stages
+	<div id="dark"></div>
 	<ul id="side-menu">
 		<div class="corner"></div>
-		<li><a href="/controler/pages/index.php">Overview</a></li>
-		<li><a href="/controler/pages/accounts.php">Accounts</a></li>
-		<li><a href="/controler/pages/budget.php">Budget</a></li>
-		<li><a href="/controler/pages/analytics.php">Analytics</a></li>
-		<li><a href="/controler/pages/operations.php">Operations</a></li>
-		<li><a href="/controler/pages/verification.php">Verification</a></li>
-		<li><a href="/controler/pages/events.php">Events</a></li>
-</ul> -->
+		<li><a href="/">Accueil</a></li>
+		<li><a href="/contact">Contact</a></li>
+		<li><a href="/infos-stage">Infos stages</a></li>
+		<li><a href="/prestations">Prestations</a></li>
+		<li><a href="/cheque-cadeau">Chèque cadeau</a></li>
+		<li><a href="/calendrier">Calendrier stages</a></li>
+	</ul>
