@@ -42,7 +42,7 @@ class WorkshopType
         exit;
     }
 
-    public static function get_all()
+    public static function getAll()
     {
         global $db;
 

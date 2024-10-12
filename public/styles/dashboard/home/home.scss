@@ -5,7 +5,7 @@ $mid-gray: #2c2d30;
 $mid-dark-gray: #19191a;
 $dark-gray: #1b1d20;
 
-#next-lesson {
+#next-session {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,7 +24,7 @@ $dark-gray: #1b1d20;
         color: $light-gray;
     }
 
-    #next-lesson-data {
+    #next-session-data {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -33,7 +33,7 @@ $dark-gray: #1b1d20;
         height: 80%;
         padding-right: 30px;
         
-        .next-lesson-content{
+        .next-session-content{
             width: 100%;
             display: flex;
             justify-content: space-between;
@@ -55,11 +55,11 @@ $dark-gray: #1b1d20;
 }
 
 @media all and (max-width: 1400px) {
-    #next-lesson {
+    #next-session {
         font-size: 1.5em;
         padding: 0 20px;
     }
-    .next-lesson-content {
+    .next-session-content {
         flex-direction: column;
         align-items: flex-start;
 

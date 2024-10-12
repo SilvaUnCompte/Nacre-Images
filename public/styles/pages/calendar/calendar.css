@@ -1,0 +1,117 @@
+#calendar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+#calendar #session-container {
+  width: 75%;
+}
+#calendar #session-container .month-row-0 {
+  flex-direction: row;
+}
+#calendar #session-container .month-row-1 {
+  flex-direction: row-reverse;
+}
+#calendar #session-container .month-row-1 .col-month .month-year {
+  text-align: right;
+}
+#calendar #session-container .month-row-1,
+#calendar #session-container .month-row-0 {
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#calendar #session-container .month-row-1 .col-month,
+#calendar #session-container .month-row-0 .col-month {
+  width: 50%;
+  padding: 0 15px;
+}
+#calendar #session-container .month-row-1 .col-month .month-year,
+#calendar #session-container .month-row-0 .col-month .month-year {
+  margin: 0;
+  font-size: 2em;
+  font-weight: bolder;
+  color: #ffffff;
+}
+#calendar #session-container .month-row-1 .col-session,
+#calendar #session-container .month-row-0 .col-session {
+  width: 50%;
+}
+#calendar #session-container .month-row-1 .col-session .a-session,
+#calendar #session-container .month-row-0 .col-session .a-session {
+  margin-bottom: 15px;
+  text-decoration: none !important;
+  width: 100%;
+  transition: transform 0.5s;
+}
+#calendar #session-container .month-row-1 .col-session .a-session:hover,
+#calendar #session-container .month-row-0 .col-session .a-session:hover {
+  transform: scale(1.015);
+}
+#calendar #session-container .month-row-1 .col-session .a-session .session-card,
+#calendar #session-container .month-row-0 .col-session .a-session .session-card {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+#calendar #session-container .month-row-1 .col-session .a-session .session-card .session-date,
+#calendar #session-container .month-row-0 .col-session .a-session .session-card .session-date {
+  font-size: 1.5em;
+  font-weight: bolder;
+  color: #ffffff;
+  width: 20%;
+  margin: 0;
+  padding: 0 15px;
+  border-radius: 15px 0px 0 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: background-color 0.2s;
+}
+#calendar #session-container .month-row-1 .col-session .a-session .session-card .session-date:hover,
+#calendar #session-container .month-row-0 .col-session .a-session .session-card .session-date:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#calendar #session-container .month-row-1 .col-session .a-session .session-card .session-info,
+#calendar #session-container .month-row-0 .col-session .a-session .session-card .session-info {
+  padding-left: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s;
+}
+#calendar #session-container .month-row-1 .col-session .a-session .session-card .session-info > *,
+#calendar #session-container .month-row-0 .col-session .a-session .session-card .session-info > * {
+  margin: 0;
+  padding-right: 10px;
+}
+#calendar #session-container .month-row-1 .col-session .a-session .session-card .session-info:hover,
+#calendar #session-container .month-row-0 .col-session .a-session .session-card .session-info:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+#calendar #session-container .month-row-1 .col-session .a-session .session-card .session-info .session-name,
+#calendar #session-container .month-row-0 .col-session .a-session .session-card .session-info .session-name {
+  font-size: 1.5em;
+  font-weight: bolder;
+  color: #ffffff;
+  text-shadow: 0 0 15px rgb(0, 0, 0);
+}
+
+@media all and (max-width: 1200px) {
+  .col-session,
+  .col-session {
+    width: 100% !important;
+  }
+  .month-row-1,
+  .month-row-0 {
+    flex-direction: column !important;
+  }
+}/*# sourceMappingURL=calendar.css.map */

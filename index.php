@@ -62,15 +62,19 @@ switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topi
     case '/mon-fils-cest-le-meilleur':
         require __DIR__ . '/controler/dashboard/home.php';
         break;
-    
+
     case '/dashboard/login':
         require __DIR__ . '/controler/dashboard/login/login-page.php';
         break;
 
+    case '/dashboard/calendrier':
+        require __DIR__ . '/controler/dashboard/calendar.php';
+        break;
+
     default:
-        if (str_starts_with($request, '/topic/')) {
+        if (str_starts_with($request, '/stage/')) {
             require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/workshop_type.php');
-            $workshop_types = WorkshopType::get_all();
+            $workshop_types = WorkshopType::getAll();
 
             $url = substr($request, 7);
 
@@ -81,6 +85,9 @@ switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topi
                     return;
                 }
             }
+
+            header('Location: /infos-stage');
+            return;
         }
 
         http_response_code(404);

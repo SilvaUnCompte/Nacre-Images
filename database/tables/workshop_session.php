@@ -2,7 +2,7 @@
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/database/connexion.php');
 
-class WorshopSession
+class WorkshopSession
 {
     private $id;
     private $type;
@@ -12,7 +12,7 @@ class WorshopSession
     public function __construct($id)
     {
         global $db;
-        
+
         $query = $db->prepare('SELECT * FROM workshop_session WHERE id = :id');
         $query->execute(['id' => $id]);
         $result = $query->fetch();
@@ -72,6 +72,22 @@ class WorshopSession
             'date' => $date,
             'additionnal_information' => $additionnal_information
         ]);
+    }
+
+    public static function getFutureSession()
+    {
+        global $db;
+        $start_date = date('Y-m-d');
+        $end_date = date('Y-m-d', strtotime('+547 days')); // 365 + 365/2 days
+
+        $query = $db->prepare("SELECT * FROM workshop_session WHERE date BETWEEN :start_date AND :end_date ORDER BY date ASC");
+        $query->execute([
+            'start_date' => $start_date,
+            'end_date' => $end_date
+        ]);
+
+        $sessions = $query->fetchAll(PDO::FETCH_ASSOC);
+        return $sessions;
     }
 
 

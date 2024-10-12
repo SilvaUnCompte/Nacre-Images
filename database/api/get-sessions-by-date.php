@@ -3,34 +3,24 @@ header('Content-Type: application/json');
 
 require($_SERVER['DOCUMENT_ROOT'] . '/database/connexion.php');
 
-if (!isset($_start_date) || !isset($_end_date)) {
+if (!isset($_GET["start_date"]) || !isset($_GET["end_date"])) {
     exit;
 }
 
-// $arg = json_decode($_GET["accounts"]);
+$start_date = $_GET["start_date"];
+$end_date = $_GET["end_date"];
 
-// if (isset($_GET["date"])) {
-//     $date = $_GET["date"];
-// } else {
-//     $date = date("Y-m-d");
-// }
+$query = $db->prepare("SELECT * FROM workshop_session WHERE date BETWEEN :start_date AND :end_date ORDER BY date ASC");
+$query->execute([
+    'start_date' => $start_date,
+    'end_date' => $end_date
+]);
 
-// $limit = "";
-// if (isset($_GET["limit"])) {
-//     $limit = ' LIMIT ' . $_GET["limit"];
-// }
+$sessions = $query->fetchAll(PDO::FETCH_ASSOC);
 
-// $regularity = "";
-// if (isset($_GET["regularity"])) {
-//     $regularity = "AND regularity = " . $_GET["regularity"];
-// }
-
-// foreach ($arg as $key => $value) {
-//     $accounts[] = $value->id_account;
-// }
-
-// $query = $db->prepare('SELECT * FROM operation WHERE id_account IN (' . implode(',', $accounts) . ') ' . $regularity . ' AND date <= \'' . $date . '\' ORDER BY date DESC' . $limit);
-// $query->execute();
-// $result = $query->fetchAll(PDO::FETCH_ASSOC);
-
-// echo json_encode($result);
+if ($sessions) {
+    echo json_encode($sessions);
+} else {
+    echo json_encode(['message' => 'No upcoming sessions found']);
+}
+?>

@@ -5,11 +5,11 @@
 
     <br>
 
-    <div id="next-lesson">
-        <div id="next-lesson-data">
-        <h2>Prochain cours</h2>
+    <div id="next-session">
+        <div id="next-session-data">
+            <h2>Prochain cours</h2>
 
-            <div class="next-lesson-content">
+            <div class="next-session-content">
                 <div>
                     <p>Date</p>
                     <p class="small-p" id="next-session-date">Chargement...</p>
@@ -30,7 +30,7 @@
     </div>
 
     <br><br><br>
-    
+
     <h1 class="big-h1">Liste des stages</h1>
     <hr><br>
 
