@@ -20,7 +20,7 @@
         ?>
 
     </div>
-    <div class="bubble-text-container">
+    <a class="bubble-text-container" href="/contact">
         <div class="bubble-text">
             <p>
                 N'hésitez pas à
@@ -29,8 +29,7 @@
                 <br>question !
             </p>
         </div>
-    </div>
+    </a>
 </main>
 
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
+<br><br><br><br>

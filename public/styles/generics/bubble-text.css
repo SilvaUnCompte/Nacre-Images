@@ -17,7 +17,11 @@
   border-radius: 11px;
   position: relative;
   box-shadow: 20px 20px #83af9b;
-  font-family: "Baloo 2", cursive;
+  font-family: "Baloo 2", sans-serif;
+  cursor: pointer;
+}
+.bubble-text p:hover {
+  color: #8f593a;
 }
 
 .bubble-text p:after {
@@ -71,8 +75,7 @@
 }
 @media all and (max-width: 1000px) {
   .bubble-text-container {
-    position: absolute;
-    bottom: 110px;
-    right: 25%;
+    position: relative;
+    transform: translatey(115px);
   }
 }/*# sourceMappingURL=bubble-text.css.map */

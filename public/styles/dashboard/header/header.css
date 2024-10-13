@@ -92,7 +92,7 @@ footer {
   font: 1em sans-serif;
 }
 
-@media all and (max-width: 1000px) {
+@media all and (max-width: 767px) {
   #side-menu {
     left: -175px;
   }
