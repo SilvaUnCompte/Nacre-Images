@@ -9,13 +9,83 @@ $dark-gray: #1b1d20;
     flex-direction: column;
     align-items: center;
 
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/assets/images/logoNI2.jpg'); // TODO: proposer ?
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        filter: blur(5px);
+        opacity: 0.01;
+        z-index: -1;
+    }
+
+    .title-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        margin-top: 75px;
+        
+        ul {
+            li {
+                display: inline-block;
+                
+                input[type="radio"] { // Add Get info pour que la page charge tout de suite avec le bon de checked
+                    display: absolute;
+                    position: absolute;
+                    opacity: 0;
+                }
+
+                label {
+                    color: #888a8b;
+                    font-size: 2.2em;
+                    font-weight: bolder;
+
+                    margin: 20px;
+                    padding: 15px;
+                    cursor: pointer;
+                    transition: all .2s;
+                }
+                input[type="radio"]:checked+label {
+                    color: white; // TODO: trouver un truc pour qu'on comprenne que c'est clickable
+                }
+                
+            }
+        }
+    }
+
     #workshop-container {
+        margin-top: 100px;
         width: 75%;
+
+        .workshop-title {
+            text-align: center;
+
+            h2 {
+                font-size: 1.7em;
+                margin: 0;
+                font-weight: bolder;
+            }
+
+            p {
+                font-size: 1.2em;
+                color: #888a8b;
+                margin-top: 0;
+                font-style: italic;
+            }
+        }
 
         .row {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            margin-bottom: 85px;
 
             .workshop-card {
                 position: relative;
@@ -23,12 +93,13 @@ $dark-gray: #1b1d20;
                 margin: 0.5%;
                 overflow: hidden;
                 aspect-ratio: 16 / 9;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 
                 .card-container {
                     transition: transform 0.5s;
 
                     &:hover {
-                        > img {
+                        >img {
                             transform: scale(1.1);
                             filter: brightness(.3);
                         }
@@ -73,6 +144,7 @@ $dark-gray: #1b1d20;
             .row {
                 .workshop-card {
                     max-width: 48%;
+
                     .card-container {
                         .text-over {
                             font-size: .9em;
