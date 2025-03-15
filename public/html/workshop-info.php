@@ -17,8 +17,8 @@
         </ul>
     </nav>
 
-    <div id="workshop-container"> <!-- class="animation-wrapper"> -->
-
+    <div id="workshop-container">
+        
         <?php
         $workshopTitle = ['Les stages classiques', 'Les thèmes exceptionnels', 'Thème sur demande', 'Stage séjour photo'];
         $workshopSubtitle = ['Ces thèmes sont abordés très régulièrement.', 'Ces thèmes sont abordés un peu moins souvent ou sur demande.', 'Ces thèmes sont sur demande uniquement.', 'Séjour en groupe d\'une semaine.'];
