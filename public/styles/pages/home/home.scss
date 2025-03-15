@@ -1,9 +1,37 @@
 $light-gray: #f5f5f5;
 $mid-gray: #2c2d30;
-$dark-gray: #1b1d20;
+$dark-gray: #151618;
+
+$header-height: 55px;
+
+
+.tt {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    background: #000000;
+    z-index: 1;
+    display: block;
+}
+
+.truc {
+    position: absolute;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, #c51414, #03278b);
+    opacity: 0.5;
+    border-radius: 9999px;
+    filter: blur(5rem);
+}
 
 header {
     box-shadow: none !important;
+    background-color: #1516189a;
 }
 
 body {
@@ -26,6 +54,11 @@ body {
         background: rgba(0, 0, 0, 0.6); // Adjust the opacity as needed
         z-index: -1; // Ensure it stays behind other content
     }
+}
+
+.rec-triangle {
+    height: $header-height;
+    background-color: $dark-gray;
 }
 
 .triangle-mid {
@@ -70,27 +103,39 @@ img {
     align-items: center;
     flex-direction: column;
 
-        width: 100%;
-        h1 {
-            color: $light-gray;
-            font-size: 8em;
-            text-align: center;
-            font-family: "Icons";
-            padding: 0;
-            margin: 0 20px;
-            text-shadow: #1b1d20 2px 2px 2px; // TODO: à voir si on garde
-        }
+    width: 100%;
 
-        p {
-            color: $light-gray;
-            font-size: 1.5em;
-            text-align: center;
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            padding: 0;
-            margin: 0;
-            text-shadow: #1b1d20 2px 2px 2px; // TODO: à voir si on garde
-        }
-    
+    h1 {
+        color: $light-gray;
+        font-size: 8em;
+        text-align: center;
+        font-family: "Icons";
+        padding: 0;
+        margin: 0 20px;
+        text-shadow: #1b1d20 2px 2px 2px; // TODO: à voir si on garde
+    }
+
+    p {
+        color: $light-gray;
+        font-size: 1.5em;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 0;
+        margin: 0;
+        text-shadow: #1b1d20 2px 2px 2px; // TODO: à voir si on garde
+    }
+
+}
+
+.info-cadre {
+    width: 70%;
+    margin-bottom: 5%;
+    backdrop-filter: blur(2px);
+    background-color: #2c2d3033;
+
+    >* {
+        margin: 30px;
+    }
 }
 
 @media all and (max-width: 1000px) {
@@ -104,6 +149,7 @@ img {
         h1 {
             font-size: 4em;
         }
+
         p {
             font-size: 1em;
         }

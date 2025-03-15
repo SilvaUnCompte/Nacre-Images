@@ -9,6 +9,7 @@ class WorkshopType
     private $page_name;
     private $seo_desc;
     private $img_name;
+    private $img_calendar;
     private $img_alt;
     private $big_title;
     private $small_title;
@@ -32,6 +33,7 @@ class WorkshopType
         $this->page_name = $result['page_name'];
         $this->seo_desc = $result['seo_desc'];
         $this->img_name = $result['img_name'];
+        $this->img_calendar = $result['img_calendar'];
         $this->img_alt = $result['img_alt'];
         $this->big_title = $result['big_title'];
         $this->small_title = $result['small_title'];
@@ -64,6 +66,7 @@ class WorkshopType
             'page_name' => $this->page_name,
             'seo_desc' => $this->seo_desc,
             'img_name' => $this->img_name,
+            'img_calendar' => $this->img_calendar,
             'img_alt' => $this->img_alt,
             'big_title' => $this->big_title,
             'small_title' => $this->small_title,
@@ -87,16 +90,17 @@ class WorkshopType
         $query->execute(['id' => $id_to_delete]);
     }
 
-    public static function create($id, $topic_name, $page_name, $seo_desc, $img_name, $img_alt, $big_title, $small_title, $paragraph)
+    public static function create($id, $topic_name, $page_name, $seo_desc, $img_name, $img_calendar, $img_alt, $big_title, $small_title, $paragraph)
     {
         global $db;
         
-        $query = $db->prepare('INSERT INTO workshop_type (topic_name, page_name, seo_desc, img_name, img_alt, big_title, small_title, paragraph) VALUES (:topic_name, :page_name, :seo_desc, :img_name, :img_alt, :big_title, :small_title, :paragraph)');
+        $query = $db->prepare('INSERT INTO workshop_type (topic_name, page_name, seo_desc, img_name, img_calendar, img_alt, big_title, small_title, paragraph) VALUES (:topic_name, :page_name, :seo_desc, :img_name, :img_alt, :big_title, :small_title, :paragraph, :img_calendar)');
         $query->execute([
             'topic_name' => $topic_name,
             'page_name' => $page_name,
             'seo_desc' => $seo_desc,
             'img_name' => $img_name,
+            'img_calendar' => $img_calendar,
             'img_alt' => $img_alt,
             'big_title' => $big_title,
             'small_title' => $small_title,

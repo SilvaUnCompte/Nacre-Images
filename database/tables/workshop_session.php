@@ -78,7 +78,7 @@ class WorkshopSession
     {
         global $db;
         $start_date = date('Y-m-d');
-        $end_date = date('Y-m-d', strtotime('+547 days')); // 365 + 365/2 days
+        $end_date = date('Y-m-d', strtotime('+364 days'));
 
         $query = $db->prepare("SELECT * FROM workshop_session WHERE date BETWEEN :start_date AND :end_date ORDER BY date ASC");
         $query->execute([

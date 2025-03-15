@@ -1,20 +1,17 @@
 <link rel="stylesheet" href="/public/styles/pages/calendar/calendar.css">
 
-<main id="calendar">
-    <div id="session-container">
+<br><br>
+
+<main class="container">
+    <h1>Calendrier des stages</h1>
+
+    <div class="particle particle-1"></div>
+    <div class="particle particle-2"></div>
+    <div class="particle particle-3"></div>
+    <div class="particle particle-4"></div>
+
+    <div class="calendar">
         <?php
-
-        // $colors = [];
-        // $colorStart = [181, 125, 14];
-        // $colorEnd = [78, 216, 72];
-        // $steps = count($workshopSessions);
-
-        // for ($i = 0; $i < $steps; $i++) {
-        //     $r = (int)($colorStart[0] + ($colorEnd[0] - $colorStart[0]) * ($i / ($steps - 1)));
-        //     $g = (int)($colorStart[1] + ($colorEnd[1] - $colorStart[1]) * ($i / ($steps - 1)));
-        //     $b = (int)($colorStart[2] + ($colorEnd[2] - $colorStart[2]) * ($i / ($steps - 1)));
-        //     $colors[] = sprintf("#%02x%02x%02x", $r, $g, $b);
-        // }
 
         $monthYear = '';
         $flexDirection = 0;
@@ -29,35 +26,37 @@
 
 
             if ($newMonthYear !== $monthYear && $monthYear !== '') {
-                echo    '</div>';
-                echo '</div>';
-                echo '<hr>';
+                echo '</div>
+                    </section>';
             }
             if ($newMonthYear !== $monthYear) {
-                echo '<div class="month-row-' . $flexDirection . '">';
-                echo    '<div class="col-month">';
-                echo        '<h2 class="month-year">' . $newMonthYear . '</h2>';
-                echo    '</div>';
-                echo    '<div class="col-session">';
+                echo '<section class="month-section">
+                        <div class="month-header">
+                            <h2 class="month-title">' . $newMonthYear . '</h2>
+                        <div class="month-divider"></div>
+                    </div>
+
+                    <div class="courses">';
+
                 $flexDirection = ($flexDirection + 1) % 2;
                 $monthYear = $newMonthYear;
             }
 
-                echo    '<a class="a-session" href="/stage/' . $workshopType['url'] . '">';
-                echo        '<div class="session-card" style="background-image: url(\'assets/images/topics/' . $workshopType["img_name"] . '\')">';
-                echo            '<p class="session-date">' . $dayMonth . '</p>'; // extension=php_intl.dll
-                echo            '<div class="session-info">';
-                echo                '<p class="session-name">' . $workshopType["topic_name"] . '</p>';
-                echo                '<p>' . $session['additional_information'] . '</p>';
-                echo            '</div>';
-                echo        '</div>';
-                // echo '<section class="session-card-bottom" style="background-image: url(\'assets/images/topics/Line/' . $workshopType["img_name"] . '\')">';
-                // echo        '<section class="session-card-bottom">';
-                // echo        '</section>';
-                echo    '</a>';
+            echo '<a class="course" href="/stage/' . $workshopType['url'] . '">
+                    <img class="course-bg" src=\'assets/images/topics/' . $workshopType["img_name"] . '\' alt="' . $workshopType["topic_name"] . '">
+                    <div class="course-overlay"></div>
+                    <div class="course-gradient"></div>
+                    <div class="course-content">
+                        <h3 class="course-title">' . $workshopType["topic_name"] . '</h3>
+                        <p>' . $session['additional_information'] . '</p>
+                        <span class="course-date">' . $dayMonth . '</span>
+                    </div>
+                </a>'; // extension=php_intl.dll
         }
         ?>
     </div>
 </main>
 
 <br><br><br>
+
+<link rel="stylesheet" href="/public/styles/generics/star.css">

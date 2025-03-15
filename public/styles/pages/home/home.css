@@ -1,5 +1,30 @@
+.tt {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  background: #000000;
+  z-index: 1;
+  display: block;
+}
+
+.truc {
+  position: absolute;
+  z-index: -10;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to right, #c51414, #03278b);
+  opacity: 0.5;
+  border-radius: 9999px;
+  filter: blur(5rem);
+}
+
 header {
   box-shadow: none !important;
+  background-color: rgba(21, 22, 24, 0.6039215686);
 }
 
 body {
@@ -22,13 +47,18 @@ body::before {
   z-index: -1;
 }
 
+.rec-triangle {
+  height: 55px;
+  background-color: #151618;
+}
+
 .triangle-mid {
   height: 0;
   width: 0;
   margin: 0;
   padding: 0;
   border-right: 100vw solid transparent;
-  border-bottom: 100px solid #1b1d20;
+  border-bottom: 100px solid #151618;
 }
 
 .triangle-mid-down {
@@ -37,7 +67,7 @@ body::before {
   margin: 0;
   padding: 0;
   border-left: 100vw solid transparent;
-  border-top: 100px solid #1b1d20;
+  border-top: 100px solid #151618;
 }
 
 img {
@@ -46,7 +76,7 @@ img {
 }
 
 .grey-section {
-  background-color: #1b1d20;
+  background-color: #151618;
   height: 100%;
   padding: 4% 10%;
   margin: 0;
@@ -81,6 +111,17 @@ img {
   padding: 0;
   margin: 0;
   text-shadow: #1b1d20 2px 2px 2px;
+}
+
+.info-cadre {
+  width: 70%;
+  margin-bottom: 5%;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  background-color: rgba(44, 45, 48, 0.2);
+}
+.info-cadre > * {
+  margin: 30px;
 }
 
 @media all and (max-width: 1000px) {

@@ -7,7 +7,7 @@
 .bubble-text p {
   transform: translatey(0px);
   animation: float 5s ease-in-out infinite;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 15px;

@@ -5,7 +5,7 @@ header {
   position: fixed;
   z-index: 100;
   width: 100vw;
-  height: 7vh;
+  height: 55px;
   background-color: #1b1d20;
   box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.5);
 }
@@ -58,7 +58,7 @@ header #navicon {
   left: 0;
   margin: 0;
   padding: 0;
-  padding-top: 7vh;
+  padding-top: 55px;
   transition: all 0.3s ease-in-out;
 }
 #side-menu .corner {
@@ -66,7 +66,7 @@ header #navicon {
   position: absolute;
   top: 0;
   width: 175px;
-  height: 7vh;
+  height: 55px;
 }
 #side-menu a {
   color: #fff;

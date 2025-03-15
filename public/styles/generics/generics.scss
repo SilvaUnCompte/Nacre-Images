@@ -1,4 +1,4 @@
-$header-height: 3vh;
+$header-height: 55px;
 $header-height-phone: 6vh;
 
 $light-gray: #f5f5f5;
@@ -11,7 +11,6 @@ body {
     margin: 0;
     padding: 0;
     width: 100vw;
-    min-height: 100vh - $header-height;
 
     p {
         line-height: 1.25;
@@ -27,9 +26,6 @@ body {
     overflow-y: scroll;
     position: relative;
     font-family: 'lato', sans-serif;
-    margin-top: $header-height !important;
-
-    // background: radial-gradient(circle, rgb(0, 0, 0, 0) 75%, rgb(0, 0, 0, 0.1)) fixed; // TODO: proposer ?
     background-color: $dark-gray;
 }
 
@@ -53,18 +49,6 @@ body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-}
-
-.info-cadre {
-    width: 70%;
-    margin-bottom: 5%;
-    background-color: #2c2d30;
-    box-shadow: inset 1px 1px 3px 1px rgba(0, 0, 0, 0.5);
-    // box-shadow: inset 4px 4px 3px 1px rgba(0, 0, 0, 0.5); //TODO: choisir si plus renfoncé
-
-    >* {
-        margin: 30px;
-    }
 }
 
 .transparent {
@@ -184,7 +168,6 @@ input[type=number] {
 
     body {
         margin-left: 0;
-        margin-top: $header-height-phone !important;
     }
 
     .inline-container {

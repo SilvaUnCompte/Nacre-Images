@@ -3,7 +3,6 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  min-height: 97vh;
 }
 html p,
 body p {
@@ -19,7 +18,6 @@ body {
   overflow-y: scroll;
   position: relative;
   font-family: "lato", sans-serif;
-  margin-top: 3vh !important;
   background-color: #1b1d20;
 }
 
@@ -43,16 +41,6 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-}
-
-.info-cadre {
-  width: 70%;
-  margin-bottom: 5%;
-  background-color: #2c2d30;
-  box-shadow: inset 1px 1px 3px 1px rgba(0, 0, 0, 0.5);
-}
-.info-cadre > * {
-  margin: 30px;
 }
 
 .transparent {
@@ -166,7 +154,6 @@ input[type=number] {
   }
   body {
     margin-left: 0;
-    margin-top: 6vh !important;
   }
   .inline-container {
     flex-direction: column;

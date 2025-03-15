@@ -20,11 +20,11 @@
 			<img id="navicon" src="/assets/images/icons/navicon.webp" alt="navicon" loading="lazy" onclick="show_navbar()">
 			<ul id="ul-header">
 				<li><a href="/">ACCUEIL</a></li>
-				<li><a href="/contact">CONTACT</a></li>
 				<li><a href="/infos-stage">INFOS STAGES</a></li>
-				<li><a href="/cheque-cadeau">CHÈQUE CADEAU</a></li>
 				<li><a href="/prestations">PRESTATIONS</a></li>
+				<li><a href="/cheque-cadeau">CHÈQUE CADEAU</a></li>
 				<li><a href="/calendrier">CALENDRIER STAGES</a></li>
+				<li><a href="/contact">CONTACT</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -33,9 +33,9 @@
 	<ul id="side-menu">
 		<div class="corner"></div>
 		<li><a href="/">Accueil</a></li>
-		<li><a href="/contact">Contact</a></li>
 		<li><a href="/infos-stage">Infos stages</a></li>
 		<li><a href="/prestations">Prestations</a></li>
 		<li><a href="/cheque-cadeau">Chèque cadeau</a></li>
 		<li><a href="/calendrier">Calendrier stages</a></li>
+		<li><a href="/contact">Contact</a></li>
 	</ul>

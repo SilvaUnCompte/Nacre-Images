@@ -1,153 +1,374 @@
-$light-gray: #f5f5f5;
-$mid-gray: #2c2d30;
-$dark-gray: #1b1d20;
+// Variables
+$color-background-dark: #0f1116;
+$color-background-medium: #1a1d25;
+$color-text: #f8f8f8;
 
-#calendar {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+// Font families
+$font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-    #session-container {
-        width: 75%;
+// Font sizes
+$font-size-base: 1rem;
+$font-size-small: 0.875rem;
+$font-size-large: 1.75rem;
+$font-size-xlarge: 2.5rem;
 
-        .month-row-0 {
-            flex-direction: row;
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-xxl: 4rem;
+
+// Border radius
+$border-radius-sm: 0.5rem;
+$border-radius-full: 9999px;
+
+$month-colors: (
+    january: (primary: #d946ef,
+        secondary: #a78bfa),
+    february: (primary: #f59e0b,
+        secondary: #a78bfa),
+    march: (primary: #10b981,
+        secondary: #a78bfa),
+    april: (primary: #06b6d4,
+        secondary: #a78bfa),
+    may: (primary: #f43f5e,
+        secondary: #a78bfa),
+    june: (primary: #3b82f6,
+        secondary: #a78bfa),
+    july: (primary: #f59e0b,
+        secondary: #a78bfa),
+    august: (primary: #6366f1,
+        secondary: #a78bfa),
+    september: (primary: #9f3cfb,
+        secondary: #a78bfa),
+    october: (primary: #06b6d4,
+        secondary: #a78bfa),
+    november: (primary: #14b8a6,
+        secondary: #a78bfa),
+    december: (primary: #8b5cf6,
+        secondary: #a78bfa)
+);
+
+// $month-colors: (
+//     january: (primary: #64748b,
+//         secondary: #94a3b8),
+//     february: (primary: #78716c,
+//         secondary: #a8a29e),
+//     march: (primary: #71717a,
+//         secondary: #a1a1aa),
+//     april: (primary: #737373,
+//         secondary: #a3a3a3),
+//     may: (primary: #4b5563,
+//         secondary: #9ca3af),
+//     june: (primary: #525252,
+//         secondary: #a3a3a3),
+//     july: (primary: #57534e,
+//         secondary: #a8a29e),
+//     august: (primary: #475569,
+//         secondary: #94a3b8),
+//     september: (primary: #334155,
+//         secondary: #64748b),
+//     october: (primary: #44403c,
+//         secondary: #78716c),
+//     november: (primary: #52525b,
+//         secondary: #71717a),
+//     december: (primary: #4b5563,
+//         secondary: #6b7280)
+// );
+
+// Breakpoints
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+
+// Container width
+$container-width: 1000px;
+
+// Mixins
+@mixin respond-to($breakpoint) {
+    @if $breakpoint ==small {
+        @media (max-width: $breakpoint-sm) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==medium {
+        @media (max-width: $breakpoint-md) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==large {
+        @media (max-width: $breakpoint-lg) {
+            @content;
+        }
+    }
+}
+
+@mixin gradient-text($direction, $color1, $color2) {
+    background-image: linear-gradient($direction, $color1, $color2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+@mixin gradient-bg($direction, $color1, $color2) {
+    background-image: linear-gradient($direction, $color1, $color2);
+}
+
+@mixin month-styles($index, $month-name, $direction) {
+    $month-color: map-get($month-colors, $month-name);
+    $primary: map-get($month-color, primary);
+    $secondary: map-get($month-color, secondary);
+
+    .month-section:nth-child(#{$index}) {
+        .month-title {
+            @include gradient-text($direction, $primary, $secondary);
         }
 
-        .month-row-1 {
-            flex-direction: row-reverse;
-
-            .col-month {
-                .month-year {
-                    text-align: right;
-                }
-            }
+        .month-divider {
+            background-image: linear-gradient($direction, $primary, transparent);
         }
 
-        .month-row-1,
-        .month-row-0 {
-            padding: 80px 0;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
+        .course {
+            border: 1px solid rgba($primary, 0.3);
 
-            .col-month {
-                width: 50%;
-                padding: 0 15px;
-
-                .month-year {
-                    margin: 0;
-                    font-size: 2em;
-                    font-weight: bolder;
-                    color: #ffffff;
-                }
+            .course-gradient {
+                background-image: linear-gradient($direction, rgba($primary, 0.7), transparent);
             }
 
-            .col-session {
-                width: 50%;
-
-                .a-session {
-                    margin-bottom: 15px;
-                    text-decoration: none !important;
-                    width: 100%;
-                    transition: transform 0.5s;
-                
-                    &:hover {
-                        transform: scale(1.015);
-                    }
-
-                    .session-card {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: baseline;
-    
-                        width: 100%;
-                        // background-color: rgb(98, 100, 98);
-    
-                        background-position: center;
-                        background-size: cover;
-    
-                        border-radius: 15px; // Probablement trop fort, à voir en fonction de si haugmenter la hauteur de la card ?
-                        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    
-                        // &>* {
-                        //     margin: 0;
-                        // }
-    
-                        .session-date {
-                            font-size: 1.5em;
-                            font-weight: bolder;
-                            color: #ffffff;
-    
-                            width: 20%;
-    
-                            margin: 0;
-                            padding: 0 15px;
-                            border-radius: 15px 0px 0 15px;
-                            background-color: rgba(0, 0, 0, 0.7);
-                            transition: background-color 0.2s;
-
-                            &:hover {
-                                background-color: rgba(0, 0, 0, 0.5); // A generaliser sur toute la balise !!
-                            }
-                        }
-    
-                        .session-info {
-                            &>* {
-                                margin: 0;
-                                padding-right: 10px;
-                            }
-    
-                            padding-left: 15px;
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: space-between;
-                            align-items: baseline;
-
-                            background-color: rgba(0, 0, 0, 0.5); // A generaliser sur toute la balise !!
-                            transition: background-color 0.2s;
-
-                            &:hover {
-                                background-color: rgba(0, 0, 0, 0);
-                            }
-    
-                            .session-name {
-                                font-size: 1.5em;
-                                font-weight: bolder;
-                                color: #ffffff;
-                                text-shadow: 0 0 15px rgba(0, 0, 0);
-                            }
-                        }
-                    }
-    
-                    // .session-card-bottom {
-                    //     width: 100%;
-                    //     height: 10px;
-    
-                    //     padding: 0;
-                    //     border-radius: 0 0 45px 45px;
-                    //     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    
-                    //     background-size: cover;
-                    //     background-position: center;
-                    //     background-color: #4d4a47;
-                    // }
-                }
+            .course-date {
+                background-color: rgba($primary, 0.2);
+                border: 1px solid rgba($primary, 0.3);
             }
         }
     }
 }
 
-@media all and (max-width: 1000px) {
-    .col-session,
-    .col-session {
-        width: 100% !important;
+// Reset and base styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    // background: linear-gradient(to bottom, $color-background-dark, $color-background-medium, $color-background-dark); //TODO: choose if we keep
+    color: $color-text;
+    min-height: 100vh;
+}
+
+.container {
+    font-family: $font-family-base;
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: $spacing-xl $spacing-md;
+}
+
+// Header styles
+h1 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: $font-size-xlarge;
+    font-weight: bold;
+    @include gradient-text(to right, #94a3b8, #e2e8f0);
+    padding-bottom: $spacing-sm;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 3px;
+        background: linear-gradient(to right, #3b82f6, #ec4899);
+        border-radius: $border-radius-full;
+    }
+}
+
+// Calendar styles
+.calendar {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xxl;
+}
+
+// Month section styles
+.month-section {
+    width: 100%;
+
+    p {
+        font-size: $font-size-small;
+        color: rgb(255, 255, 255);
     }
 
-    .month-row-1,
-    .month-row-0 {
-        flex-direction: column !important;
+    &:nth-child(even) {
+        .month-header {
+            flex-direction: row-reverse;
+        }
+
+        .month-title {
+            padding-right: 0;
+            padding-left: $spacing-md;
+        }
+
+        .course-content {
+            flex-direction: row-reverse;
+        }
+    }
+}
+
+.month-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: $spacing-lg;
+    width: 100%;
+}
+
+.month-title {
+    font-size: $font-size-large;
+    font-weight: bold;
+    padding-right: $spacing-md;
+}
+
+.month-divider {
+    height: $spacing-xs;
+    flex: 1;
+    border-radius: $border-radius-full;
+}
+
+// Course styles
+.courses {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.course {
+    position: relative;
+    height: 5rem;
+    width: 100%;
+    border-radius: $border-radius-sm;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        text-decoration: none;
+        transform: translateY(-2px) scale(1.01);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    &-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.8;
+    }
+
+    &-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    &-gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.7;
+    }
+
+    &-content {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        padding: 0 $spacing-lg;
+    }
+
+    &-title {
+        font-weight: 500;
+        color: white;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    &-date {
+        font-size: $font-size-small;
+        font-weight: 500;
+        color: white;
+        padding: $spacing-xs $spacing-sm;
+        border-radius: $border-radius-full;
+        backdrop-filter: blur(4px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+// Month-specific styles
+@include month-styles(1, january, to right);
+@include month-styles(2, february, to left);
+@include month-styles(3, march, to right);
+@include month-styles(4, april, to left);
+@include month-styles(5, may, to right);
+@include month-styles(6, june, to left);
+@include month-styles(7, july, to right);
+@include month-styles(8, august, to left);
+@include month-styles(9, september, to right);
+@include month-styles(10, october, to left);
+@include month-styles(11, november, to right);
+@include month-styles(12, december, to left);
+
+// Responsive styles
+@include respond-to(medium) {
+    .course {
+        height: 4.5rem;
+
+        &-content {
+            padding: 0 $spacing-md;
+        }
+    }
+
+    .month-title {
+        font-size: 1.5rem;
+    }
+}
+
+@include respond-to(small) {
+    h1 {
+        font-size: $spacing-xl;
+
+        &::after {
+            width: 80px;
+        }
+    }
+
+    .course {
+        &-title {
+            font-size: 0.9rem;
+        }
+
+        &-date {
+            font-size: 0.75rem;
+        }
     }
 }

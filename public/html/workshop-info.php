@@ -19,11 +19,6 @@
 
     <div id="workshop-container"> <!-- class="animation-wrapper"> -->
 
-        <!-- <div class="particle particle-1"></div> -->
-        <!-- <div class="particle particle-2"></div> -->
-        <!-- <div class="particle particle-3"></div> -->
-        <!-- <div class="particle particle-4"></div> -->
-
         <?php
         $workshopTitle = ['Les stages classiques', 'Les thèmes exceptionnels', 'Thème sur demande', 'Stage séjour photo'];
         $workshopSubtitle = ['Ces thèmes sont abordés très régulièrement.', 'Ces thèmes sont abordés un peu moins souvent ou sur demande.', 'Ces thèmes sont sur demande uniquement.', 'Séjour en groupe d\'une semaine.'];
@@ -67,4 +62,3 @@
 </main>
 
 <br><br><br><br>
-<link rel="stylesheet" href="/public/styles/generics/star.css">
