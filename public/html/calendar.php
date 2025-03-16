@@ -5,16 +5,18 @@
 <main class="container">
     <h1>Calendrier des stages</h1>
 
+
+    <!-- <div class="flare"></div> -->
     <div class="particle particle-1"></div>
     <div class="particle particle-2"></div>
     <div class="particle particle-3"></div>
     <div class="particle particle-4"></div>
 
+
     <div class="calendar">
         <?php
 
         $monthYear = '';
-        $flexDirection = 0;
         foreach ($workshopSessions as $session) {
             $workshopType = array_filter($workshopTypes, function ($type) use ($session) {
                 return $type['id'] === $session['type'];
@@ -37,13 +39,12 @@
                     </div>
 
                     <div class="courses">';
-
-                $flexDirection = ($flexDirection + 1) % 2;
+                
                 $monthYear = $newMonthYear;
             }
 
             echo '<a class="course" href="/stage/' . $workshopType['url'] . '">
-                    <img class="course-bg" src=\'assets/images/topics/' . $workshopType["img_name"] . '\' alt="' . $workshopType["topic_name"] . '">
+                    <img class="course-bg" src=\'assets/images/topics/' . $workshopType["img_name"] . '\' alt="' . $workshopType["topic_name"] . '" loading="lazy">
                     <div class="course-overlay"></div>
                     <div class="course-gradient"></div>
                     <div class="course-content">
@@ -60,3 +61,4 @@
 <br><br><br>
 
 <link rel="stylesheet" href="/public/styles/generics/star.css">
+<script src="/public/js/flare.js"></script>
