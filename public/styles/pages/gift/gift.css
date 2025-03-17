@@ -52,10 +52,6 @@
     flex-direction: column-reverse !important;
   }
 }
-body {
-  background: linear-gradient(135deg, #18181f, #0c0f18);
-}
-
 .card-container {
   position: relative;
   width: 100%;
@@ -65,24 +61,21 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-.card-scene {
+.card-container .card-scene {
   width: 30vh;
   height: 50vh;
   perspective: 1000px;
   position: relative;
 }
-
-.card {
+.card-container .card {
   width: 100%;
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
   animation: rotate 15s infinite linear;
+  /* Round shadow under the card */
 }
-
-/* Round shadow under the card */
-.shadow {
+.card-container .card .shadow {
   position: absolute;
   width: 30vh;
   height: 40px;
@@ -94,8 +87,7 @@ body {
   z-index: -1;
   transform: rotateX(90deg);
 }
-
-.card-face {
+.card-container .card .card-face {
   box-sizing: border-box;
   position: absolute;
   width: 100%;
@@ -105,8 +97,7 @@ body {
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
-
-.card-front {
+.card-container .card .card-front {
   background: linear-gradient(45deg, #e6e6e6, #ffffff);
   display: flex;
   flex-direction: column;
@@ -114,8 +105,7 @@ body {
   align-items: center;
   padding: 20px;
 }
-
-.card-back {
+.card-container .card .card-back {
   background: linear-gradient(45deg, #d1d1d1, #f5f5f5);
   transform: rotateY(180deg);
   display: flex;

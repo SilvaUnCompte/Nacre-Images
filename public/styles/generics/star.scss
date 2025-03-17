@@ -116,10 +116,10 @@ $time-4: 600s;
     border-radius: 50%;
     opacity: 0.5;
     filter: blur(10px);
-    animation: float 10s infinite ease-in-out;
+    animation: flareframes 10s infinite ease-in-out;
 }
 
-@keyframes float {
+@keyframes flareframes {
     0%, 100% {
         transform: translateY(0) translateX(0);
     }
