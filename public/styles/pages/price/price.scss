@@ -1,0 +1,421 @@
+// Variables
+$font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$primary-bg: #121212;
+$text-color: #e0e0e0;
+$text-muted: #a0a0a0;
+$text-white: #ffffff;
+
+// Category colors
+$colors: (
+    groupe: (primary: rgba(167, 139, 250, 1),
+        secondary: rgba(124, 58, 237, 0.8),
+        gradient-end: rgba(167, 139, 250, 0.4),
+        icon-bg: rgba(124, 58, 237, 0.3),
+        icon-bg-hover: rgba(124, 58, 237, 0.5),
+        indicator: rgba(167, 139, 250, 0.7),
+        icon-url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='rgba(167, 139, 250, 1)'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z'/%3E%3C/svg%3E"
+    ),
+    solo: (primary: rgba(52, 211, 153, 1),
+        secondary: rgba(16, 185, 129, 0.8),
+        gradient-end: rgba(52, 211, 153, 0.4),
+        icon-bg: rgba(16, 185, 129, 0.3),
+        icon-bg-hover: rgba(16, 185, 129, 0.5),
+        indicator: rgba(52, 211, 153, 0.7),
+        icon-url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='rgba(52, 211, 153, 1)'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z'/%3E%3C/svg%3E"
+    ),
+    special: (primary: rgba(248, 113, 113, 1),
+        secondary: rgba(244, 63, 94, 0.8),
+        gradient-end: rgba(248, 113, 113, 0.4),
+        icon-bg: rgba(244, 63, 94, 0.3),
+        icon-bg-hover: rgba(244, 63, 94, 0.5),
+        indicator: rgba(248, 113, 113, 0.7),
+        icon-url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='rgba(248, 113, 113, 1)'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z'/%3E%3C/svg%3E"
+    )
+);
+
+// Mixins
+@mixin transition($properties...) {
+    transition: all 0.3s ease;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin category-accent($category) {
+    $category-colors: map-get($colors, $category);
+    background: linear-gradient(90deg,
+            map-get($category-colors, secondary) 0%,
+            map-get($category-colors, gradient-end) 100%);
+}
+
+// Base styles
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $primary-bg;
+    color: $text-color;
+}
+
+// Pricing section
+.pricing-section {
+    width: 90%;
+    max-width: 1250px;
+
+    >* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: $font-family;
+    }
+
+    // Header
+    .pricing-header {
+        margin-bottom: 50px;
+        text-align: center;
+
+        h1 {
+            font-size: 38px;
+            font-weight: 700;
+            color: $text-white;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            font-size: 17px;
+            color: $text-muted;
+            line-height: 1.5;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    }
+
+    // Category container
+    .category-container {
+        margin-bottom: 40px;
+        position: relative;
+        padding: 30px;
+        border-radius: 12px;
+        @include transition;
+        background-color: rgba(255, 255, 255, 0.03);
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            border-radius: 4px 4px 0 0;
+        }
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+    }
+
+}
+
+
+// Category specific styles
+@each $category, $values in $colors {
+    .#{$category}-category {
+        .category-title {
+            color: map-get($values, primary);
+
+            &::before {
+                background-image: url(map-get($values, icon-url));
+            }
+        }
+
+        &::before {
+            @include category-accent($category);
+        }
+
+        .pricing-table td:last-child {
+            color: map-get($values, primary);
+        }
+
+        .info-icon {
+            background-color: map-get($values, icon-bg);
+
+            &:hover {
+                background-color: map-get($values, icon-bg-hover);
+            }
+        }
+
+        .indicator-dot.active {
+            background-color: map-get($values, indicator);
+        }
+    }
+}
+
+// Category title
+.category-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+// Pricing table
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent;
+
+    tr {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    td {
+        padding: 20px 12px;
+
+        &:first-child {
+            padding-left: 0;
+            font-size: 18px;
+            font-weight: 500;
+            color: $text-color;
+        }
+
+        &:last-child {
+            padding-right: 0;
+            font-size: 22px;
+            font-weight: 700;
+            text-align: right;
+        }
+    }
+}
+
+// Info icon and tooltip
+.info-container {
+    position: relative;
+    display: inline-block;
+
+    &:hover {
+        .tooltip {
+            visibility: visible;
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+    }
+}
+
+.info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    color: $text-white;
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 8px;
+    cursor: help;
+    @include transition;
+}
+
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: rgba(30, 30, 30, 0.95);
+    color: $text-white;
+    text-align: center;
+    padding: 10px 14px;
+    border-radius: 8px;
+    width: 220px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    z-index: 1;
+    font-size: 13px;
+    line-height: 1.5;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -6px;
+        border-width: 6px;
+        border-style: solid;
+        border-color: rgba(30, 30, 30, 0.95) transparent transparent transparent;
+    }
+}
+
+// Category indicators
+.category-indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 6px;
+}
+
+.indicator-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+
+    &.active {
+        width: 20px;
+        border-radius: 3px;
+    }
+}
+
+// Media queries
+@media (max-width: 768px) {
+    .pricing-section {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .category-container {
+        padding: 25px 15px;
+        margin-bottom: 30px;
+    }
+
+    .pricing-header {
+        margin-bottom: 30px;
+
+        h1 {
+            font-size: 28px;
+        }
+    }
+
+    .pricing-table {
+        td {
+            padding: 16px 8px;
+
+            &:first-child {
+                font-size: 16px;
+            }
+
+            &:last-child {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .tooltip {
+        width: 180px;
+        font-size: 12px;
+    }
+
+    .contact-button {
+        height: 48px;
+        padding: 0 24px;
+        font-size: 15px;
+    }
+}
+
+
+
+
+
+
+
+
+/* Contact section - Professional style */
+.contact-section {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-text {
+    font-size: 17px;
+    color: #a0a0a0;
+    margin-bottom: 35px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 32px;
+    height: 54px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.contact-button:hover::after {
+    width: 100%;
+}
+
+.contact-button:active {
+    transform: translateY(0);
+}
+
+/* Arrow icon for button */
+.contact-button svg {
+    margin-left: 8px;
+    transition: transform 0.2s ease;
+}
+
+.contact-button:hover svg {
+    transform: translateX(4px);
+}

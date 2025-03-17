@@ -5,6 +5,7 @@
 <main id="faq">
     <div id="faq-container">
         <h1>FAQ</h1>
+        <div class="flare"></div>
 
         <?php
         $faq = FAQ::getAll();
@@ -33,3 +34,7 @@
 </main>
 
 <br><br><br><br>
+
+
+<link rel="stylesheet" href="/public/styles/generics/star.css">
+<script src="/public/js/flare.js"></script>

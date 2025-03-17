@@ -5,8 +5,6 @@
 <main class="container">
     <h1>Calendrier des stages</h1>
 
-
-    <!-- <div class="flare"></div> -->
     <div class="particle particle-1"></div>
     <div class="particle particle-2"></div>
     <div class="particle particle-3"></div>
