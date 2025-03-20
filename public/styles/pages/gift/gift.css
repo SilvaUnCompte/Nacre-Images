@@ -10,13 +10,6 @@
 .main-section #title-container {
   width: 65%;
 }
-.main-section #title-container .big-h1 {
-  font-size: 3em;
-  font-weight: bold;
-  color: #f5f5f5;
-  margin-bottom: 20px;
-  margin-top: 0;
-}
 .main-section hr {
   display: block;
   height: 3px;

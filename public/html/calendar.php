@@ -3,7 +3,7 @@
 <br><br>
 
 <main class="container">
-    <h1>Calendrier des stages</h1>
+    <h1 class="big-h1">Calendrier des stages</h1>
 
     <div class="particle particle-1"></div>
     <div class="particle particle-2"></div>
