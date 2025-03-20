@@ -1,7 +1,7 @@
 /* Config */
 $color-bg: #111;
 $color-particle: #b9b2b2;
-$spacing: 2560px;
+$spacing: 2560;
 $time-1: 60s;
 $time-2: 120s;
 $time-3: 180s;
@@ -11,12 +11,12 @@ $time-4: 600s;
     overflow: hidden;
 }
 
-/* Pauls awesome mixin */
+/* Paul's awesome mixin */
 @function particles($max) {
    $val: 0px 0px $color-particle;
    @for $i from 1 through $max {
       $val: #{$val},
-      (random($spacing)-800)+px random($spacing)+px $color-particle;
+      (random($spacing)-300)+px random($spacing)+px $color-particle;
    }
    @return $val;
 }
@@ -33,7 +33,7 @@ $time-4: 600s;
 .particle:after {
   position: absolute;
   content: "";
-  top: $spacing;
+  top: $spacing + px;
 }
 
 .particle-1 {
@@ -90,7 +90,7 @@ $time-4: 600s;
 
 @keyframes animParticle {
   from { transform: translateY(0px); }
-  to   { transform: translateY($spacing * -1); }
+  to   { transform: translateY($spacing * -1 + px); }
 }
 
 .page-wrapper {
