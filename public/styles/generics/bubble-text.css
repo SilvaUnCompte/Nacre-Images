@@ -1,7 +1,8 @@
 .bubble-text-container {
+  width: 180px;
   position: fixed;
   bottom: 110px;
-  right: 5%;
+  right: 4%;
 }
 
 .bubble-text p {
@@ -10,10 +11,10 @@
   text-align: left;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 14px;
   color: #774f38;
   background-color: #ece5ce;
-  padding: 35px;
+  padding: 17px;
   border-radius: 11px;
   position: relative;
   box-shadow: 20px 20px #83af9b;
