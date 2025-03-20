@@ -17,7 +17,9 @@
 
 	<header id="header">
 		<nav id="first-header">
-			<img id="navicon" src="/assets/images/icons/navicon.webp" alt="navicon" loading="lazy" onclick="show_navbar()">
+			<a class="mobile-display" href="/"><img class="navicon" src="/assets/images/logo/logo-no-bg.png" alt="logo" loading="lazy"></a>
+			<a id="header-title" class="mobile-display">NACRE&nbsp&nbspIMAGES</a>
+			<img class="navicon mobile-display" src="/assets/images/icons/navicon.webp" alt="navicon" loading="lazy" onclick="show_navbar()">
 			<ul id="ul-header">
 				<li><a href="/">ACCUEIL</a></li>
 				<li><a href="/infos-stage">INFOS STAGES</a></li>
