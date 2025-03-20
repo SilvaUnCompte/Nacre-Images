@@ -5,7 +5,7 @@
 <main id="workshop-info">
 
     <div id="workshop-container">
-        
+
         <?php
         $workshopTitle = ['Les stages classiques', 'Les thèmes exceptionnels', 'Thème sur demande', 'Stage séjour photo'];
         $workshopSubtitle = ['Ces thèmes sont abordés très régulièrement.', 'Ces thèmes sont abordés un peu moins souvent ou sur demande.', 'Ces thèmes sont sur demande uniquement.', 'Séjour en groupe d\'une semaine.'];
@@ -16,21 +16,24 @@
                 return $type['regularity_type'] == $i;
             });
 
-            echo '<div class="workshop-title">';
-            echo    '<h2>' . $workshopTitle[$i] . '</h2>';
-            echo    '<hr>';
-            echo    '<p>' . $workshopSubtitle[$i] . '</p>';
-            echo '</div>';
+            echo '<div class="workshop-title">
+                    <h2>' . $workshopTitle[$i] . '</h2>
+                    
+                    <p>' . $workshopSubtitle[$i] . '</p>
+                 </div>';
 
-            echo '<section class="row">';
+            echo '<div class="divider divider-' . $i . '"></div>
+                <section class="workshops-grid">';
+
             foreach ($workshopTypes_0 as $topics) {
-                // echo 'TTTTT';
-                echo '<a class="workshop-card" href="/stage/' . $topics['url'] . '">';
-                echo    '<div class="card-container">';
-                echo        '<img loading="lazy" alt="' . $topics["img_alt"] . '" src=\'assets/images/topics/' . $topics["img_name"] . '\')">';
-                echo        '<p class="text-over">' . $topics["topic_name"] . '</p>';
-                echo    '</div>';
-                echo '</a>';
+
+                echo '<a class="workshop-card" href="/stage/' . $topics['url'] . '">
+                        <div class="workshop-card-container">
+                            <img class="workshop-image" loading="lazy" alt="' . $topics["img_alt"] . '" src=\'assets/images/topics/' . $topics["img_name"] . '\')">
+                            <div class="overlay"></div>
+                            <p class="text-over">' . $topics["topic_name"] . '</p>
+                        </div>
+                    </a>';
             }
             echo '</section>';
         }
@@ -38,11 +41,12 @@
 
         <!-- TODO: mettre la bulle n'hésitez pas à demander -->
     </div>
+
     <a class="bubble-text-container transparent" href="/contact">
         <div class="bubble-text">
             <p>
                 <!-- Un thème non listé vous<br>intéresse ? Demandez moi et<br>dans la mesure du possible, je<br>tacherai de vous satisfaire ! -->
-                Un thème non listé vous <br>intéresse ? N'hésitez<br> pas à demander !
+                Un thème non listé vous intéresse ? N'hésitez pas à demander !
             </p>
         </div>
     </a>
