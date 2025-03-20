@@ -54,6 +54,11 @@ $dark-gray: #1b1d20;
     .main-section {
         padding-top: 1.5*$header-height;
 
+        hr {
+            width: 70%;
+            margin: 0;
+        }
+
         .container, #title-container {
             width: 80%;
             >* {

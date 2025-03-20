@@ -18,6 +18,8 @@ $topic = $workshop_type->getBigTitle();
 $title = $workshop_type->getSmallTitle();
 $paragraph = $workshop_type->getParagraph();
 
+$contact_button = true;
+
 include($_SERVER['DOCUMENT_ROOT'] . "/public/html/helpers/header.php");
 include($_SERVER['DOCUMENT_ROOT'] . "/public/html/topic.php");
 include($_SERVER['DOCUMENT_ROOT'] . "/public/html/helpers/footer.html");

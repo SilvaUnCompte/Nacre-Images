@@ -43,6 +43,10 @@
   .main-section {
     padding-top: 82.5px;
   }
+  .main-section hr {
+    width: 70%;
+    margin: 0;
+  }
   .main-section .container, .main-section #title-container {
     width: 80%;
   }

@@ -19,6 +19,6 @@
         </div>
     </div>
 
-    <?php include($_SERVER['DOCUMENT_ROOT'] . "/public/html/contact-button.php"); ?>
+    <?php $contact_button ? include($_SERVER['DOCUMENT_ROOT'] . "/public/html/contact-button.php") : ""; ?>
 
 </main>

@@ -21,6 +21,7 @@
   align-items: center;
   justify-content: center;
   padding: 0 32px;
+  margin: 5px 30px;
   height: 54px;
   font-size: 16px;
   font-weight: 500;
@@ -69,4 +70,14 @@
 
 .contact-button:hover svg {
   transform: translateX(4px);
+}
+
+@media screen and (max-width: 768px) {
+  .contact-section {
+    width: 75%;
+
+    .contact-button {
+      margin: 10px;
+    }
+  }
 }

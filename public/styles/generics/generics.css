@@ -19,6 +19,7 @@ body {
   position: relative;
   font-family: "lato", sans-serif;
   background: linear-gradient(135deg, #18181f, #111627);
+  min-height: 100vh;
 }
 
 .scroll-trigger {
