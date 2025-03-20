@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="/public/styles/pages/price/price.css">
+<link rel="stylesheet" href="/public/styles/generics/contact-button.css">
+
 <br><br><br>
 
 <div class="pricing-section">
@@ -61,6 +64,3 @@
         </svg>
     </a>
 </div>
-
-
-<link rel="stylesheet" href="/public/styles/pages/price/price.css">

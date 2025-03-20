@@ -20,33 +20,6 @@
   opacity: 0.01;
   z-index: -1;
 }
-#workshop-info .title-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  margin-top: 75px;
-}
-#workshop-info .title-row ul li {
-  display: inline-block;
-}
-#workshop-info .title-row ul li input[type=radio] {
-  display: absolute;
-  position: absolute;
-  opacity: 0;
-}
-#workshop-info .title-row ul li label {
-  color: #888a8b;
-  font-size: 2.2em;
-  font-weight: bolder;
-  margin: 20px;
-  padding: 15px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-#workshop-info .title-row ul li input[type=radio]:checked + label {
-  color: white;
-}
 #workshop-info #workshop-container {
   margin-top: 100px;
   width: 75%;

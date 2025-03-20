@@ -4,19 +4,6 @@
 
 <main id="workshop-info">
 
-    <nav class="title-row">
-        <ul>
-            <li>
-                <input type="radio" id="tt1" name="title" value="topics" checked>
-                <label for="tt1"> Liste des Thèmes</label>
-            </li>
-            <li>
-                <input type="radio" id="tt2" name="title" value="prices">
-                <label for="tt2"> Liste des Tarifs</label>
-            </li>
-        </ul>
-    </nav>
-
     <div id="workshop-container">
         
         <?php
@@ -54,8 +41,8 @@
     <a class="bubble-text-container transparent" href="/contact">
         <div class="bubble-text">
             <p>
-                Un thème non listé vous<br>intéresse ? Demandez moi et<br>dans la mesure du possible, je<br>tacherai de vous satisfaire !
-                <!-- Un thème non listé vous <br>intéresse ? N'hésitez<br> pas à demander ! //TODO choisir le text final -->
+                <!-- Un thème non listé vous<br>intéresse ? Demandez moi et<br>dans la mesure du possible, je<br>tacherai de vous satisfaire ! -->
+                Un thème non listé vous <br>intéresse ? N'hésitez<br> pas à demander !
             </p>
         </div>
     </a>

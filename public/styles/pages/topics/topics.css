@@ -1,8 +1,5 @@
-body {
-  height: 97vh;
-}
-
 .main-section {
+  padding-top: 110px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,7 +41,7 @@ body {
 
 @media all and (max-width: 1000px) {
   .main-section {
-    padding-top: 20px;
+    padding-top: 82.5px;
   }
   .main-section .container, .main-section #title-container {
     width: 80%;

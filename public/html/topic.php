@@ -19,4 +19,6 @@
         </div>
     </div>
 
+    <?php include($_SERVER['DOCUMENT_ROOT'] . "/public/html/contact-button.php"); ?>
+
 </main>

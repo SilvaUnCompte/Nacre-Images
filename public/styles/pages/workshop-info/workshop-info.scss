@@ -25,41 +25,6 @@ $dark-gray: #1b1d20;
         z-index: -1;
     }
 
-    .title-row {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        margin-top: 75px;
-    
-        ul {
-            li {
-                display: inline-block;
-                
-                input[type="radio"] { // Add Get info pour que la page charge tout de suite avec le bon de checked
-                    display: absolute;
-                    position: absolute;
-                    opacity: 0;
-                }
-
-                label {
-                    color: #888a8b;
-                    font-size: 2.2em;
-                    font-weight: bolder;
-
-                    margin: 20px;
-                    padding: 15px;
-                    cursor: pointer;
-                    transition: all .2s;
-                }
-                input[type="radio"]:checked+label {
-                    color: white; // TODO: trouver un truc pour qu'on comprenne que c'est clickable
-                }
-                
-            }
-        }
-    }
-
     #workshop-container {
         margin-top: 100px;
         width: 75%;
