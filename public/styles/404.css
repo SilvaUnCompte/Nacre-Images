@@ -23,6 +23,7 @@ body {
     line-height: 1;
     overflow: hidden;
     height: 90vh;
+    background: #1b1d20 !important;
 }
 
 label {
@@ -326,7 +327,7 @@ button {
 }
 
 .e-nav__link:after {
-    content: "Home Page";
+    content: "Accueil";
 }
 
 .e-nav__link:hover:before {

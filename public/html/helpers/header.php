@@ -13,6 +13,8 @@
 	<title><?php echo 'Nacre-Images - ' . $page_name ?></title>
 </head>
 
+<script src="/public/js/navbar.js" type="text/javascript" defer></script>
+
 <body>
 
 	<header id="header">

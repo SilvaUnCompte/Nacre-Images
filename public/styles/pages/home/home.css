@@ -137,4 +137,57 @@ img {
   .space-empty p {
     font-size: 1em;
   }
+}
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.button-container .bottom-button {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  background-color: rgba(44, 45, 48, 0.2);
+}
+.button-container .bottom-button-1:hover {
+  background: linear-gradient(135deg, #ff6b6b, #ee5253);
+  color: white;
+}
+.button-container .bottom-button-2:hover {
+  background: linear-gradient(135deg, #1dd1a1, #10ac84);
+  color: white;
+}
+.button-container .bottom-button-3:hover {
+  background: linear-gradient(135deg, #54a0ff, #2e86de);
+  color: white;
+}
+.button-container .bottom-button-4:hover {
+  background: linear-gradient(135deg, #5f27cd, #341f97);
+  color: white;
+}
+.button-container .bottom-button-5:hover {
+  background: linear-gradient(135deg, #ff9f43, #ee8d2d);
+  color: white;
+}
+.button-container .bottom-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
+}
+.button-container .bottom-button:active {
+  transform: translateY(1px);
 }/*# sourceMappingURL=home.css.map */
