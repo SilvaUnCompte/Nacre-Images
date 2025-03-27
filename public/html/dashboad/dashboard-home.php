@@ -30,24 +30,24 @@
             <iframe id="widget_autocomplete_preview" width="150" height="300" frameborder="0" src="https://meteofrance.com/widget/prevision/141180##3D6AA2" title="Prévisions Caen par Météo-France"> </iframe>
         </div>
 
-        <a class="display-block" href="/controler/dashboard/liste-des-stages">
+        <a class="display-block" href="/dashboard/liste-des-stages">
             <h1 class="title-lg">Liste des stages</h1>
         </a>
 
-        <a class="display-block" href="/controler/dashboard/liste-des-prestations">
+        <a class="display-block" href="/dashboard/liste-des-prestations">
             <h1 class="title-lg">Liste des prestations</h1>
         </a>
 
-        <a class="display-block" href="/controler/dashboard/faq">
+        <a class="display-block" href="/dashboard/faq">
             <h1 class="title-lg">FAQ</h1>
         </a>
     </section>
 
     <section class="midcol">
-        <a class="display-block" href="/controler/dashboard/tarifs">
+        <a class="display-block" href="/dashboard/tarifs">
             <h1 class="title-lg">Tarifs</h1>
         </a>
-        <a class="display-block" href="/controler/dashboard/calendrier">
+        <a class="display-block" href="/dashboard/calendrier">
             <h1 class="title-lg">Calendrier</h1>
         </a>
     </section>

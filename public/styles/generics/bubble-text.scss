@@ -6,6 +6,7 @@ $color-yellow: #f9cdad;
 $color-pink: #fe4365;
 
 .bubble-text-container {
+	z-index: 80;
 	width: 180px;
 	position: fixed;
 	bottom: 110px;

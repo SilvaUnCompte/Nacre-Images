@@ -1,4 +1,5 @@
 .bubble-text-container {
+  z-index: 80;
   width: 180px;
   position: fixed;
   bottom: 110px;
