@@ -12,15 +12,15 @@
             <div class="next-session-content">
                 <div>
                     <p>Date</p>
-                    <p class="small-p" id="next-session-date">Chargement...</p>
+                    <p class="text-small" id="next-session-date">Chargement...</p>
                 </div>
                 <div>
                     <p>Type</p>
-                    <p class="small-p" id="next-session-type">Chargement...</p>
+                    <p class="text-small" id="next-session-type">Chargement...</p>
                 </div>
                 <div>
                     <p>Informations</p>
-                    <p class="small-p" id="next-session-info">Chargement...</p>
+                    <p class="text-small" id="next-session-info">Chargement...</p>
                 </div>
                 <div></div>
             </div>
@@ -31,19 +31,19 @@
 
     <br><br><br>
 
-    <h1 class="big-h1">Liste des stages</h1>
+    <h1 class="title-lg">Liste des stages</h1>
     <hr><br>
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . "/controler/dashboard/workshop-type/type-list.php"); ?>
 
     <br><br>
-    <h1 class="big-h1">Tarifs</h1>
+    <h1 class="title-lg">Tarifs</h1>
     <hr><br>
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . "/controler/dashboard/prices.php"); ?>
 
     <br><br>
-    <h1 class="big-h1">Calendrier</h1>
+    <h1 class="title-lg">Calendrier</h1>
     <hr><br>
 
     <?php include($_SERVER['DOCUMENT_ROOT'] . "/controler/dashboard/session-list.php"); ?>

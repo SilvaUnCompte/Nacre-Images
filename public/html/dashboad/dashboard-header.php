@@ -22,9 +22,9 @@
                 <li><a href="/dashboard/liste-des-stages">LISTE DES STAGES</a></li>
             </ul>
         </nav>
-        <div class="inline-container log-data">
-            <a href="/controler/dashboard/login/logout.php">
-                <p><?php echo $_SESSION['username'] ?></p>
+        <div class="inline-container">
+            <a class="log-out" href="/controler/dashboard/login/logout.php">
+                <?php echo $_SESSION['username'] ?>
             </a>
         </div>
     </header>
