@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/assets/images/logo325.jpg" />
+    <link rel="icon" href="/assets/images/logo/logo325.jpg" />
     <meta name="description" content=<?php echo $description ?>>
     <link rel="stylesheet" href="/public/styles/dashboard/header/header.css">
     <link rel="stylesheet" href="/public/styles/dashboard/generics/generics.css">
@@ -17,9 +17,11 @@
         <nav id="first-header">
             <ul id="ul-header">
                 <li><a href="/dashboard">DASHBOARD</a></li>
-                <li><a href="/dashboard/calendrier">CALENDRIER STAGES</a></li>
+                <li><a href="/dashboard/calendrier">CALENDRIER</a></li>
                 <li><a href="/dashboard/tarifs">TARIFS</a></li>
-                <li><a href="/dashboard/liste-des-stages">LISTE DES STAGES</a></li>
+                <li><a href="/dashboard/faq">FAQ</a></li>
+                <li><a href="/dashboard/liste-des-stages">STAGES</a></li>
+                <li><a href="/dashboard/liste-des-prestations">PRESTATIONS</a></li>
             </ul>
         </nav>
         <div class="inline-container">

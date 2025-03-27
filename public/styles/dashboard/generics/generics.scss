@@ -86,6 +86,7 @@ $z-index-tooltip: 1070;
 }
 
 @mixin hover-focus {
+
   &:hover,
   &:focus {
     @content;
@@ -93,14 +94,28 @@ $z-index-tooltip: 1070;
 }
 
 @mixin responsive($breakpoint) {
-  @if $breakpoint == sm {
-    @media (min-width: 576px) { @content; }
-  } @else if $breakpoint == md {
-    @media (min-width: 768px) { @content; }
-  } @else if $breakpoint == lg {
-    @media (min-width: 992px) { @content; }
-  } @else if $breakpoint == xl {
-    @media (min-width: 1200px) { @content; }
+  @if $breakpoint ==sm {
+    @media (min-width: 576px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint ==md {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint ==lg {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint ==xl {
+    @media (min-width: 1200px) {
+      @content;
+    }
   }
 }
 
@@ -126,30 +141,30 @@ body {
   background-color: $color-background-dark;
   color: $color-text-primary-dark;
   padding: 55px 30px;
-  
+
   &.dark {
     // CSS Variables for theming
     --color-primary: #{$color-primary};
     --color-primary-light: #{$color-primary-light};
     --color-primary-dark: #{$color-primary-dark};
-    
+
     --color-secondary: #{$color-secondary};
     --color-secondary-light: #{$color-secondary-light};
     --color-secondary-dark: #{$color-secondary-dark};
-    
+
     --color-accent: #{$color-accent};
     --color-accent-light: #{$color-accent-light};
     --color-accent-dark: #{$color-accent-dark};
-    
+
     --color-success: #{$color-success};
     --color-warning: #{$color-warning};
     --color-error: #{$color-error};
     --color-info: #{$color-info};
-    
+
     --color-background: #{$color-background-dark};
     --color-surface: #{$color-surface-dark};
     --color-surface-elevated: #{$color-surface-dark-elevated};
-    
+
     --color-text-primary: #{$color-text-primary-dark};
     --color-text-secondary: #{$color-text-secondary-dark};
     --color-text-disabled: #{$color-text-disabled-dark};
@@ -164,7 +179,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: $spacing-lg;
-  
+
   @include responsive(md) {
     padding: $spacing-xl;
   }
@@ -188,7 +203,7 @@ body {
 .element {
   @include flex(column);
   gap: $spacing-md;
-  
+
   &.full-width {
     width: 100%;
   }
@@ -288,35 +303,35 @@ p,
   height: 100px;
   border-radius: $border-radius-md;
   border: 1px solid $color-border-dark;
-  
+
   &.bg-primary {
     background-color: var(--color-primary);
   }
-  
+
   &.bg-secondary {
     background-color: var(--color-secondary);
   }
-  
+
   &.bg-accent {
     background-color: var(--color-accent);
   }
-  
+
   &.bg-success {
     background-color: var(--color-success);
   }
-  
+
   &.bg-warning {
     background-color: var(--color-warning);
   }
-  
+
   &.bg-error {
     background-color: var(--color-error);
   }
-  
+
   &.bg-surface {
     background-color: var(--color-surface);
   }
-  
+
   &.bg-background {
     background-color: var(--color-background);
   }
@@ -326,20 +341,28 @@ p,
   font-weight: 600;
 }
 
+// Containers
+
 .inline-container {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.log-out {
-    display: flex;
-    color: $color-text-primary-dark;
-    text-decoration: none;
-    position: absolute;
-    top: 15px;
-    right: 20px;
+.midcol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 45%;
 }
+
+
+a {
+  color: $color-text-primary-dark;
+  text-decoration: none;
+}
+
 
 // Dividers
 // -------------------------
@@ -348,17 +371,17 @@ p,
   height: 1px;
   background-color: $color-border-dark;
   margin: $spacing-2xl 0;
-  
+
   &.divider-text {
     @include flex(row, center, center);
     background: none;
-    
+
     span {
       padding: 0 $spacing-md;
       background-color: var(--color-background);
       color: $color-text-secondary-dark;
     }
-    
+
     &::before,
     &::after {
       content: '';
@@ -367,12 +390,12 @@ p,
       background-color: $color-border-dark;
     }
   }
-  
+
   &.divider-dashed {
     background: none;
     border-top: 1px dashed $color-border-dark;
   }
-  
+
   &.divider-dotted {
     background: none;
     border-top: 1px dotted $color-border-dark;
@@ -391,71 +414,71 @@ p,
   border: none;
   outline: none;
   @include transition;
-  
+
   &.btn-primary {
     background-color: var(--color-primary);
     color: white;
-    
+
     @include hover-focus {
       background-color: var(--color-primary-dark);
     }
   }
-  
+
   &.btn-secondary {
     background-color: var(--color-secondary);
     color: white;
-    
+
     @include hover-focus {
       background-color: var(--color-secondary-dark);
     }
   }
-  
+
   &.btn-accent {
     background-color: var(--color-accent);
     color: white;
-    
+
     @include hover-focus {
       background-color: var(--color-accent-dark);
     }
   }
-  
+
   &.btn-outline {
     background-color: transparent;
     border: 1px solid var(--color-primary);
     color: var(--color-primary);
-    
+
     @include hover-focus {
       background-color: var(--color-primary);
       color: white;
     }
   }
-  
+
   &.btn-ghost {
     background-color: transparent;
     color: var(--color-text-primary);
-    
+
     @include hover-focus {
       background-color: rgba(255, 255, 255, 0.1);
     }
   }
-  
+
   &.btn-sm {
     padding: $spacing-xs $spacing-md;
     font-size: $font-size-sm;
   }
-  
+
   &.btn-lg {
     padding: $spacing-md $spacing-xl;
     font-size: $font-size-lg;
   }
-  
+
   &.btn-icon {
     width: 40px;
     height: 40px;
     padding: 0;
     border-radius: $border-radius-full;
   }
-  
+
   &[disabled] {
     opacity: 0.5;
     cursor: not-allowed;
@@ -488,21 +511,21 @@ p,
   font-family: $font-family-base;
   font-size: $font-size-base;
   @include transition;
-  
+
   &:focus {
     outline: none;
     border-color: var(--color-primary);
     box-shadow: 0 0 0 2px rgba($color-primary, 0.2);
   }
-  
+
   &::placeholder {
     color: $color-text-disabled-dark;
   }
 }
 
 input[type="date"] {
-    background: #fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat;
-    width: 151px;
+  background: #fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat;
+  width: 151px;
 }
 
 .form-textarea {
@@ -527,16 +550,16 @@ input[type="date"] {
   cursor: pointer;
   @include transition;
   position: relative;
-  
+
   &:checked {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
-    
+
     &::after {
       opacity: 1;
     }
   }
-  
+
   &:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba($color-primary, 0.2);
@@ -545,7 +568,7 @@ input[type="date"] {
 
 .form-checkbox {
   border-radius: $border-radius-sm;
-  
+
   &::after {
     content: '';
     position: absolute;
@@ -563,7 +586,7 @@ input[type="date"] {
 
 .form-radio {
   border-radius: $border-radius-full;
-  
+
   &::after {
     content: '';
     position: absolute;
@@ -585,7 +608,7 @@ input[type="date"] {
   background-color: var(--color-surface);
   border-radius: $border-radius-full;
   outline: none;
-  
+
   &::-webkit-slider-thumb {
     appearance: none;
     width: 18px;
@@ -594,7 +617,7 @@ input[type="date"] {
     border-radius: $border-radius-full;
     cursor: pointer;
   }
-  
+
   &::-moz-range-thumb {
     width: 18px;
     height: 18px;
@@ -610,25 +633,25 @@ input[type="date"] {
   display: inline-block;
   width: 50px;
   height: 24px;
-  
+
   .switch-input {
     opacity: 0;
     width: 0;
     height: 0;
-    
-    &:checked + .switch-slider {
+
+    &:checked+.switch-slider {
       background-color: var(--color-primary);
-      
+
       &::before {
         transform: translateX(26px);
       }
     }
-    
-    &:focus + .switch-slider {
+
+    &:focus+.switch-slider {
       box-shadow: 0 0 0 2px rgba($color-primary, 0.2);
     }
   }
-  
+
   .switch-slider {
     position: absolute;
     cursor: pointer;
@@ -640,7 +663,7 @@ input[type="date"] {
     border: 1px solid $color-border-dark;
     border-radius: $border-radius-full;
     @include transition;
-    
+
     &::before {
       position: absolute;
       content: '';
@@ -661,30 +684,30 @@ input[type="date"] {
   background-color: var(--color-surface);
   border-radius: $border-radius-lg;
   overflow: hidden;
-  
+
   &.card-elevated {
     box-shadow: $shadow-md;
   }
-  
+
   &.card-bordered {
     border: 1px solid $color-border-dark;
   }
-  
+
   .card-header {
     padding: $spacing-md;
     border-bottom: 1px solid $color-border-dark;
   }
-  
+
   .card-title {
     font-size: $font-size-lg;
     font-weight: 600;
     margin: 0;
   }
-  
+
   .card-body {
     padding: $spacing-md;
   }
-  
+
   .card-footer {
     padding: $spacing-md;
     border-top: 1px solid $color-border-dark;
@@ -701,7 +724,7 @@ input[type="date"] {
   padding: $spacing-md;
   border-radius: $border-radius-md;
   margin-bottom: $spacing-md;
-  
+
   .alert-icon {
     @include flex(row, center, center);
     width: 24px;
@@ -710,71 +733,71 @@ input[type="date"] {
     font-weight: bold;
     flex-shrink: 0;
   }
-  
+
   .alert-content {
     flex: 1;
   }
-  
+
   .alert-title {
     font-weight: 600;
     margin: 0 0 $spacing-xs 0;
   }
-  
+
   .alert-message {
     margin: 0;
   }
-  
+
   &.alert-info {
     background-color: rgba($color-info, 0.1);
     border-left: 4px solid $color-info;
-    
+
     .alert-icon {
       background-color: $color-info;
       color: white;
     }
-    
+
     .alert-title {
       color: $color-info;
     }
   }
-  
+
   &.alert-success {
     background-color: rgba($color-success, 0.1);
     border-left: 4px solid $color-success;
-    
+
     .alert-icon {
       background-color: $color-success;
       color: white;
     }
-    
+
     .alert-title {
       color: $color-success;
     }
   }
-  
+
   &.alert-warning {
     background-color: rgba($color-warning, 0.1);
     border-left: 4px solid $color-warning;
-    
+
     .alert-icon {
       background-color: $color-warning;
       color: white;
     }
-    
+
     .alert-title {
       color: $color-warning;
     }
   }
-  
+
   &.alert-error {
     background-color: rgba($color-error, 0.1);
     border-left: 4px solid $color-error;
-    
+
     .alert-icon {
       background-color: $color-error;
       color: white;
     }
-    
+
     .alert-title {
       color: $color-error;
     }
@@ -789,32 +812,32 @@ input[type="date"] {
   font-size: $font-size-sm;
   font-weight: 600;
   border-radius: $border-radius-full;
-  
+
   &.badge-primary {
     background-color: var(--color-primary);
     color: white;
   }
-  
+
   &.badge-secondary {
     background-color: var(--color-secondary);
     color: white;
   }
-  
+
   &.badge-success {
     background-color: var(--color-success);
     color: white;
   }
-  
+
   &.badge-warning {
     background-color: var(--color-warning);
     color: white;
   }
-  
+
   &.badge-error {
     background-color: var(--color-error);
     color: white;
   }
-  
+
   &.badge-outline {
     background-color: transparent;
     border: 1px solid $color-border-dark;
@@ -836,32 +859,28 @@ input[type="date"] {
   height: 100%;
   background-color: var(--color-primary);
   border-radius: $border-radius-full;
-  
+
   &.progress-striped {
-    background-image: linear-gradient(
-      45deg,
-      rgba(255, 255, 255, 0.15) 25%,
-      transparent 25%,
-      transparent 50%,
-      rgba(255, 255, 255, 0.15) 50%,
-      rgba(255, 255, 255, 0.15) 75%,
-      transparent 75%,
-      transparent
-    );
+    background-image: linear-gradient(45deg,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
+        transparent 75%,
+        transparent);
     background-size: 40px 40px;
   }
-  
+
   &.progress-animated {
-    background-image: linear-gradient(
-      45deg,
-      rgba(255, 255, 255, 0.15) 25%,
-      transparent 25%,
-      transparent 50%,
-      rgba(255, 255, 255, 0.15) 50%,
-      rgba(255, 255, 255, 0.15) 75%,
-      transparent 75%,
-      transparent
-    );
+    background-image: linear-gradient(45deg,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
+        transparent 75%,
+        transparent);
     background-size: 40px 40px;
     animation: progress-animation 2s linear infinite;
   }
@@ -871,6 +890,7 @@ input[type="date"] {
   0% {
     background-position: 0 0;
   }
+
   100% {
     background-position: 40px 0;
   }
@@ -889,6 +909,7 @@ input[type="date"] {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -899,30 +920,31 @@ input[type="date"] {
 .table {
   width: 100%;
   border-collapse: collapse;
-  
-  th, td {
+
+  th,
+  td {
     padding: $spacing-md;
     text-align: left;
     border-bottom: 1px solid $color-border-dark;
   }
-  
+
   th {
     font-weight: 600;
     color: $color-text-secondary-dark;
   }
-  
+
   tbody tr {
     @include transition;
-    
+
     &:hover {
       background-color: rgba(255, 255, 255, 0.05);
     }
   }
-  
+
   &.table-striped {
     tbody tr:nth-child(odd) {
       background-color: rgba(255, 255, 255, 0.02);
-      
+
       &:hover {
         background-color: rgba(255, 255, 255, 0.05);
       }
@@ -937,17 +959,17 @@ input[type="date"] {
   padding: $spacing-md;
   background-color: var(--color-surface);
   border-radius: $border-radius-md;
-  
+
   .navbar-brand {
     font-size: $font-size-lg;
     font-weight: 700;
   }
-  
+
   .navbar-menu {
     @include flex(row, flex-end, center);
     list-style: none;
     gap: $spacing-md;
-    
+
     .navbar-item {
       a {
         color: $color-text-secondary-dark;
@@ -955,13 +977,13 @@ input[type="date"] {
         padding: $spacing-xs $spacing-sm;
         border-radius: $border-radius-sm;
         @include transition;
-        
+
         &:hover {
           color: var(--color-text-primary);
           background-color: rgba(255, 255, 255, 0.05);
         }
       }
-      
+
       &.active a {
         color: var(--color-primary);
         font-weight: 600;
@@ -976,10 +998,10 @@ input[type="date"] {
   border-bottom: 1px solid $color-border-dark;
   padding: 0;
   margin: 0 0 $spacing-lg 0;
-  
+
   .tab-item {
     margin-right: $spacing-md;
-    
+
     a {
       display: block;
       padding: $spacing-sm $spacing-md;
@@ -987,12 +1009,12 @@ input[type="date"] {
       text-decoration: none;
       @include transition;
       border-bottom: 2px solid transparent;
-      
+
       &:hover {
         color: var(--color-text-primary);
       }
     }
-    
+
     &.active a {
       color: var(--color-primary);
       border-bottom-color: var(--color-primary);
@@ -1005,26 +1027,26 @@ input[type="date"] {
   list-style: none;
   padding: 0;
   margin: 0 0 $spacing-lg 0;
-  
+
   .breadcrumb-item {
     @include flex(row, flex-start, center);
-    
+
     &:not(:last-child)::after {
       content: '/';
       margin: 0 $spacing-sm;
       color: $color-text-disabled-dark;
     }
-    
+
     a {
       color: $color-text-secondary-dark;
       text-decoration: none;
       @include transition;
-      
+
       &:hover {
         color: var(--color-primary);
       }
     }
-    
+
     &.active {
       color: var(--color-text-primary);
       font-weight: 600;
@@ -1037,10 +1059,10 @@ input[type="date"] {
   list-style: none;
   padding: 0;
   margin: 0;
-  
+
   .page-item {
     margin: 0 $spacing-xs;
-    
+
     .page-link {
       display: block;
       padding: $spacing-xs $spacing-sm;
@@ -1050,13 +1072,13 @@ input[type="date"] {
       color: $color-text-secondary-dark;
       text-decoration: none;
       @include transition;
-      
+
       &:hover {
         background-color: rgba(255, 255, 255, 0.05);
         color: var(--color-text-primary);
       }
     }
-    
+
     &.active .page-link {
       background-color: var(--color-primary);
       color: white;
@@ -1082,18 +1104,18 @@ input[type="date"] {
   border-radius: $border-radius-lg;
   box-shadow: $shadow-lg;
   overflow: hidden;
-  
+
   .modal-header {
     @include flex(row, space-between, center);
     padding: $spacing-md;
     border-bottom: 1px solid $color-border-dark;
-    
+
     .modal-title {
       margin: 0;
       font-size: $font-size-lg;
       font-weight: 600;
     }
-    
+
     .modal-close {
       background: none;
       border: none;
@@ -1101,17 +1123,17 @@ input[type="date"] {
       font-size: 24px;
       cursor: pointer;
       @include transition;
-      
+
       &:hover {
         color: var(--color-text-primary);
       }
     }
   }
-  
+
   .modal-body {
     padding: $spacing-lg;
   }
-  
+
   .modal-footer {
     @include flex(row, flex-end, center);
     gap: $spacing-sm;
@@ -1123,7 +1145,7 @@ input[type="date"] {
 .tooltip-container {
   position: relative;
   display: inline-block;
-  
+
   .tooltip-text {
     padding: $spacing-xs $spacing-sm;
     background-color: var(--color-surface);
@@ -1131,7 +1153,7 @@ input[type="date"] {
     border-radius: $border-radius-sm;
     cursor: pointer;
   }
-  
+
   .tooltip {
     position: absolute;
     background-color: var(--color-surface-elevated);
@@ -1145,12 +1167,12 @@ input[type="date"] {
     opacity: 0;
     visibility: hidden;
     @include transition;
-    
+
     &.tooltip-top {
       bottom: 100%;
       left: 50%;
       transform: translateX(-50%) translateY(-$spacing-sm);
-      
+
       &::after {
         content: '';
         position: absolute;
@@ -1163,7 +1185,7 @@ input[type="date"] {
       }
     }
   }
-  
+
   &:hover .tooltip {
     opacity: 1;
     visibility: visible;

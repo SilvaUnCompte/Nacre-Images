@@ -219,13 +219,17 @@ p,
   align-items: center;
 }
 
-.log-out {
+.midcol {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 45%;
+}
+
+a {
   color: #ffffff;
   text-decoration: none;
-  position: absolute;
-  top: 15px;
-  right: 20px;
 }
 
 .divider {
@@ -729,7 +733,8 @@ input[type=date] {
   width: 100%;
   border-collapse: collapse;
 }
-.table th, .table td {
+.table th,
+.table td {
   padding: 16px;
   text-align: left;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);

@@ -9,19 +9,17 @@ if (!isset($_SESSION['email'])) {
 $page_name = 'Dashboard';
 $description = 'Bienvenue sur votre espace de gestion. Vous pouvez ici gérer vos ateliers, vos sessions d\'ateliers, vos tarifs et vos prestations.';
 
+
+require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/prices.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/faq.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/workshop_session.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/workshop_type.php');
+$all_tarifs = Prices::getAll();
+$all_faq = FAQ::getAll();
+$all_workshop_type = WorkshopType::getAll();
+$all_future_session = WorkshopSession::getFutureSessionByDate(Date('Y-m-d'));
+
 include($_SERVER['DOCUMENT_ROOT'] . "/public/html/dashboad/dashboard-header.php");
 include($_SERVER['DOCUMENT_ROOT'] . "/public/html/dashboad/dashboard-home.php");
 
 ?>
-
-<!-- 
-TODO: Dans l'odre à faire : 
-Page global dashboad : Cadre avec workshop_type, workshop_session, tarif, prestation ?
- > Dans une iframe -> Page list de workshop (avec bouton edit, delete, create)
- > Dans une iframe -> Page list de workshop_session (avec bouton edit, delete, create) trier par mois et une date d'observation
-Page de création & edition de workshop :
- > Avec overview en temps réel
-Page de création & edition de workshop_session
-Gestion de la FAQ
-...
--->

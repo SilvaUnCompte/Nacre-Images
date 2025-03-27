@@ -9,12 +9,13 @@ header {
   background-color: #1b1d20;
   box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.5);
 }
-header .log-data {
+header .log-out {
+  display: flex;
+  color: white;
+  text-decoration: none;
   position: absolute;
-  right: 0;
-  width: 15%;
-  height: 100%;
-  margin-right: 10px;
+  top: 15px;
+  right: 20px;
 }
 header #first-header {
   width: 100%;

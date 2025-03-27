@@ -90,6 +90,20 @@ class WorkshopSession
         return $sessions;
     }
 
+    public static function getFutureSessionByDate($date)
+    {
+        global $db;
+        $start_date = date('Y-m-d');
+
+        $query = $db->prepare("SELECT * FROM workshop_session WHERE date >= :start_date ORDER BY date ASC");
+        $query->execute([
+            'start_date' => $start_date,
+        ]);
+
+        $sessions = $query->fetchAll(PDO::FETCH_ASSOC);
+        return $sessions;
+    }
+
 
     public function getId()
     {
