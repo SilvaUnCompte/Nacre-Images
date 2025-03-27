@@ -34,15 +34,22 @@
                         <tbody>';
 
         foreach ($priceType[2] as $price) {
-            echo '<tr>
+            echo '<tr class="' . ($price['description'] != "" ? 'main-row' : '') . '" data-row="' . $price['id'] . '">
                     <td>' .
                 $price['label'] .
                 '<span class="info-container">
                             <span class="info-icon">i</span>
-                            <span class="tooltip">' . $price['description'] . '</span>
+                            <span class="tooltip">' . substr($price['description'], 0, 55) . (strlen($price['description']) > 55 ? '... [Click]' : '') . '</span>
                         </span>
                     </td>
-                    <td>' . $price['price'] . '€</td>
+                     <td>' . $price['price'] . '€</td>
+                </tr>
+                <tr class="sub-row" id="sub-row-' . $price['id'] . '">
+                    <td colspan="2">
+                        <div class="hidden-info-content">
+                            <p>' . $price['description'] . '</p>
+                        </div>
+                    </td>
                 </tr>';
         }
         echo '</tbody> </table> </div>';
@@ -64,3 +71,5 @@
         </svg>
     </a>
 </div>
+
+<script src="/public/js/price.js" defer></script>
