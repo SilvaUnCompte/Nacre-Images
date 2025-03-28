@@ -12,8 +12,9 @@ $description = 'Bienvenue sur votre espace de gestion. Vous pouvez ici gérer vo
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/prices.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/faq.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/workshop_session.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/workshop_type.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/workshop_session.php');
+
 $all_tarifs = Prices::getAll();
 $all_faq = FAQ::getAll();
 $all_workshop_type = WorkshopType::getAll();

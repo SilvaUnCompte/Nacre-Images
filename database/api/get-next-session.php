@@ -7,8 +7,8 @@ require($_SERVER['DOCUMENT_ROOT'] . '/database/connexion.php');
 $current_date = date('Y-m-d');
 
 // Prepare SQL query to fetch the next closest session date
-$query = $db->prepare('select result.`date`,result.additional_information,wt.topic_name from `nacre-image`.workshop_type wt right join (
-SELECT * FROM `nacre-image`.workshop_session ws where ws.`date` >= :current_date ORDER BY date ASC LIMIT 1
+$query = $db->prepare('select result.`date`,result.additional_information,wt.topic_name from workshop_type wt right join (
+SELECT * FROM workshop_session ws where ws.`date` >= :current_date ORDER BY date ASC LIMIT 1
 ) as result on result.type = wt.id');
 $query->execute(['current_date' => $current_date]);
 

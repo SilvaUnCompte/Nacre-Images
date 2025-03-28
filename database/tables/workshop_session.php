@@ -80,7 +80,9 @@ class WorkshopSession
         $start_date = date('Y-m-d');
         $end_date = date('Y-m-d', strtotime('+364 days'));
 
-        $query = $db->prepare("SELECT * FROM workshop_session WHERE date BETWEEN :start_date AND :end_date ORDER BY date ASC");
+        $query = $db->prepare("SELECT * from workshop_session ws 
+        left join workshop_type wt on ws.`type` = wt.id
+        WHERE date BETWEEN :start_date AND :end_date ORDER BY date ASC");
         $query->execute([
             'start_date' => $start_date,
             'end_date' => $end_date
@@ -95,7 +97,8 @@ class WorkshopSession
         global $db;
         $start_date = date('Y-m-d');
 
-        $query = $db->prepare("SELECT * FROM workshop_session WHERE date >= :start_date ORDER BY date ASC");
+        $query = $db->prepare("SELECT ws.id, type, date, additional_information, topic_name from workshop_session ws 
+        left join workshop_type wt on ws.`type` = wt.id WHERE date >= :start_date ORDER BY date ASC");
         $query->execute([
             'start_date' => $start_date,
         ]);

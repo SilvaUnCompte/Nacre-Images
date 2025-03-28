@@ -64,7 +64,7 @@ switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topi
     case '/dashboard':
     case '/dashboard/':
     case '/mon-fils-cest-le-meilleur':
-        require __DIR__ . '/controler/dashboard/home.php';
+        require __DIR__ . '/controler/dashboard/dashboard-home.php';
         break;
 
     case '/dashboard/login':
