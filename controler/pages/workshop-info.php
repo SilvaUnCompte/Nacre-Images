@@ -8,7 +8,7 @@ $page_name = 'Calendrier des stages';
 $description = 'Le calendrier des stages photo à venir. Réservez ou faite une demande particulière votre par mail ou téléphone. Contactez Gilles Quesnot pour plus d\'informations.';
 
 $workshopTypes = WorkshopType::getAll();
-$workshopSessions = WorkshopSession::getFutureSession();
+$workshopSessions = WorkshopSession::getOneYearFutureSession();
 $prices = Prices::getAll();
 
 include($_SERVER['DOCUMENT_ROOT'] . "/public/html/helpers/header.php");
