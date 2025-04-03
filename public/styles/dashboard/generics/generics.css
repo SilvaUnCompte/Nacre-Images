@@ -365,6 +365,9 @@ p,
   color: rgba(255, 255, 255, 0.38);
 }
 
+.form-date {
+  max-width: 200px;
+}
 .form-date::-webkit-calendar-picker-indicator {
   filter: invert(1);
   cursor: pointer;

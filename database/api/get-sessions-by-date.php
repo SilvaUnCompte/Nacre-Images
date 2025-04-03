@@ -29,6 +29,6 @@ $all_future_session = WorkshopSession::getFutureSessionByDate($start_date);
 if ($all_future_session) {
     echo json_encode($all_future_session);
 } else {
-    echo json_encode(['message' => 'No upcoming sessions found']);
+    echo json_encode([]);
 }
 ?>

@@ -491,6 +491,8 @@ p,
 
 // Date input specific styles
 .form-date {
+  max-width: 200px;
+
   &::-webkit-calendar-picker-indicator {
     filter: invert(1);
     cursor: pointer;

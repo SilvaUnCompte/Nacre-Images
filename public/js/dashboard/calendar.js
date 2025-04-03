@@ -3,26 +3,22 @@ const observationDate = document.getElementById('observation-date');
 observationDate.value = new Date().toISOString().split('T')[0];
 observationDate.addEventListener('change', updateDatatable);
 
-
 window.onload = (event) => {
     updateDatatable();
 }
 
 function updateDatatable() {
-    var startDate = observationDate.value;
-
-    fetch('/database/api/get-sessions-by-date.php?start_date=' + startDate)
+    fetch('/database/api/get-sessions-by-date.php?start_date=' + observationDate.value)
         .then(response => response.json())
         .then(data => {
             createSessionCards(data);
         });
 }
 
-
 function createSessionCards(data) {
     calendar_data = '';
 
-    if (data.length == 0) {
+    if (data == null || data.length == 0) {
         calendar_data = `</br><div class="alert alert-warning">
                             <div class="alert-icon">!</div>
                             <div class="alert-content">
@@ -30,7 +26,6 @@ function createSessionCards(data) {
                                 <p class="alert-message">Aucune donnée entregistré pour cette date</p>
                             </div>
                         </div>`;
-        return;
     }
     else {
         calendar_data = `</br><div class="alert alert-info">
@@ -40,9 +35,8 @@ function createSessionCards(data) {
                                 <p class="alert-message">` + data.length + ` sessions trouvées</p>
                             </div>
                         </div>`;
-    }
 
-    calendar_data += `<table><thead>
+        calendar_data += `<table><thead>
                         <tr>
                             <th class="text-regular">Date</th>
                             <th class="text-regular">Type</th>
@@ -51,17 +45,18 @@ function createSessionCards(data) {
                         </tr>
                     </thead><tbody>`;
 
-    data.forEach(session => {
-        calendar_data += `<tr>
-                            <td class="text-regular">${session.date}</td>
+        data.forEach(session => {
+            calendar_data += `<tr>
+                            <td class="text-regular">${new Date(session.date).toLocaleDateString('fr-FR')}</td>
                             <td class="text-regular">${session.topic_name}</td>
                             <td class="text-regular"><input type="text" class="additional-information-input form-input" placeholder="Informations supplémentaires" value="${session.additional_information}"></td>
                             <td class="text-regular">
-                                <img src="/assets/images/icons/trash.png" class="card-button" alt="delete" onclick="deleteSession('${session.id}','${session.topic_name}','${session.date}')">
+                                <img src="/assets/images/icons/trash.png" class="card-button" alt="delete" onclick="deleteSession('${session.id}','${session.topic_name}','${new Date(session.date).toLocaleDateString('fr-FR')}')">
                                 <img src="/assets/images/icons/save.png" class="card-button" alt="save" onclick="updateSession('${session.id}',this)">
                             </td>
                         </tr>`;
-    });
+        });
+    }
 
     calendarContainer.innerHTML = calendar_data + `</tbody></table>`;
 }
@@ -90,7 +85,6 @@ function deleteSession(session_id, name, date) {
 function updateSession(session_id, itself) {
     var additional_information = itself.parentNode.parentNode.querySelector(".additional-information-input").value;
 
-
     fetch('/database/api/update-info-session.php', {
         method: 'POST',
         headers: {
@@ -113,5 +107,42 @@ function updateSession(session_id, itself) {
         .catch(error => {
             console.error("Erreur :", error);
             new_popup("Erreur 500 de l'update", "error");
+        });
+}
+
+function addSession() {
+    const sessionDate = document.getElementById('session-date').value;
+    const sessionTopic = document.getElementById('session-topic').value;
+    const sessionInfo = document.getElementById('session-info').value;
+
+    if (sessionDate == "" || sessionTopic == 0) {
+        new_popup("Veuillez remplir tous les champs", "error");
+        return;
+    }
+
+    fetch('/database/api/add-session.php', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/x-www-form-urlencoded',
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({
+            date: sessionDate,
+            topic: sessionTopic,
+            additional_information: sessionInfo
+        })
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                new_popup("Session ajoutée avec succès", "success");
+                updateDatatable();
+            } else {
+                new_popup("Erreur lors de l'ajout de la session", "error");
+            }
+        })
+        .catch(error => {
+            console.error("Erreur :", error);
+            new_popup("Erreur 500 de l'ajout de la session", "error");
         });
 }
