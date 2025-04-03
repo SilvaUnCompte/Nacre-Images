@@ -8,6 +8,7 @@ window.onload = (event) => {
 }
 
 function updateDatatable() {
+    calendarContainer.innerHTML = `<div class="spinner spinner-centered"></div>`;
     fetch('/database/api/get-sessions-by-date.php?start_date=' + observationDate.value)
         .then(response => response.json())
         .then(data => {
@@ -23,7 +24,7 @@ function createSessionCards(data) {
                             <div class="alert-icon">!</div>
                             <div class="alert-content">
                                 <h4 class="alert-title">Warning</h4>
-                                <p class="alert-message">Aucune donnée entregistré pour cette date</p>
+                                <p class="alert-message">Aucune donnée entregistrée pour cette date</p>
                             </div>
                         </div>`;
     }
@@ -36,7 +37,7 @@ function createSessionCards(data) {
                             </div>
                         </div>`;
 
-        calendar_data += `<table><thead>
+        calendar_data += `<table  class="table table-striped"><thead>
                         <tr>
                             <th class="text-regular">Date</th>
                             <th class="text-regular">Type</th>
@@ -51,8 +52,8 @@ function createSessionCards(data) {
                             <td class="text-regular">${session.topic_name}</td>
                             <td class="text-regular"><input type="text" class="additional-information-input form-input" placeholder="Informations supplémentaires" value="${session.additional_information}"></td>
                             <td class="text-regular">
+                            <img src="/assets/images/icons/save.png" class="card-button" alt="save" onclick="updateSession('${session.id}',this)">
                                 <img src="/assets/images/icons/trash.png" class="card-button" alt="delete" onclick="deleteSession('${session.id}','${session.topic_name}','${new Date(session.date).toLocaleDateString('fr-FR')}')">
-                                <img src="/assets/images/icons/save.png" class="card-button" alt="save" onclick="updateSession('${session.id}',this)">
                             </td>
                         </tr>`;
         });

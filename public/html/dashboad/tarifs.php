@@ -8,11 +8,9 @@
             <label for="select" class="form-label">Type</label>
             <select id="session-topic" class="form-select">
                 <option value="0" disabled selected>Select an option</option>
-                <?php
-                foreach ($all_topics as $topic) {
-                    echo '<option value="' . $topic['id'] . '">' . $topic['topic_name'] . '</option>';
-                }
-                ?>
+                <option value="0">Groupe</option>
+                <option value="1">Individuel</option>
+                <option value="2">Spécial</option>
             </select>
         </div>
         <div>
@@ -28,10 +26,7 @@
     </section>
 
     <section class="display-block">
-        <div>
-            <input type="date" class="form-date" id="observation-date">
-        </div>
-        <div id="calendar-container">
+        <div id="prices-container">
             <div class="spinner spinner-centered"></div>
         </div>
     </section>
@@ -39,5 +34,5 @@
 </main>
 
 <script src="/public/js/popup.js" type="text/javascript"></script>
-<script src="/public/js/dashboard/calendar.js" defer></script>
+<script src="/public/js/dashboard/tarifs.js" defer></script>
 <link rel="stylesheet" href="/public/styles/popup/popup.css">

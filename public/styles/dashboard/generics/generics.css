@@ -336,6 +336,7 @@ p,
 .form-input,
 .form-textarea,
 .form-select,
+.form-number,
 .form-date {
   width: 100%;
   padding: 8px 16px;
@@ -350,17 +351,19 @@ p,
 .form-input:focus,
 .form-textarea:focus,
 .form-select:focus,
+.form-number:focus,
 .form-date:focus {
   outline: none;
   border-color: var(--color-primary);
   box-shadow: 0 0 0 2px rgba(109, 93, 252, 0.2);
 }
-.form-input::-moz-placeholder, .form-textarea::-moz-placeholder, .form-select::-moz-placeholder, .form-date::-moz-placeholder {
+.form-input::-moz-placeholder, .form-textarea::-moz-placeholder, .form-select::-moz-placeholder, .form-number::-moz-placeholder, .form-date::-moz-placeholder {
   color: rgba(255, 255, 255, 0.38);
 }
 .form-input::placeholder,
 .form-textarea::placeholder,
 .form-select::placeholder,
+.form-number::placeholder,
 .form-date::placeholder {
   color: rgba(255, 255, 255, 0.38);
 }
@@ -377,6 +380,16 @@ p,
 }
 .form-date::-webkit-calendar-picker-indicator:hover {
   opacity: 1;
+}
+
+.form-number {
+  -moz-appearance: textfield;
+  max-width: 100px;
+  text-align: right;
+}
+.form-number::-webkit-inner-spin-button, .form-number::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .form-textarea {
@@ -712,6 +725,12 @@ p,
   border-top-color: var(--color-primary);
   animation: spinner 1s linear infinite;
 }
+.spinner.spinner-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 @keyframes spinner {
   0% {
@@ -726,7 +745,8 @@ table,
   width: 100%;
   border-collapse: collapse;
 }
-table th, table td,
+table th,
+table td,
 .table th,
 .table td {
   padding: 16px;
