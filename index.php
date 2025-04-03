@@ -75,6 +75,22 @@ switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topi
         require __DIR__ . '/controler/dashboard/calendar.php';
         break;
 
+    case '/dashboard/tarifs':
+        require __DIR__ . '/controler/dashboard/tarifs.php';
+        break;
+
+    case '/dashboard/liste-des-stages':
+        require __DIR__ . '/controler/dashboard/stages.php';
+        break;
+
+    case '/dashboard/faq':
+        require __DIR__ . '/controler/dashboard/faq.php';
+        break;
+
+    case '/dashboard/prestations':
+        require __DIR__ . '/controler/dashboard/prestations.php';
+        break;
+
     default:
         if (str_starts_with($request, '/stage/')) {
             require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/workshop_type.php');

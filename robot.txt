@@ -1,5 +1,5 @@
 User-agent: *
-Disallow: /hello*
+Disallow: /dashboad*
 
 sitemap: https://www.stages-photos-nacre-images.fr/sitemap-file.xml
 
