@@ -21,7 +21,6 @@ function updateDatatable() {
 function createTarifRows(data) {
     data.sort((a, b) => a.type - b.type);
     prices_data = '';
-    console.log(data); //TODO delete me
 
     if (data == null || data.length == 0) {
         prices_data = `</br><div class="alert alert-warning">
@@ -53,12 +52,12 @@ function createTarifRows(data) {
 
         data.forEach(price => {
             prices_data += `<tr>
-                            <td class="text-regular">${price.type == 0 ? 'Groupe' : price.type == 1 ? 'Solo' : 'Spécial'}</td>
-                            <td class="text-regular"><input type="text" class="additional-information-input form-input" placeholder="Label" value="${price.label}"></td>
-                            <td class="text-regular"><input type="text" class="additional-information-input form-input" placeholder="Description" value="${price.description}"></td>
-                            <td class="text-regular"><input type="text" class="additional-information-input form-number" placeholder="42" value="${price.price}"></td>
+                            <td class="text-regular">${price.type == 0 ? 'Groupe' : price.type == 1 ? 'Individuel' : 'Spécial'}</td>
+                            <td class="text-regular"><input type="text" id="label-input" class="form-input" placeholder="Label" value="${price.label}"></td>
+                            <td class="text-regular"><input type="text" id="description-input" class="form-input" placeholder="Description" value="${price.description}"></td>
+                            <td class="text-regular"><input type="text" id="price-input" class="form-number" placeholder="42" value="${price.price}"></td>
                             <td class="text-regular">
-                            <img src="/assets/images/icons/save.png" class="card-button" alt="save" onclick="updatePrice('${price.id}',this)">
+                                <img src="/assets/images/icons/save.png" class="card-button" alt="save" onclick="updatePrice('${price.id}',this)">
                                 <img src="/assets/images/icons/trash.png" class="card-button" alt="delete" onclick="deletePrice('${price.id}','${price.label}')">
                             </td>
                         </tr>`;
@@ -73,83 +72,97 @@ function deletePrice(price_id, label) {
         return;
     }
 
-    // fetch('/database/api/delete-price.php?price_id=' + price_id)
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         if (data.success) {
-    //             new_popup("price supprimée avec succès", "success");
-    //             updateDatatable();
-    //         } else {
-    //             new_popup("Erreur lors de la suppression de la price", "error");
-    //         }
-    //     })
-    //     .catch(error => {
-    //         console.error("Erreur :", error);
-    //         new_popup("Erreur lors de la suppression de la price", "error");
-    //     });
+    fetch('/database/api/delete-price.php?id=' + price_id)
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                new_popup("price supprimée avec succès", "success");
+                updateDatatable();
+            } else {
+                new_popup("Erreur lors de la suppression de la price", "error");
+            }
+        })
+        .catch(error => {
+            console.error("Erreur :", error);
+            new_popup("Erreur lors de la suppression de la price", "error");
+        });
 }
 
-// function updatePrice(price_id, itself) {
-//     var additional_information = itself.parentNode.parentNode.querySelector(".additional-information-input").value;
+function updatePrice(id, itself) {
+    var label = itself.parentNode.parentNode.querySelector("#label-input").value;
+    var description = itself.parentNode.parentNode.querySelector("#description-input").value;
+    var price = itself.parentNode.parentNode.querySelector("#price-input").value;
+    if (label == "" || description == "" || price == "") {
+        new_popup("Veuillez remplir tous les champs", "error");
+        return;
+    }
+    if (isNaN(price)) {
+        new_popup("Veuillez entrer un prix valide", "error");
+        return;
+    }
 
-//     fetch('/database/api/update-info-price.php', {
-//         method: 'POST',
-//         headers: {
-//             'Accept': 'application/x-www-form-urlencoded',
-//             'Content-Type': 'application/x-www-form-urlencoded'
-//         },
-//         body: new URLSearchParams({
-//             price_id: price_id,
-//             additional_information: additional_information
-//         })
-//     })
-//         .then(response => response.json())
-//         .then(data => {
-//             if (data.success) {
-//                 new_popup("price mise à jour avec succès", "success");
-//             } else {
-//                 new_popup("Erreur lors de l'update", "error");
-//             }
-//         })
-//         .catch(error => {
-//             console.error("Erreur :", error);
-//             new_popup("Erreur 500 de l'update", "error");
-//         });
-// }
+    fetch('/database/api/update-price.php', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/x-www-form-urlencoded',
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({
+            id: id,
+            label: label,
+            description: description,
+            price: price
+        })
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                new_popup("price mise à jour avec succès", "success");
+            } else {
+                new_popup("Erreur lors de l'update", "error");
+            }
+        })
+        .catch(error => {
+            console.error("Erreur :", error);
+            new_popup("Erreur 500 de l'update", "error");
+        });
+}
 
-// function addprice() {
-//     const priceDate = document.getElementById('price-date').value;
-//     const priceTopic = document.getElementById('price-topic').value;
-//     const priceInfo = document.getElementById('price-info').value;
+function addPrice() {
+    const priceType = document.getElementById('add-price-type').value;
+    const priceLabel = document.getElementById('add-price-label').value;
+    const priceDescription = document.getElementById('add-price-description').value;
+    const pricePrice = document.getElementById('add-price-price').value;
 
-//     if (priceDate == "" || priceTopic == 0) {
-//         new_popup("Veuillez remplir tous les champs", "error");
-//         return;
-//     }
+    if (priceType == "" || priceLabel == "" || priceDescription == "" || pricePrice == "") {
+        new_popup("Veuillez remplir tous les champs", "error");
+        return;
+    }
 
-//     fetch('/database/api/add-price.php', {
-//         method: 'POST',
-//         headers: {
-//             'Accept': 'application/x-www-form-urlencoded',
-//             'Content-Type': 'application/x-www-form-urlencoded'
-//         },
-//         body: new URLSearchParams({
-//             date: priceDate,
-//             topic: priceTopic,
-//             additional_information: priceInfo
-//         })
-//     })
-//         .then(response => response.json())
-//         .then(data => {
-//             if (data.success) {
-//                 new_popup("price ajoutée avec succès", "success");
-//                 updateDatatable();
-//             } else {
-//                 new_popup("Erreur lors de l'ajout de la price", "error");
-//             }
-//         })
-//         .catch(error => {
-//             console.error("Erreur :", error);
-//             new_popup("Erreur 500 de l'ajout de la price", "error");
-//         });
-// }
+    fetch('/database/api/add-price.php', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/x-www-form-urlencoded',
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({
+            type: priceType,
+            label: priceLabel,
+            description: priceDescription,
+            price: pricePrice
+        })
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                new_popup("price ajoutée avec succès", "success");
+                updateDatatable();
+            } else {
+                new_popup("Erreur lors de l'ajout de la price", "error");
+            }
+        })
+        .catch(error => {
+            console.error("Erreur :", error);
+            new_popup("Erreur 500 de l'ajout de la price", "error");
+        });
+}

@@ -1,26 +1,30 @@
 <main>
     <section class="display-block inline-container">
-        <div class="form-group">
-            <label for="date-input" class="form-label">Date Input</label>
-            <input type="date" id="session-date" class="form-date">
-        </div>
-        <div class="form-group">
-            <label for="select" class="form-label">Type</label>
-            <select id="session-topic" class="form-select">
-                <option value="0" disabled selected>Select an option</option>
+    <div class="form-group">
+            <label for="add-price-type" class="form-label">Type</label>
+            <select id="add-price-type" class="form-select">
+                <option value="" disabled selected>Select an option</option>
                 <option value="0">Groupe</option>
                 <option value="1">Individuel</option>
                 <option value="2">Spécial</option>
             </select>
         </div>
+        <div class="form-group">
+            <label for="add-price-label" class="form-label">Label</label>
+            <input type="text" id="add-price-label" class="form-input" placeholder="Titre du tarif">
+        </div>
+        <div class="form-group">
+            <label for="add-price-price" class="form-label">Prix</label>
+            <input type="text" id="add-price-price" class="form-number" placeholder="42.00">
+        </div>
         <div>
             <div class="form-group">
-                <label for="text-input" class="form-label">Informations supplémentaires</label>
-                <input type="text" id="session-info" class="form-input" placeholder="Enter text here">
+                <label for="add-price-description" class="form-label">Description</label>
+                <input type="text" id="add-price-description" class="form-input" placeholder="Description du tarif">
             </div>
         </div>
         <div>
-            <button id="create-event" class="btn btn-primary" type="button" onclick="addSession()">Ajouter</button>
+            <button id="create-event" class="btn btn-primary" type="button" onclick="addPrice()">Ajouter</button>
         </div>
 
     </section>

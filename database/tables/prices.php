@@ -42,8 +42,8 @@ class Prices
 
         $query->execute([
             'id' => $this->id,
-            'type' => $this->price,
-            'date' => $this->label,
+            'price' => $this->price,
+            'label' => $this->label,
             'description' => $this->description,
             'type' => $this->type
         ]);
@@ -86,5 +86,18 @@ class Prices
             'description' => $description,
             'type' => $type
         ]);
+    }
+
+    public function setLabel($label)
+    {
+        $this->label = $label;
+    }
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
+    public function setDescription($description)
+    {
+        $this->description = $description;
     }
 }
