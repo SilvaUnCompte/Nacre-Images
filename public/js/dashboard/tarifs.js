@@ -76,15 +76,15 @@ function deletePrice(price_id, label) {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                new_popup("price supprimée avec succès", "success");
+                new_popup("Tarif supprimée avec succès", "success");
                 updateDatatable();
             } else {
-                new_popup("Erreur lors de la suppression de la price", "error");
+                new_popup("Erreur lors de la suppression du tarif", "error");
             }
         })
         .catch(error => {
             console.error("Erreur :", error);
-            new_popup("Erreur lors de la suppression de la price", "error");
+            new_popup("Erreur lors de la suppression du tarif", "error");
         });
 }
 
@@ -117,7 +117,7 @@ function updatePrice(id, itself) {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                new_popup("price mise à jour avec succès", "success");
+                new_popup("Tarif mise à jour avec succès", "success");
             } else {
                 new_popup("Erreur lors de l'update", "error");
             }
@@ -155,14 +155,14 @@ function addPrice() {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                new_popup("price ajoutée avec succès", "success");
+                new_popup("Tarif ajoutée avec succès", "success");
                 updateDatatable();
             } else {
-                new_popup("Erreur lors de l'ajout de la price", "error");
+                new_popup("Erreur lors de l'ajout du tarif", "error");
             }
         })
         .catch(error => {
             console.error("Erreur :", error);
-            new_popup("Erreur 500 de l'ajout de la price", "error");
+            new_popup("Erreur 500 de l'ajout du tarif", "error");
         });
 }
