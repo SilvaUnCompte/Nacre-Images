@@ -14,6 +14,8 @@ class WorkshopType
     private $big_title;
     private $small_title;
     private $paragraph;
+    private $url;
+    private $regularity_type;
 
     public function __construct($id)
     {
@@ -38,6 +40,8 @@ class WorkshopType
         $this->big_title = $result['big_title'];
         $this->small_title = $result['small_title'];
         $this->paragraph = $result['paragraph'];
+        $this->url = $result['url'];
+        $this->regularity_type = $result['regularity_type'];
     }
     public function __destruct()
     {
@@ -58,7 +62,7 @@ class WorkshopType
     {
         global $db;
         
-        $query = $db->prepare('UPDATE workshop_type SET topic_name = :topic_name, page_name = :page_name, seo_desc = :seo_desc, img_name = :img_name, img_alt = :img_alt, big_title = :big_title, small_title = :small_title, paragraph = :paragraph WHERE id = :id');
+        $query = $db->prepare('UPDATE workshop_type SET topic_name = :topic_name, page_name = :page_name, seo_desc = :seo_desc, img_name = :img_name, img_calendar = :img_calendar, img_alt = :img_alt, big_title = :big_title, small_title = :small_title, paragraph = :paragraph, `url` = :url, regularity_type = :regularity_type WHERE id = :id');
 
         $query->execute([
             'id' => $this->id,
@@ -70,7 +74,9 @@ class WorkshopType
             'img_alt' => $this->img_alt,
             'big_title' => $this->big_title,
             'small_title' => $this->small_title,
-            'paragraph' => $this->paragraph
+            'paragraph' => $this->paragraph,
+            'url' => $this->url,
+            'regularity_type' => $this->regularity_type
         ]);
     }
 
@@ -90,11 +96,11 @@ class WorkshopType
         $query->execute(['id' => $id_to_delete]);
     }
 
-    public static function create($id, $topic_name, $page_name, $seo_desc, $img_name, $img_calendar, $img_alt, $big_title, $small_title, $paragraph)
+    public static function create($topic_name, $page_name, $seo_desc, $img_name, $img_calendar, $img_alt, $big_title, $small_title, $paragraph, $url, $regularity_type)
     {
         global $db;
         
-        $query = $db->prepare('INSERT INTO workshop_type (topic_name, page_name, seo_desc, img_name, img_calendar, img_alt, big_title, small_title, paragraph) VALUES (:topic_name, :page_name, :seo_desc, :img_name, :img_alt, :big_title, :small_title, :paragraph, :img_calendar)');
+        $query = $db->prepare('INSERT INTO workshop_type (topic_name, page_name, seo_desc, img_name, img_calendar, img_alt, big_title, small_title, paragraph, `url`, regularity_type) VALUES (:topic_name, :page_name, :seo_desc, :img_name, :img_calendar, :img_alt, :big_title, :small_title, :paragraph, :url, :regularity_type)');
         $query->execute([
             'topic_name' => $topic_name,
             'page_name' => $page_name,
@@ -104,7 +110,9 @@ class WorkshopType
             'img_alt' => $img_alt,
             'big_title' => $big_title,
             'small_title' => $small_title,
-            'paragraph' => $paragraph
+            'paragraph' => $paragraph,
+            'url' => $url,
+            'regularity_type' => $regularity_type
         ]);
     }
 
@@ -128,6 +136,10 @@ class WorkshopType
     {
         return $this->img_name;
     }
+    public function getImgCalendar()
+    {
+        return $this->img_calendar;
+    }
     public function getImgAlt()
     {
         return $this->img_alt;
@@ -143,6 +155,14 @@ class WorkshopType
     public function getParagraph()
     {
         return $this->paragraph;
+    }
+    public function getUrl()
+    {
+        return $this->url;
+    }
+    public function getRegularityType()
+    {
+        return $this->regularity_type;
     }
     public function setTopicName($topic_name)
     {
@@ -160,6 +180,10 @@ class WorkshopType
     {
         $this->img_name = $img_name;
     }
+    public function setImgCalendar($img_calendar)
+    {
+        $this->img_calendar = $img_calendar;
+    }
     public function setImgAlt($img_alt)
     {
         $this->img_alt = $img_alt;
@@ -175,5 +199,13 @@ class WorkshopType
     public function setParagraph($paragraph)
     {
         $this->paragraph = $paragraph;
+    }
+    public function setUrl($url)
+    {
+        $this->url = $url;
+    }
+    public function setRegularityType($regularity_type)
+    {
+        $this->regularity_type = $regularity_type;
     }
 }

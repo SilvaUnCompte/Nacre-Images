@@ -13,11 +13,12 @@ if (!isset($_GET['id']) || empty($_GET['id']) || !is_numeric($_GET['id'])) {
 $page_name = 'Editeur de stage';
 $description = 'Bienvenue sur l\'éditeur de stage, vous pouvez modifier les informations de chaque stage.';
 $id = $_GET['id'];
+$edition = ($id >= 0);
 $workshop_type = null;
 
-if ($id >= 0) {
+if ($edition) {
     require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/workshop_type.php');
-    $workshop_type = new WorkshopType($_GET['id']);
+    $workshop_type = new WorkshopType($id);
 }
 
 include($_SERVER['DOCUMENT_ROOT'] . "/public/html/dashboad/dashboard-header.php");
