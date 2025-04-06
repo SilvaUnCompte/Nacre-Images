@@ -195,6 +195,13 @@ body {
   margin-bottom: $spacing-2xl;
 }
 
+.right {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  padding-right: 20px
+}
+
 .element-container {
   @include flex(row, flex-start, stretch, wrap);
   gap: $spacing-xl;

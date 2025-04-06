@@ -61,6 +61,13 @@ body {
   margin-bottom: 48px;
 }
 
+.right {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  padding-right: 20px;
+}
+
 .element-container {
   display: flex;
   flex-direction: row;

@@ -212,7 +212,7 @@
             ?>
         </a>
 
-        <a class="display-block" href="/dashboard/liste-des-prestations">
+        <a class="display-block" href="/dashboard/prestations">
             <h1 class="title-lg">Liste des prestations</h1>
 
 

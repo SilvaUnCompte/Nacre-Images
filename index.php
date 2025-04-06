@@ -80,7 +80,7 @@ switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topi
         break;
 
     case '/dashboard/liste-des-stages':
-        require __DIR__ . '/controler/dashboard/stages.php';
+        require __DIR__ . '/controler/dashboard/stage-list.php';
         break;
 
     case '/dashboard/faq':
@@ -107,6 +107,11 @@ switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topi
             }
 
             header('Location: /infos-stage');
+            return;
+        }
+
+        if (str_starts_with($request, '/dashboard/liste-des-stages/edit')) {
+            require __DIR__ . '/controler/dashboard/stage-editor.php';
             return;
         }
 
