@@ -582,6 +582,10 @@ p,
   gap: 8px;
 }
 
+.hide {
+  display: none;
+}
+
 .alert {
   display: flex;
   flex-direction: row;
