@@ -67,3 +67,14 @@
 
     </div>
 </main>
+
+
+<?php 
+if (isset($_POST['message'])) {
+    echo '<div class="hide" id="message">' . $_POST['message'] . '</div>';
+}
+?>
+
+<script src="/public/js/popup.js" type="text/javascript"></script>
+<script src="/public/js/dashboard/workshop-list.js"></script>
+<link rel="stylesheet" href="/public/styles/popup/popup.css">

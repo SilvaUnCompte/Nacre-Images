@@ -6,13 +6,13 @@
 
     <!-- Button panel -->
     <section id="workshop-navbar" class="display-block inline-container">
-        <a class="btn btn-primary form-number" href="/dashboard/liste-des-stages">Annuler</a>
+        <a class="btn btn-primary form-number" href="/dashboard/liste-des-stages">Retour</a>
         <?php
         if ($edition) {
             echo '<button class="btn btn-primary form-number" type="button" onclick="deleteWorkshop(' . $id . ')">Supprimer</button>';
         }
         ?>
-        <button class="btn btn-primary form-number" type="button" onclick="toogleView()">Aperçu/Édition</button>
+        <button id="toogle-button-page" class="btn btn-primary form-number" type="button" onclick="toogleView()">Aperçu</button>
         <?php
         if ($edition) {
             echo '<button class="btn btn-primary form-number" type="button" onclick="updateWorkshop(' . $id . ')">Update</button>';
@@ -23,7 +23,8 @@
     </section>
 
     <!-- Evdit view -->
-    <section class="display-block">
+    <section id="page-edition" class="display-block">
+        <!-- Infos complémentaires -->
         <div class="inline-container">
             <div class="form-group">
                 <label for="workshop-page-name" class="form-label">Nom sur l'onglet de la page</label>
@@ -91,7 +92,11 @@
     </section>
 
     <!-- Résultat overview -->
-    <section class="display-block hide">
+    <section id="page-overview" class="display-block hide">
 
     </section>
 </main>
+
+<script src="/public/js/popup.js" type="text/javascript"></script>
+<script src="/public/js/dashboard/workshop.js"></script>
+<link rel="stylesheet" href="/public/styles/popup/popup.css">
