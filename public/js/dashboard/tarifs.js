@@ -42,6 +42,7 @@ function createTarifRows(data) {
 
         prices_data += `<table><thead>
                         <tr>
+                            <th class="text-regular">Id</th>
                             <th class="text-regular">Type</th>
                             <th class="text-regular">Label</th>
                             <th class="text-regular">Description</th>
@@ -52,15 +53,16 @@ function createTarifRows(data) {
 
         data.forEach(price => {
             prices_data += `<tr>
-                            <td class="text-regular">${price.type == 0 ? 'Groupe' : price.type == 1 ? 'Individuel' : 'Spécial'}</td>
-                            <td class="text-regular"><input type="text" id="label-input" class="form-input" placeholder="Label" value="${price.label}"></td>
-                            <td class="text-regular"><input type="text" id="description-input" class="form-input" placeholder="Description" value="${price.description}"></td>
-                            <td class="text-regular"><input type="text" id="price-input" class="form-number" placeholder="42" value="${price.price}"></td>
-                            <td class="text-regular">
-                                <img src="/assets/images/icons/save.png" class="card-button" alt="save" onclick="updatePrice('${price.id}',this)">
-                                <img src="/assets/images/icons/trash.png" class="card-button" alt="delete" onclick="deletePrice('${price.id}','${price.label}')">
-                            </td>
-                        </tr>`;
+                                <td class="text-regular">${price.id}</td>
+                                <td class="text-regular">${price.type == 0 ? 'Groupe' : price.type == 1 ? 'Individuel' : 'Spécial'}</td>
+                                <td class="text-regular"><input type="text" id="label-input" class="form-input" placeholder="Label" value="${price.label}"></td>
+                                <td class="text-regular"><input type="text" id="description-input" class="form-input" placeholder="Description" value="${price.description}"></td>
+                                <td class="text-regular"><input type="text" id="price-input" class="form-number" placeholder="42" value="${price.price}"></td>
+                                <td class="text-regular">
+                                    <img src="/assets/images/icons/save.png" class="card-button" alt="save" onclick="updatePrice('${price.id}',this)">
+                                    <img src="/assets/images/icons/trash.png" class="card-button" alt="delete" onclick="deletePrice('${price.id}','${price.label}')">
+                                </td>
+                            </tr>`;
         });
     }
 

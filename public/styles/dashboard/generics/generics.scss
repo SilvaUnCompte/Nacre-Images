@@ -202,6 +202,13 @@ body {
   padding-right: 20px
 }
 
+.right-text {
+  text-align: right;
+}
+.left-text {
+  text-align: left;
+}
+
 .element-container {
   @include flex(row, flex-start, stretch, wrap);
   gap: $spacing-xl;
@@ -541,7 +548,7 @@ p,
 }
 
 .form-textarea {
-  min-height: 100px;
+  min-height: 150px;
   resize: vertical;
 }
 
@@ -729,7 +736,7 @@ p,
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 // Alerts

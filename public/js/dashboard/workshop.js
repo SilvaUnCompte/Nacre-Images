@@ -1,9 +1,54 @@
 const toogleButtonPage = document.getElementById("toogle-button-page");
 const pageOverview = document.getElementById("page-overview");
 const pageEdition = document.getElementById("page-edition");
+const priceList = [];
+const typesNames = {
+	0: "Groupe",
+	1: "Individuel",
+	2: "Spécial"
+}
+
+// Form
+const workshopPageName = document.getElementById("workshop-page-name");
+const workshopName = document.getElementById("workshop-name");
+const workshopUrl = document.getElementById("workshop-url");
+const workshopRegularity = document.getElementById("workshop-regularity");
+
+const workshopImageName = document.getElementById("workshop-image-name");
+const workshopImageCalendar = document.getElementById("workshop-image-calendar");
+const workshopImageAlt = document.getElementById("workshop-image-alt");
+
+const workshopBigTitle = document.getElementById("workshop-big-title");
+const workshopSmallTitle = document.getElementById("workshop-small-title");
+const workshopParagraph = document.getElementById("workshop-paragraph");
+const workshopSeoDesc = document.getElementById("workshop-seo-desc");
+
+
+window.onload = function () {
+	workshopParagraph.innerHTML = baliseToText(workshopParagraph.value);
+	getAllPrice();
+}
+
+function getAllPrice() {
+	fetch('/database/api/get-all-price.php')
+		.then(response => {
+			if (response.ok) {
+				return response.json();
+			} else {
+				new_popup(`Erreur ${response.status} lors de la récupération des prix`, "error");
+				throw new Error(`HTTP status ${response.status}`);
+			}
+		})
+		.then(data => {
+			data.forEach(price => {
+				priceList.push(price);
+			});
+		});
+}
 
 function toogleView() {
 	if (pageOverview.classList.contains("hide")) {
+		compileView();
 		pageOverview.classList.remove("hide");
 		pageEdition.classList.add("hide");
 		toogleButtonPage.innerHTML = "Édition";
@@ -31,32 +76,18 @@ function deleteWorkshop(workshopId) {
 }
 
 function updateWorkshop(workshopId) {
-	const workshopPageName = document.getElementById("workshop-page-name").value;
-	const workshopName = document.getElementById("workshop-name").value;
-	const workshopUrl = document.getElementById("workshop-url").value;
-	const workshopRegularity = document.getElementById("workshop-regularity").value;
-
-	const workshopImageName = document.getElementById("workshop-image-name").value;
-	const workshopImageCalendar = document.getElementById("workshop-image-calendar").value;
-	const workshopImageAlt = document.getElementById("workshop-image-alt").value;
-
-	const workshopBigTitle = document.getElementById("workshop-big-title").value;
-	const workshopSmallTitle = document.getElementById("workshop-small-title").value;
-	const workshopParagraph = document.getElementById("workshop-paragraph").value;
-	const workshopSeoDesc = document.getElementById("workshop-seo-desc").value;
-
 	if (
-		workshopPageName === "" ||
-		workshopName === "" ||
-		workshopUrl === "" ||
-		workshopRegularity === "" ||
-		workshopImageName === "" ||
-		workshopImageCalendar === "" ||
-		workshopImageAlt === "" ||
-		workshopBigTitle === "" ||
-		workshopSmallTitle === "" ||
-		workshopParagraph === "" ||
-		workshopSeoDesc === ""
+		workshopPageName.value === "" ||
+		workshopName.value === "" ||
+		workshopUrl.value === "" ||
+		workshopRegularity.value === "" ||
+		workshopImageName.value === "" ||
+		workshopImageCalendar.value === "" ||
+		workshopImageAlt.value === "" ||
+		workshopBigTitle.value === "" ||
+		workshopSmallTitle.value === "" ||
+		workshopParagraph.value === "" ||
+		workshopSeoDesc.value === ""
 	) {
 		new_popup("Veuillez remplir tous les champs", "error");
 		return;
@@ -70,17 +101,17 @@ function updateWorkshop(workshopId) {
 		},
 		body: new URLSearchParams({
 			id: workshopId,
-			page_name: workshopPageName,
-			name: workshopName,
-			url: workshopUrl,
-			regularity: workshopRegularity,
-			image_name: workshopImageName,
-			image_calendar: workshopImageCalendar,
-			image_alt: workshopImageAlt,
-			big_title: workshopBigTitle,
-			small_title: workshopSmallTitle,
-			paragraph: workshopParagraph,
-			seo_desc: workshopSeoDesc
+			page_name: workshopPageName.value,
+			name: workshopName.value,
+			url: workshopUrl.value,
+			regularity: workshopRegularity.value,
+			image_name: workshopImageName.value,
+			image_calendar: workshopImageCalendar.value,
+			image_alt: workshopImageAlt.value,
+			big_title: workshopBigTitle.value,
+			small_title: workshopSmallTitle.value,
+			paragraph: textToBalise(workshopParagraph.value),
+			seo_desc: workshopSeoDesc.value
 		})
 	})
 		.then(response => response.json())
@@ -98,32 +129,18 @@ function updateWorkshop(workshopId) {
 }
 
 function createWorkshop() {
-	const workshopPageName = document.getElementById("workshop-page-name").value;
-	const workshopName = document.getElementById("workshop-name").value;
-	const workshopUrl = document.getElementById("workshop-url").value;
-	const workshopRegularity = document.getElementById("workshop-regularity").value;
-
-	const workshopImageName = document.getElementById("workshop-image-name").value;
-	const workshopImageCalendar = document.getElementById("workshop-image-calendar").value;
-	const workshopImageAlt = document.getElementById("workshop-image-alt").value;
-
-	const workshopBigTitle = document.getElementById("workshop-big-title").value;
-	const workshopSmallTitle = document.getElementById("workshop-small-title").value;
-	const workshopParagraph = document.getElementById("workshop-paragraph").value;
-	const workshopSeoDesc = document.getElementById("workshop-seo-desc").value;
-
 	if (
-		workshopPageName === "" ||
-		workshopName === "" ||
-		workshopUrl === "" ||
-		workshopRegularity === "" ||
-		workshopImageName === "" ||
-		workshopImageCalendar === "" ||
-		workshopImageAlt === "" ||
-		workshopBigTitle === "" ||
-		workshopSmallTitle === "" ||
-		workshopParagraph === "" ||
-		workshopSeoDesc === ""
+		workshopPageName.value === "" ||
+		workshopName.value === "" ||
+		workshopUrl.value === "" ||
+		workshopRegularity.value === "" ||
+		workshopImageName.value === "" ||
+		workshopImageCalendar.value === "" ||
+		workshopImageAlt.value === "" ||
+		workshopBigTitle.value === "" ||
+		workshopSmallTitle.value === "" ||
+		workshopParagraph.value === "" ||
+		workshopSeoDesc.value === ""
 	) {
 		new_popup("Veuillez remplir tous les champs", "error");
 		return;
@@ -136,17 +153,17 @@ function createWorkshop() {
 			'Content-Type': 'application/x-www-form-urlencoded'
 		},
 		body: new URLSearchParams({
-			page_name: workshopPageName,
-			name: workshopName,
-			url: workshopUrl,
-			regularity: workshopRegularity,
-			image_name: workshopImageName,
-			image_calendar: workshopImageCalendar,
-			image_alt: workshopImageAlt,
-			big_title: workshopBigTitle,
-			small_title: workshopSmallTitle,
-			paragraph: workshopParagraph,
-			seo_desc: workshopSeoDesc
+			page_name: workshopPageName.value,
+			name: workshopName.value,
+			url: workshopUrl.value,
+			regularity: workshopRegularity.value,
+			image_name: workshopImageName.value,
+			image_calendar: workshopImageCalendar.value,
+			image_alt: workshopImageAlt.value,
+			big_title: workshopBigTitle.value,
+			small_title: workshopSmallTitle.value,
+			paragraph: textToBalise(workshopParagraph.value),
+			seo_desc: workshopSeoDesc.value
 		})
 	})
 		.then(response => response.json())
@@ -176,4 +193,63 @@ function backToList(message) {
 	form.appendChild(input);
 	document.body.appendChild(form);
 	form.submit();
+}
+
+function compileView() {
+	const paragraph = textifyPrice(workshopParagraph.value);
+
+	const html = `<div id="title-container">
+						<h1 class="big-h1">${workshopBigTitle.value}</h1>
+						<hr><br>
+					</div>
+					<div class="inline-container container">
+						<img src="/assets/images/topics/${workshopImageName.value}" alt=${workshopImageAlt.value}>
+						<div>
+							<h2 class="big-h2">
+								${workshopSmallTitle.value}
+							</h2>
+
+							<p class="paragraph">
+								${textToBalise(paragraph)}
+							</p>
+						</div>
+					</div>`;
+
+	pageOverview.innerHTML = html;
+}
+
+function baliseToText(baliseString) {
+	const textString = baliseString
+		.replace(/<br\s*\/?>/gi, "\n")
+		.replace(/<span style="font-weight: bold;">(.*?)<\/span>/gi, "**$1**")
+		.replace(/<span style="font-style: italic;">(.*?)<\/span>/gi, "*$1*")
+		.replace(/<span style="text-decoration: underline;">(.*?)<\/span>/gi, "__$1__")
+
+	return textString;
+}
+
+function textToBalise(text) {
+	const baliseString = text
+		.replace(/\*\*(.*?)\*\*/g, '<span style="font-weight: bold;">$1</span>')
+		.replace(/\*(.*?)\*/g, '<span style="font-style: italic;">$1</span>')
+		.replace(/__(.*?)__/g, '<span style="text-decoration: underline;">$1</span>')
+		.replace(/\n/g, "<br>");
+
+	return baliseString;
+}
+
+function textifyPrice(text) {
+	const result = text.replace(/\{(\d+(\+|\_|\*))\}/g, (match, id) => {
+		const price = priceList.find(price => price.id == id.slice(0, -1));
+
+		if (id.endsWith('*')) {
+			return price ? `${price.price} €` : match;
+		} else if (id.endsWith('_')) {
+			return price ? `${price.label}` : match;
+		} else if (id.endsWith('+')) {
+			return price ? `${typesNames[price.type]}` : match;
+		}
+	});
+
+	return result;
 }

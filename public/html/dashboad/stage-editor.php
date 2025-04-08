@@ -66,6 +66,33 @@
                     <label for="workshop-image-alt" class="form-label">Alt des images</label>
                     <input type="text" id="workshop-image-alt" class="form-input" value="<?php echo $edition ? $workshop_type->getImgAlt() : ''; ?>" placeholder="une patate">
                 </div>
+                <h4>Code pour la descrition :</h4>
+                <div class="inline-container">
+                    <p class="left-text">
+                        **Text**<br>
+                        *Text*<br>
+                        __Text__<br>
+                        {1*}<br>
+                        {1_}<br>
+                        {1+}<br>
+                    </p>
+                    <p>
+                        => <br>
+                        => <br>
+                        => <br>
+                        => <br>
+                        => <br>
+                        => <br>
+                    </p>
+                    <p class="right-text">
+                        <span style="font-weight: bold;">Text</span><br>
+                        <span style="font-style: italic;">Text</span><br>
+                        <span style="text-decoration: underline;">Text</span><br>
+                        Prix €<br>
+                        Label<br>
+                        Type<br>
+                    </p>
+                </div>
             </div>
             <!-- Text -->
             <div>
@@ -92,7 +119,7 @@
     </section>
 
     <!-- Résultat overview -->
-    <section id="page-overview" class="display-block hide">
+    <section id="page-overview" class="main-section hide">
 
     </section>
 </main>
@@ -100,3 +127,4 @@
 <script src="/public/js/popup.js" type="text/javascript"></script>
 <script src="/public/js/dashboard/workshop.js"></script>
 <link rel="stylesheet" href="/public/styles/popup/popup.css">
+<link rel="stylesheet" href="/public/styles/pages/special-topics/special-topics.css">
