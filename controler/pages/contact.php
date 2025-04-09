@@ -16,8 +16,6 @@ $paragraph = 'Gilles Quesnot :<br>
                 tâche généralement de répondre très vite. Ne cherchez pas ma boutique, afin de garantir 
                 les tarifs les plus abordables, je travaille exclusivement "sur le terrain".';
 
-$contact_button = false;
-
 include($_SERVER['DOCUMENT_ROOT'] . "/public/html/helpers/header.php");
 include($_SERVER['DOCUMENT_ROOT'] . "/public/html/topic.php");
 include($_SERVER['DOCUMENT_ROOT'] . "/public/html/helpers/footer.html");

@@ -1,15 +1,12 @@
 <link rel="stylesheet" href="/public/styles/pages/calendar/calendar.css">
 
-<br><br>
+<div class="particle particle-1"></div>
+<div class="particle particle-2"></div>
+<div class="particle particle-3"></div>
+<div class="particle particle-4"></div>
 
 <main class="container">
-    <h1 class="big-h1">Calendrier des stages</h1>
-
-    <div class="particle particle-1"></div>
-    <div class="particle particle-2"></div>
-    <div class="particle particle-3"></div>
-    <div class="particle particle-4"></div>
-
+    <br>
 
     <div class="calendar">
         <?php
@@ -37,7 +34,7 @@
                     </div>
 
                     <div class="courses">';
-                
+
                 $monthYear = $newMonthYear;
             }
 
