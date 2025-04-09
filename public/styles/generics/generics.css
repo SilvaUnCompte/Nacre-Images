@@ -1,7 +1,11 @@
-html,
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
   width: 100vw;
 }
 html p,
@@ -14,6 +18,7 @@ header {
 }
 
 body {
+  margin-top: 55px;
   overflow-x: hidden;
   overflow-y: scroll;
   position: relative;

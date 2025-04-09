@@ -43,6 +43,7 @@ body {
     background-repeat: no-repeat;
     transition: background-image 0.7s ease-in-out;
     background-position: center center;
+    margin: 0 !important;
 
     &::before {
         // Add a pseudo-element to create the overlay effect on the background image

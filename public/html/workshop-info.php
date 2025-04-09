@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap">
 
 <main id="workshop-info">
-
     <div id="workshop-container">
 
         <?php

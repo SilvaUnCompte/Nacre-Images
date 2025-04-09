@@ -7,10 +7,14 @@ $mid-dark-gray: #19191a;
 $dark-gray: #1b1d20;
 $background-color: linear-gradient(135deg, #18181f, #111627);
 
-html,
-body {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
     width: 100vw;
 
     p {
@@ -23,6 +27,7 @@ header {
 }
 
 body {
+    margin-top: $header-height;
     overflow-x: hidden;
     overflow-y: scroll;
     position: relative;

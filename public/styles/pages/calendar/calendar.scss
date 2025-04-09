@@ -143,14 +143,6 @@ $container-width: 1000px;
     }
 }
 
-
-// Reset and base styles
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .container {
     font-family: $font-family-base;
     max-width: $container-width;

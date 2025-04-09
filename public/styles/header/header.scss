@@ -1,8 +1,9 @@
 @use "sass:math";
+@import url('/public/styles/header/second-header.css');
 
 $margin-left: 175px;
 $header-height: 55px;
-$header-height-phone: 6vh;
+$header-height-phone: 55px;
 
 $light-gray: #f5f5f5;
 $mid-gray: #2f3238;

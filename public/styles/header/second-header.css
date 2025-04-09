@@ -1,0 +1,41 @@
+.second-header {
+  height: 280px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(58, 123, 213, 0.1) 0%, rgba(33, 33, 33, 0.9) 100%);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+}
+.second-header .header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+.second-header .header-content .second-header-h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.second-header .header-content .second-header-h1 span {
+  color: #3a7bd5;
+  font-weight: 600;
+}
+.second-header .header-content .intro {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #b3b3b3;
+}
+
+@media (max-width: 768px) {
+  .second-header-h1 {
+    font-size: 2rem !important;
+  }
+}/*# sourceMappingURL=second-header.css.map */

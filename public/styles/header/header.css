@@ -1,3 +1,4 @@
+@import url("/public/styles/header/second-header.css");
 #dark {
   position: fixed;
   top: 0;
@@ -75,7 +76,7 @@ header #first-header ul li a:hover {
   left: 0;
   margin: 0;
   padding: 0;
-  padding-top: 6vh;
+  padding-top: 55px;
   transition: all 0.3s ease-in-out;
 }
 #side-menu .corner {
@@ -83,7 +84,7 @@ header #first-header ul li a:hover {
   position: absolute;
   top: 0;
   width: 175px;
-  height: 6vh;
+  height: 55px;
 }
 #side-menu a {
   color: #fff;
@@ -119,7 +120,7 @@ footer {
     left: -175px;
   }
   header {
-    height: 6vh !important;
+    height: 55px !important;
   }
   header #first-header {
     display: flex;
