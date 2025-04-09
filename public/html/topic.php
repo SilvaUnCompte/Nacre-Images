@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="/public/styles/pages/topics/topics.css">
 
 <main class="main-section">
-
     <div id="title-container">
         <h1 class="big-h1"><?php echo $topic ?></h1>
         <hr><br>
@@ -18,7 +17,3 @@
             </p>
         </div>
     </div>
-
-    <?php $contact_button ? include($_SERVER['DOCUMENT_ROOT'] . "/public/html/contact-button.php") : ""; ?>
-
-</main>

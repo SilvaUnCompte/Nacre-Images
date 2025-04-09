@@ -58,6 +58,17 @@ class WorkshopType
         return $result;
     }
 
+    static public function getNextSession($type)
+    {
+        global $db;
+
+        $query = $db->prepare('SELECT * FROM workshop_session WHERE type = :type AND date > NOW() ORDER BY date ASC LIMIT 10');
+        $query->execute(['type' => $type]);
+        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
+    }
+
     public function update()
     {
         global $db;
