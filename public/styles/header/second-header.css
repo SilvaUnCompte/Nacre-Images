@@ -28,6 +28,7 @@
   font-weight: 600;
 }
 .second-header .header-content .intro {
+  width: 80%;
   max-width: 800px;
   margin: 0 auto;
   font-size: 1.1rem;

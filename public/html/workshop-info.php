@@ -37,8 +37,6 @@
             echo '</section>';
         }
         ?>
-
-        <!-- TODO: mettre la bulle n'hésitez pas à demander -->
     </div>
 
     <a class="bubble-text-container transparent" href="/contact">

@@ -1,0 +1,136 @@
+$bg-primary: #121212;
+$bg-secondary: #1e1e1e;
+$text-primary: #f5f5f5;
+$text-secondary: #b3b3b3;
+$accent: #3a7bd5;
+$accent-light: rgb(119, 174, 247);
+$card-bg: #1e263a;
+$border-radius: 8px;
+$transition: all 0.3s ease;
+
+section {
+    padding: 60px 0;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+
+            h2 {
+                font-size: 2rem;
+                font-weight: 400;
+                display: inline-block;
+                padding-bottom: 10px;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 60px;
+                    height: 3px;
+                    background-color: $accent;
+                }
+            }
+        }
+
+        h3 {
+            margin-top: 30px;
+            text-align: center;
+            color: $accent;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+
+            .service-card {
+                background-color: $card-bg;
+                border-radius: $border-radius;
+                overflow: hidden;
+                transition: $transition;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+                &:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                }
+
+                .service-content {
+                    padding: 25px;
+
+                    .service-title {
+                        font-size: 1.3rem;
+                        margin-bottom: 15px;
+                        color: $accent-light;
+                    }
+
+                    .service-description {
+                        color: $text-secondary;
+                        margin-bottom: 15px;
+                    }
+
+                    .service-price {
+                        font-weight: 600;
+                        margin: 10px 0;
+                        color: $text-primary;
+                    }
+                    
+                    .link {
+                        color: $accent;
+                        text-decoration: none;
+                        transition: $transition;
+
+                        &:hover {
+                            color: $accent-light;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.other-services {
+    background-color: $bg-secondary;
+    padding: 60px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 40px 0;
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+}
+
+.info {
+    color: $text-secondary;
+    text-align: center;
+    margin-top: 40px;
+}

@@ -47,6 +47,9 @@
 .month-section:nth-child(even) .course-content {
   flex-direction: row-reverse;
 }
+.month-section:nth-child(even) .course-content .course-title {
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.644);
+}
 
 .month-header {
   display: flex;
