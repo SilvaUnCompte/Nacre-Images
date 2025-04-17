@@ -59,19 +59,19 @@ class services
         return $result;
     }
 
-    public function updateById($id, $label, $desc, $price, $link, $url, $page_part)
+    public function update()
     {
         global $db;
-        
-        $query = $db->prepare('UPDATE services SET label = :label, desc = :desc, price = :price, link = :link, url = :url, page_part = :page_part WHERE id = :id');
+
+        $query = $db->prepare('UPDATE services SET label = :label, `desc` = :desc, price = :price, link = :link, `url` = :url, page_part = :page_part WHERE id = :id');
         $query->execute([
-            'id' => $id,
-            'label' => $label,
-            'desc' => $desc,
-            'price' => $price,
-            'link' => $link,
-            'url' => $url,
-            'page_part' => $page_part
+            'id' => $this->id,
+            'label' => $this->label,
+            'desc' => $this->desc,
+            'price' => $this->price,
+            'link' => $this->link,
+            'url' => $this->url,
+            'page_part' => $this->page_part
         ]);
     }
     
@@ -82,7 +82,7 @@ class services
         $query = $db->prepare('DELETE FROM services WHERE id = :id');
         $query->execute(['id' => $this->id]);
     }
-    public function deleteById($id)
+    public static function deleteById($id)
     {
         global $db;
 
@@ -94,7 +94,7 @@ class services
     {
         global $db;
         
-        $query = $db->prepare('INSERT INTO services (label, desc, price, link, url, page_part) VALUES (:label, :desc, :price, :link, :url, :page_part)');
+        $query = $db->prepare('INSERT INTO services (label, `desc`, price, link, `url`, page_part) VALUES (:label, :desc, :price, :link, :url, :page_part)');
         $query->execute([
             'label' => $label,
             'desc' => $desc,
@@ -129,6 +129,10 @@ class services
     {
         return $this->url;
     }
+    public function getPagePart()
+    {
+        return $this->page_part;
+    }
     public function setLabel($label)
     {
         $this->label = $label;
@@ -148,5 +152,9 @@ class services
     public function setUrl($url)
     {
         $this->url = $url;
+    }
+    public function setPagePart($page_part)
+    {
+        $this->page_part = $page_part;
     }
 }

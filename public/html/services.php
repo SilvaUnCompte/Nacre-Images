@@ -12,11 +12,11 @@
             foreach ($services_section_0 as $service) {
                 echo '<div class="service-card">
                         <div class="service-content">
-                            <h4 class="service-title">' . $service['label'] . '</h4>
+                            <p class="service-title">' . $service['label'] . '</p>
                             <p class="service-description">' . $service['desc'] . '</p>
-                            <p class="service-price">' . $service['price'] . '</p>
-                            <a target="_blank" href="' . $service['url'] . '" class="link">' . $service['link'] . '</a>
-                        </div>
+                            <p class="service-price">' . $service['price'] . '</p>' .
+                    (($service['link'] != '' && $service['link'] != null) ? ('<a target="_blank" href="' . $service['url'] . '" class="link">' . $service['link'] . '</a>') : '') .
+                    '</div>
                     </div>';
             }
             ?>
@@ -31,11 +31,11 @@
             foreach ($services_section_1 as $service) {
                 echo '<div class="service-card">
                         <div class="service-content">
-                            <h4 class="service-title">' . $service['label'] . '</h4>
+                            <p class="service-title">' . $service['label'] . '</p>
                             <p class="service-description">' . $service['desc'] . '</p>
-                            <p class="service-price">' . $service['price'] . '</p>
-                            <a target="_blank" href="' . $service['url'] . '" class="link">' . $service['link'] . '</a>
-                        </div>
+                            <p class="service-price">' . $service['price'] . '</p>' .
+                    (($service['link'] != '' && $service['link'] != null) ? ('<a target="_blank" href="' . $service['url'] . '" class="link">' . $service['link'] . '</a>') : '') .
+                    '</div>
                     </div>';
             }
             ?>
@@ -54,11 +54,11 @@
             foreach ($services_section_2 as $service) {
                 echo '<div class="service-card">
                         <div class="service-content">
-                            <h4 class="service-title">' . $service['label'] . '</h4>
+                            <p class="service-title">' . $service['label'] . '</p>
                             <p class="service-description">' . $service['desc'] . '</p>
-                            <p class="service-price">' . $service['price'] . '</p>
-                            <a target="_blank" href="' . $service['url'] . '" class="link">' . $service['link'] . '</a>
-                        </div>
+                            <p class="service-price">' . $service['price'] . '</p>' .
+                    (($service['link'] != '' && $service['link'] != null) ? ('<a target="_blank" href="' . $service['url'] . '" class="link">' . $service['link'] . '</a>') : '') .
+                    '</div>
                     </div>';
             }
             ?>
