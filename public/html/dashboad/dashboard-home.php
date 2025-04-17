@@ -79,7 +79,7 @@
                         <div class="alert-icon">!</div>
                         <div class="alert-content">
                             <h4 class="alert-title">Warning</h4>
-                            <p class="alert-message">Aucune question d\'entregistrée</p>
+                            <p class="alert-message">Aucune question entregistrée</p>
                         </div>
                     </div>';
             } else {
@@ -215,7 +215,43 @@
         <a class="display-block" href="/dashboard/prestations">
             <h1 class="title-lg">Liste des prestations</h1>
 
+            <?php
+            if (count($all_service) == 0) {
+                echo '<div class="alert alert-warning">
+                        <div class="alert-icon">!</div>
+                        <div class="alert-content">
+                            <h4 class="alert-title">Warning</h4>
+                            <p class="alert-message">Aucune prestation trouvé</p>
+                        </div>
+                    </div>';
+            } else {
+                echo '<div class="alert alert-info">
+                    <div class="alert-icon">!</div>
+                    <div class="alert-content">
+                        <h4 class="alert-title">Info</h4>
+                        <p class="alert-message">' . count($all_service) . ' prestations</p>
+                    </div>
+                </div>';
 
+                echo '<table>
+                        <thead>
+                            <tr>
+                                <th class="text-regular">Label</th>
+                                <th class="text-regular">Description</th>
+                                <th class="text-regular">Prix</th>
+                            </tr>
+                        </thead><tbody>';
+
+                foreach ($all_service as $service) {
+                    echo '<tr>
+                            <td class="text-regular">' . $service['label'] . '</td>
+                            <td class="text-regular">' . $service['desc'] . '</td>
+                            <td class="text-regular">' . $service['price'] . '</td>
+                        </tr>';
+                }
+                echo '</tbody></table>';
+            }
+            ?>
         </a>
     </section>
 </main>

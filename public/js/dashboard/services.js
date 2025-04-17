@@ -36,7 +36,7 @@ function createServiceRows(data) {
                             <div class="alert-icon">!</div>
                             <div class="alert-content">
                                 <h4 class="alert-title">Info</h4>
-                                <p class="alert-message">` + data.length + ` services trouvées</p>
+                                <p class="alert-message">` + data.length + ` prestations trouvées</p>
                             </div>
                         </div>`;
 
