@@ -40,7 +40,7 @@ function createTarifRows(data) {
                             </div>
                         </div>`;
 
-        prices_data += `<table><thead>
+        prices_data += `<table class="table table-striped"><thead>
                         <tr>
                             <th class="text-regular">Id</th>
                             <th class="text-regular">Type</th>
@@ -54,7 +54,7 @@ function createTarifRows(data) {
         data.forEach(price => {
             prices_data += `<tr>
                                 <td class="text-regular">${price.id}</td>
-                                <td class="text-regular">${price.type == 0 ? 'Groupe' : price.type == 1 ? 'Individuel' : 'Spécial'}</td>
+                                <td class="text-regular">${typesNames[price.type]}</td>
                                 <td class="text-regular"><input type="text" id="label-input" class="form-input" placeholder="Label" value="${price.label}"></td>
                                 <td class="text-regular"><input type="text" id="description-input" class="form-input" placeholder="Description" value="${price.description}"></td>
                                 <td class="text-regular"><input type="text" id="price-input" class="form-number" placeholder="42" value="${price.price}"></td>

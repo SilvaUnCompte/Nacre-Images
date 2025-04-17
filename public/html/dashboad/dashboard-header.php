@@ -21,7 +21,7 @@
                 <li><a href="/dashboard/tarifs">TARIFS</a></li>
                 <li><a href="/dashboard/faq">FAQ</a></li>
                 <li><a href="/dashboard/liste-des-stages">STAGES</a></li>
-                <li><a href="/dashboard/liste-des-prestations">PRESTATIONS</a></li>
+                <li><a href="/dashboard/prestations">PRESTATIONS</a></li>
             </ul>
         </nav>
         <div class="inline-container">

@@ -37,7 +37,7 @@ function createSessionCards(data) {
                             </div>
                         </div>`;
 
-        calendar_data += `<table  class="table table-striped"><thead>
+        calendar_data += `<table class="table table-striped"><thead>
                         <tr>
                             <th class="text-regular">Date</th>
                             <th class="text-regular">Type</th>

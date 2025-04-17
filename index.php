@@ -88,7 +88,7 @@ switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topi
         break;
 
     case '/dashboard/prestations':
-        require __DIR__ . '/controler/dashboard/prestations.php';
+        require __DIR__ . '/controler/dashboard/services.php';
         break;
 
     default:
