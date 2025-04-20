@@ -19,7 +19,7 @@ $price_types_name = [
 
 $page_name = $workshop_type->getPageName();
 $description = $workshop_type->getSeoDesc();
-$image = '/assets/images/topics/' . $workshop_type->getImgName();
+$image = '/assets/images/illustrations/' . $workshop_type->getImgName();
 $alt_image = $workshop_type->getImgAlt();
 $topic = $workshop_type->getBigTitle();
 $title = $workshop_type->getSmallTitle();
