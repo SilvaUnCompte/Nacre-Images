@@ -1,7 +1,7 @@
 const carouselTrack = document.querySelector('.carousel-track');
 const nextButton = document.querySelector('.carousel-button-next');
 const prevButton = document.querySelector('.carousel-button-prev');
-const imageDirectory = 'carousel-studio'; // Path to the image directory
+const imageDirectory = document.getElementById('image-directory').innerHTML; // Get the image directory from a hidden input field
 
 
 document.addEventListener('DOMContentLoaded', function () {

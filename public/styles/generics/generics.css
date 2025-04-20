@@ -27,6 +27,10 @@ body {
   min-height: 100vh;
 }
 
+.hide {
+  display: none !important;
+}
+
 .scroll-trigger {
   opacity: 0;
   transition: all 0.5s;
@@ -86,7 +90,8 @@ a:hover {
   margin-top: 0;
 }
 
-h1, .big-h2 {
+h1,
+.big-h2 {
   margin-bottom: 25px;
   font-size: 1.7em;
   font-weight: bold;
