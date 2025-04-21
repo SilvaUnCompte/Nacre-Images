@@ -34,13 +34,13 @@
                 <div class="price">190€</div>
                 <div class="additional-info">
                     <p>Si vous souhaitez, en plus, des photos des deux personnes ensemble : +70€</p>
-                    <p>En gros, au forfait solo, il suffit d'ajouter 70€ par "sujet" pris en photos...clair non?</p>
+                    <p>En gros, au forfait solo, il suffit d'ajouter 70€ par "groupe/personne" pris en photos... clair non?</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="image-directory" class="hide"><?php echo $carousel_img_dir; ?></div>
+    <div id="image-directory" class="hide"><?php echo $carrousel_img_dir; ?></div>
     <?php include($_SERVER['DOCUMENT_ROOT'] . "/public/html/carrousel.php"); ?>
 
     <div class="contact-section">

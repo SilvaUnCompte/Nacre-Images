@@ -1,6 +1,6 @@
-const carouselTrack = document.querySelector('.carousel-track');
-const nextButton = document.querySelector('.carousel-button-next');
-const prevButton = document.querySelector('.carousel-button-prev');
+const carrouselTrack = document.querySelector('.carrousel-track');
+const nextButton = document.querySelector('.carrousel-button-next');
+const prevButton = document.querySelector('.carrousel-button-prev');
 const imageDirectory = document.getElementById('image-directory').innerHTML; // Get the image directory from a hidden input field
 
 
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(data => {
             createImageCard(data);
-            initCarousel();
+            initCarrousel();
         })
         .catch(error => {
             console.error('There has been a problem with your fetch operation:', error);
@@ -25,14 +25,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function createImageCard(data) {
     for (const [key, value] of Object.entries(data)) {
-        carouselTrack.innerHTML += `<div class="carousel-slide">
-                                        <img src="/assets/images/${imageDirectory}/${value}" alt="Carousel Image ${key}" loading="lazy" class="carousel-image">
+        carrouselTrack.innerHTML += `<div class="carrousel-slide">
+                                        <img src="/assets/images/${imageDirectory}/${value}" alt="Carrousel Image ${key}" loading="lazy" class="carrousel-image">
                                     </div>`;
     }
 }
 
-function initCarousel() {
-    const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+function initCarrousel() {
+    const slides = Array.from(document.querySelectorAll('.carrousel-slide'));
     const totalSlides = slides.length;
     let currentIndex = 1; // Start with the third slide (index 2) as active
 
@@ -41,7 +41,7 @@ function initCarousel() {
     let autoplayTimeout = null;
 
     // Set initial position
-    updateCarousel();
+    updateCarrousel();
 
     // Event listeners for buttons
     nextButton.addEventListener('click', () => {
@@ -51,7 +51,7 @@ function initCarousel() {
         } else {
             currentIndex = 0;
         }
-        updateCarousel();
+        updateCarrousel();
     });
 
     prevButton.addEventListener('click', () => {
@@ -61,15 +61,15 @@ function initCarousel() {
         } else {
             currentIndex = totalSlides - 1;
         }
-        updateCarousel();
+        updateCarrousel();
     });
 
-    // Update carousel position and active slide
-    function updateCarousel() {
+    // Update carrousel position and active slide
+    function updateCarrousel() {
         // Calculate the transform to center the active slide
         const slideWidth = 33.333; // Width of each slide in percentage
         const offset = slideWidth * (currentIndex - 1); // Offset to center the active slide
-        carouselTrack.style.transform = `translateX(-${offset}%)`;
+        carrouselTrack.style.transform = currentIndex == 0 ? `translateX(${slideWidth}%)` : `translateX(-${offset}%)`;
 
         // Update active class
         slides.forEach((slide, index) => {
@@ -85,11 +85,11 @@ function initCarousel() {
     let touchStartX = 0;
     let touchEndX = 0;
 
-    carouselTrack.addEventListener('touchstart', (e) => {
+    carrouselTrack.addEventListener('touchstart', (e) => {
         touchStartX = e.changedTouches[0].screenX;
     });
 
-    carouselTrack.addEventListener('touchend', (e) => {
+    carrouselTrack.addEventListener('touchend', (e) => {
         touchEndX = e.changedTouches[0].screenX;
         handleSwipe();
     });
@@ -104,7 +104,7 @@ function initCarousel() {
             } else {
                 currentIndex = 0;
             }
-            updateCarousel();
+            updateCarrousel();
         } else if (touchEndX > touchStartX + swipeThreshold) {
             // Swipe right - go to previous slide
             if (currentIndex > 0) {
@@ -112,7 +112,7 @@ function initCarousel() {
             } else {
                 currentIndex = totalSlides - 1;
             }
-            updateCarousel();
+            updateCarrousel();
         }
     }
 
@@ -127,7 +127,7 @@ function initCarousel() {
             } else {
                 currentIndex = 0;
             }
-            updateCarousel();
+            updateCarrousel();
         }, 4000); // Change slide every 4 seconds
     }
 
@@ -148,6 +148,6 @@ function initCarousel() {
     startAutoplay();
 
     // Pause autoplay on hover
-    // carouselTrack.addEventListener('mouseenter', stopAutoplay);
-    // carouselTrack.addEventListener('mouseleave', startAutoplay);
+    // carrouselTrack.addEventListener('mouseenter', stopAutoplay);
+    // carrouselTrack.addEventListener('mouseleave', startAutoplay);
 }

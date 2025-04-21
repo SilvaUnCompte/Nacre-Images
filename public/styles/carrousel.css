@@ -1,4 +1,4 @@
-.carousel-container {
+.carrousel-container {
     width: 100%;
     max-width: 1200px;
     position: relative;
@@ -8,21 +8,21 @@
     padding: 40px 0;
 }
 
-.carousel-track {
+.carrousel-track {
     display: flex;
     transition: transform 0.5s ease;
     align-items: center;
     height: 400px;
 }
 
-.carousel-slide {
+.carrousel-slide {
     flex: 0 0 33.333%;
     padding: 0 15px;
     transition: all 0.5s ease;
     transform-origin: center center;
 }
 
-.carousel-slide img {
+.carrousel-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -32,22 +32,22 @@
 }
 
 /* Style for the center (active) slide */
-.carousel-slide.active {
+.carrousel-slide.active {
     transform: scale(1.3);
     z-index: 10;
 }
 
-.carousel-slide.active img {
+.carrousel-slide.active img {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* Style for the side slides */
-.carousel-slide:not(.active) {
+.carrousel-slide:not(.active) {
     opacity: 0.4;
     filter: blur(1.5px);
 }
 
-.carousel-button {
+.carrousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -66,36 +66,36 @@
     transition: all 0.3s ease;
 }
 
-.carousel-button:hover {
+.carrousel-button:hover {
     background-color: white;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
 }
 
-.carousel-button-prev {
+.carrousel-button-prev {
     left: 20px;
 }
 
-.carousel-button-next {
+.carrousel-button-next {
     right: 20px;
 }
 
 @media (max-width: 768px) {
-    .carousel-slide.active {
+    .carrousel-slide.active {
         transform: scale(1.1);
     }
 }
 
 @media (max-width: 480px) {
-    .carousel-container {
+    .carrousel-container {
         padding: 0;
         margin: 0;
     }
     
-    .carousel-slide.active {
+    .carrousel-slide.active {
         transform: scale(2);
     }
     
-    .carousel-button {
+    .carrousel-button {
         width: 40px;
         height: 40px;
         font-size: 18px;
