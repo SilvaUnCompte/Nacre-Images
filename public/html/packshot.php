@@ -1,12 +1,6 @@
 <link rel="stylesheet" href="/public/styles/pages/packshot.css">
 
 <div class="packshot-container">
-    <!-- <section class="service-description">
-        <p>Je vous propose la prise de vue de vos objets, bijoux, œuvres d'art, produits marchands etc...</p>
-        <p>Les tarifs varient en fonction du type d'objet, de l'utilisation des photos et du nombre de prises de vue à effectuer.</p>
-        <p><span class="highlight">Possibilité de fond blanc ou noir.</span> Chaque fichier est optimisé minutieusement et remis en HD.</p>
-    </section> -->
-
     <section class="pricing-section">
         <h2>Tarifs</h2>
         <p class="pricing-note">
