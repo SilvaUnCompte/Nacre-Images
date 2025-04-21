@@ -40,7 +40,6 @@
         </div>
     </div>
 
-    <div id="image-directory" class="hide"><?php echo $carrousel_img_dir; ?></div>
     <?php include($_SERVER['DOCUMENT_ROOT'] . "/public/html/carrousel.php"); ?>
 
     <div class="contact-section">

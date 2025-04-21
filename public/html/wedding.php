@@ -19,7 +19,7 @@
     <div class="wedding-container">
         <h2 class="glow">Notre Approche</h2>
         <div class="approach-content">
-            <p class="wedding-p">Profiter des services d'un professionnel vous évite d'avoir à vous soucier de cette phase importante de la journée et vous garantit la qualité des images. Pour votre satisfaction, il est primordial d'apprécier en amont le travail du photographe (visualisez mon travail ici) et de rencontrer la personne avec qui vous allez partager un ou plusieurs moments d'intimité, le feeling doit passer.</p>
+            <p class="wedding-p">Profiter des services d'un professionnel vous évite d'avoir à vous soucier de cette phase importante de la journée et vous garantit la qualité des images. Pour votre satisfaction, il est primordial d'apprécier en amont le travail du photographe <a href="#showcast">(visualisez mon travail ici)</a> et de rencontrer la personne avec qui vous allez partager un ou plusieurs moments d'intimité, le feeling doit passer.</p>
 
             <p class="wedding-p">Le résultat du reportage dépend du savoir-faire du photographe, de sa sensibilité, de sa compétence à cadrer vite et bien mais également de sa capacité à restituer l'ambiance par le traitement des fichiers. Chaque image sera retravaillée en aval afin de lui donner le rendu souhaité ... êtes vous plutôt couleurs ou noir et blanc? Préférez vous les photos posées ou sur le vif? C'est en échangeant avec moi que vous pourrez avancer vos préférences. Sachez que pour 2h de prise de vue, 6 à 8h d'editing suivent ensuite...je traite les photos une par une.</p>
 
@@ -93,3 +93,23 @@
         </div>
     </div>
 </section>
+
+
+<div id="showcast" class="wedding-container">
+    <?php include($_SERVER['DOCUMENT_ROOT'] . "/public/html/carrousel.php"); ?>
+</div>
+
+<div class="contact-section">
+    <p>Vous souhaitez une séance différente, sur mesure ou l'offrir... contactez moi !</p><br>
+
+    <a href="/contact" class="contact-button">
+        Me contacter
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+        </svg>
+    </a>
+</div>
+
+<link rel="stylesheet" href="/public/styles/generics/contact-button.css">

@@ -15,7 +15,7 @@
             echo    '<div class="question-card">';
             echo        '<h2>' . $question['question'] . '</h2>';
             echo    '</div>';
-            echo    '<p>' . $question['answer'] . '</p>';
+            echo    '<p class="answer">' . $question['answer'] . '</p>';
             echo '</div>';
         }
         ?>

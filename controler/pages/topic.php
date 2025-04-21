@@ -23,6 +23,7 @@ $image = '/assets/images/illustrations/' . $workshop_type->getImgName();
 $alt_image = $workshop_type->getImgAlt();
 $topic = $workshop_type->getBigTitle();
 $title = $workshop_type->getSmallTitle();
+$carrousel_img_dir = 'carrousel-workshop/' . $workshop_type->getUrl();
 $next_sessions = WorkshopType::getNextSession($workshop_type->getId());
 
 $paragraph = preg_replace_callback('/\{(\d+(\+|\_|\*))\}/', function ($matches) use ($price_list, $price_types_name) {
@@ -50,6 +51,19 @@ $paragraph = preg_replace_callback('/\{(\d+(\+|\_|\*))\}/', function ($matches) 
 
 include($_SERVER['DOCUMENT_ROOT'] . "/public/html/helpers/header.php");
 include($_SERVER['DOCUMENT_ROOT'] . "/public/html/topic.php");
+
+
+$checkdir = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/' . $carrousel_img_dir;
+if (is_dir($checkdir)) {
+    $images = array_diff(scandir($checkdir), ['..', '.']);
+
+    if (!empty($images)) {
+        echo '<h2 class="title-photo-example">Photo qu\'on pourrait faire</h2>';
+    }
+}
+include($_SERVER['DOCUMENT_ROOT'] . "/public/html/carrousel.php");
+
+
 include($_SERVER['DOCUMENT_ROOT'] . "/public/html/next-session.php");
 include($_SERVER['DOCUMENT_ROOT'] . "/public/html/contact-button.php");
 echo '</main>';

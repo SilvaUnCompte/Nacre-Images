@@ -29,10 +29,11 @@ html {
   font-size: 1.3em;
   color: white;
 }
-#faq #faq-container .faq-card p {
+#faq #faq-container .faq-card .answer {
   font-size: 1.1em;
   text-align: justify;
   color: #8d8d8d;
+  margin-top: 5px;
 }
 
 @media all and (max-width: 1000px) {

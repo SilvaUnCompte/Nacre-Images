@@ -1,35 +1,8 @@
 const carrouselTrack = document.querySelector('.carrousel-track');
 const nextButton = document.querySelector('.carrousel-button-next');
 const prevButton = document.querySelector('.carrousel-button-prev');
-const imageDirectory = document.getElementById('image-directory').innerHTML; // Get the image directory from a hidden input field
 
-
-document.addEventListener('DOMContentLoaded', function () {
-
-    fetch(`/database/api/image-dir.php?path=${imageDirectory}`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            createImageCard(data);
-            initCarrousel();
-        })
-        .catch(error => {
-            console.error('There has been a problem with your fetch operation:', error);
-        });
-
-});
-
-function createImageCard(data) {
-    for (const [key, value] of Object.entries(data)) {
-        carrouselTrack.innerHTML += `<div class="carrousel-slide">
-                                        <img src="/assets/images/${imageDirectory}/${value}" alt="Carrousel Image ${key}" loading="lazy" class="carrousel-image">
-                                    </div>`;
-    }
-}
+document.addEventListener('DOMContentLoaded', initCarrousel);
 
 function initCarrousel() {
     const slides = Array.from(document.querySelectorAll('.carrousel-slide'));
