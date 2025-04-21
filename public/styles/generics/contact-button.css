@@ -72,9 +72,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .contact-section {
-    width: 75%;
-  }
   .contact-section .contact-button {
     margin: 10px;
   }

@@ -46,6 +46,10 @@ switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topi
         require __DIR__ . '/controler/pages/studio.php';
         break;
 
+    case '/packshot':
+        require __DIR__ . '/controler/pages/packshot.php';
+        break;
+
     case '/mentions-legals':
     case '/mentionslegales.htm':
         require __DIR__ . '/controler/pages/legal-notice.php';

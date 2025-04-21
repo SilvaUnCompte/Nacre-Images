@@ -203,7 +203,7 @@ function compileView() {
 						<hr><br>
 					</div>
 					<div class="inline-container container">
-						<img src="/assets/images/topics/${workshopImageName.value}" alt=${workshopImageAlt.value}>
+						<img src="/assets/images/illustrations/${workshopImageName.value}" alt=${workshopImageAlt.value}>
 						<div>
 							<h2 class="big-h2">
 								${workshopSmallTitle.value}

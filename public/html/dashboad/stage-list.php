@@ -55,7 +55,7 @@
             foreach ($workshopTypes_0 as $topics) {
                 echo '<a class="workshop-card" href="liste-des-stages/edit?id=' . $topics['id'] . '">
                         <div class="workshop-card-container">
-                            <img class="workshop-image" loading="lazy" alt="' . $topics["img_alt"] . '" src=\'/assets/images/topics/' . $topics["img_name"] . '\')">
+                            <img class="workshop-image" loading="lazy" alt="' . $topics["img_alt"] . '" src=\'/assets/images/illustrations/' . $topics["img_name"] . '\')">
                             <div class="overlay"></div>
                             <p class="text-over">' . $topics["topic_name"] . '</p>
                         </div>

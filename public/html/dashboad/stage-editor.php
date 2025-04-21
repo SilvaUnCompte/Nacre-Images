@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="/public/styles/pages/workshop-info/workshop-info.css">
-<link rel="stylesheet" href="/public/styles/generics/bubble-text.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap">
 
 <main id="workshop-info">
@@ -127,4 +126,4 @@
 <script src="/public/js/popup.js" type="text/javascript"></script>
 <script src="/public/js/dashboard/workshop.js"></script>
 <link rel="stylesheet" href="/public/styles/popup/popup.css">
-<link rel="stylesheet" href="/public/styles/pages/special-topics/special-topics.css">
+<link rel="stylesheet" href="/public/styles/pages/topics/topics.css">

@@ -39,7 +39,7 @@
             }
 
             echo '<a class="course" href="/stage/' . $workshopType['url'] . '">
-                    <img class="course-bg" src=\'assets/images/topics/' . $workshopType["img_name"] . '\' alt="' . $workshopType["topic_name"] . '" loading="lazy">
+                    <img class="course-bg" src=\'assets/images/illustrations/' . $workshopType["img_name"] . '\' alt="' . $workshopType["topic_name"] . '" loading="lazy">
                     <div class="course-overlay"></div>
                     <div class="course-gradient"></div>
                     <div class="course-content">
