@@ -1,0 +1,192 @@
+:root {
+    --background: linear-gradient(135deg, #18181f, #111627);
+    --card-bg: rgba(30, 30, 45, 0.7);
+    --card-hover: rgba(40, 40, 60, 0.8);
+    --text-color: #e6e6e6;
+    --light-text: #b0b0b0;
+    --accent-color: #a67db8;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+body {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--background);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.wedding-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.wedding-header {
+    background: linear-gradient(rgba(20, 20, 35, 0.7), rgba(20, 20, 35, 0.7)), 
+                url('/placeholder.svg?height=800&width=1200') center/cover no-repeat;
+    padding: 100px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+    color: white;
+    text-shadow: 0 2px 10px var(--shadow-color);
+}
+
+.tagline {
+    font-size: 1.5rem;
+    color: var(--light-text);
+    font-style: italic;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 5px var(--shadow-color);
+}
+
+/* Sections */
+section {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 400;
+    color: white;
+    text-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.wedding-p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* Philosophy section */
+.philosophy {
+    background-color: rgba(25, 25, 40, 0.5);
+    padding: 80px 0;
+}
+
+.philosophy-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Approach section */
+.approach-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Pricing section */
+.pricing {
+    background-color: rgba(25, 25, 40, 0.3);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.price-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.price-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--shadow-color);
+    background-color: var(--card-hover);
+}
+
+.price-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: white;
+}
+
+.price {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+/* Packages section */
+.packages {
+    background-color: rgba(25, 25, 40, 0.2);
+}
+
+.package-item {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.package-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--shadow-color);
+    background-color: var(--card-hover);
+}
+
+.package-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    color: white;
+}
+
+/* Deliverables section */
+.deliverables-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Glow effects */
+.glow {
+    text-shadow: 0 0 10px rgba(166, 125, 184, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    section {
+        padding: 40px 0;
+    }
+    
+    .wedding-header {
+        padding: 60px 0;
+    }
+}

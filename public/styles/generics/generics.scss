@@ -62,6 +62,10 @@ body {
     align-items: center;
 }
 
+.inv-inline {
+    flex-direction: row-reverse;
+}
+
 .transparent {
     opacity: 0.6;
     transition: opacity 0.3s;
