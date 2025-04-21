@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /dashboard/
+
+Sitemap: https://www.stages-photos-nacre-images.fr/sitemap.xml

@@ -1,6 +1,0 @@
-User-agent: *
-Disallow: /dashboad*
-
-sitemap: https://www.stages-photos-nacre-images.fr/sitemap-file.xml
-
-// TODO: mettre list des pages dashboad à ne pas aller voir
