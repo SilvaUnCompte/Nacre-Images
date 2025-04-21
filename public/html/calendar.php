@@ -19,7 +19,7 @@
             $workshopType = reset($workshopType);
 
             $dayMonth = IntlDateFormatter::formatObject(new DateTimeImmutable($session['date']), 'd MMMM', 'fr');
-            $newMonthYear = ucfirst(IntlDateFormatter::formatObject(new DateTimeImmutable($session['date']), 'MMMM YYYY', 'fr'));
+            $newMonthYear = ucfirst(IntlDateFormatter::formatObject(new DateTimeImmutable($session['date']), 'MMMM YYYY', 'fr')); // TODO extension=php_intl.dll
 
 
             if ($newMonthYear !== $monthYear && $monthYear !== '') {
@@ -47,7 +47,7 @@
                         <p>' . $session['additional_information'] . '</p>
                         <span class="course-date">' . $dayMonth . '</span>
                     </div>
-                </a>'; // extension=php_intl.dll
+                </a>';
         }
         ?>
     </div>

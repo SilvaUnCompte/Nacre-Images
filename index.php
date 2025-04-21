@@ -10,6 +10,9 @@ switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topi
     case '/accueil':
         require __DIR__ . '/controler/pages/index.php';
         break;
+    case '/BingSiteAuth.xml':
+        require __DIR__ . '/BingSiteAuth.xml';
+        break;
 
     case '/contact':
     case '/contact.htm':
@@ -27,27 +30,25 @@ switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topi
         break;
 
     case '/infos-stage':
-    case '/tarifs.htm':
     case '/themes.htm':
         require __DIR__ . '/controler/pages/workshop-info.php';
         break;
 
-    case '/formateurs':
-    case '/formateurs.htm':
-        require __DIR__ . '/controler/pages/trainers.php';
-        break;
-
-    case '/prestations':
     case '/reportages.htm':
+    case '/prestations':
         require __DIR__ . '/controler/pages/services.php';
         break;
 
-    case '/studio':
+    case '/prestations/studio':
         require __DIR__ . '/controler/pages/studio.php';
         break;
 
-    case '/packshot':
+    case '/prestations/packshot':
         require __DIR__ . '/controler/pages/packshot.php';
+        break;
+
+    case '/prestations/mariage':
+        require __DIR__ . '/controler/pages/wedding.php';
         break;
 
     case '/mentions-legals':
@@ -65,6 +66,7 @@ switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topi
         require __DIR__ . '/controler/pages/faq.php';
         break;
 
+    case '/tarifs.htm':
     case '/stage/tarifs':
         require __DIR__ . '/controler/pages/tarif.php';
         break;
