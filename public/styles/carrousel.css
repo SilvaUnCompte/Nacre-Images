@@ -80,12 +80,6 @@
 }
 
 @media (max-width: 768px) {
-    .carrousel-slide.active {
-        transform: scale(1.1);
-    }
-}
-
-@media (max-width: 480px) {
     .carrousel-container {
         padding: 0;
         margin: 0;

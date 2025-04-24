@@ -185,7 +185,7 @@ input[type=number] {
     /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
-@media all and (max-width: 1000px) {
+@media all and (max-width: 1100px) {
     .container {
         width: 90%;
     }
@@ -204,5 +204,9 @@ input[type=number] {
 
     .transparent {
         opacity: 1;
+    }
+
+    .paragraph {
+        font-size: 1.05em;
     }
 }
