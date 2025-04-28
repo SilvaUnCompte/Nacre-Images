@@ -49,10 +49,17 @@
                 ne trouverez pas dans mon programme une multitude de modules visant à vous faire revenir plusieurs fois.<br>
                 En une journée unique de stage photo, je vous garantis l'apprentissage de toutes les notions
                 primordiales (et plus) afin que vous puissiez ensuite évoluer seul ou revenir sur d'autres thèmes plus
-                spécialisés.<br>
-                L'organisation de stages photos est mon activité principale.
+                spécialisés.
             </p>
         </div>
+    </div>
+
+    <br>
+
+    <div class="center-container">
+        <p class="big-h2">Avant de choisir un photographe pour un cours, il faut aller voir ses photos !</p>
+
+        <?php include($_SERVER['DOCUMENT_ROOT'] . "/public/html/carrousel.php"); ?>
     </div>
 
     <div class="container inline-container scroll-trigger info-cadre">
@@ -69,25 +76,6 @@
         <img class='illustration' src="/assets/images/illustrations/formateur.jpg" loading="lazy" alt="exemple stage photo">
     </div>
 
-    <div class="container inline-container scroll-trigger info-cadre place-right">
-        <div>
-            <h2 class="big-h2">** Nouveautés **</h2>
-
-            <p class="paragraph">
-                - Formule d'accompagnement personnalisée sur 6 mois/1 an<br>
-                - NOUVEAU: Tirages commandables en ligne<br>
-                - Autres services: Photos studio à domicile, packshot et nouveau thème de cours: photo au flash (macro,
-                portrait ...)<br>
-            </p>
-        </div>
-    </div>
-
-
-    <div class="center-container">
-        <p class="paragraph">Avant de choisir un photographe pour un cours, il faut aller voir ses photos !</p>
-
-        <?php include($_SERVER['DOCUMENT_ROOT'] . "/public/html/carrousel.php"); ?>
-    </div>
 
     <div class="button-container">
         <a href="/faq" class="bottom-button bottom-button-1">FAQ</a>

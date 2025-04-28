@@ -20,7 +20,7 @@ html {
   margin: 20px 0;
 }
 #faq #faq-container .faq-card .question-card {
-  background-color: #2c2d30;
+  background-color: #242831;
   padding: 10px;
   border-radius: 5px;
 }
@@ -32,7 +32,7 @@ html {
 #faq #faq-container .faq-card .answer {
   font-size: 1.1em;
   text-align: justify;
-  color: #8d8d8d;
+  color: #cccccc;
   margin-top: 5px;
 }
 

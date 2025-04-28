@@ -8,7 +8,7 @@ $description = 'Le calendrier des stages photo à venir. Réservez ou faite une 
 
 $header_title_p1 = 'Calendrier des ';
 $header_title_p2 = 'stages';
-$header_text = "Vous trouverez la plannification des stages pour l'année à venir. Si vous avez la moindre question ou un besoin plus spécifique, n'hésitez pas à me contacter pour que l'on puisse s'arranger au mieux.";
+$header_text = "Vous trouverez la plannification des stages (en groupe) pour l'année à venir. Si vous avez la moindre question ou un besoin plus spécifique, n'hésitez pas à me contacter pour que l'on puisse s'arranger au mieux.";
 
 $workshopTypes = WorkshopType::getAll();
 $workshopSessions = WorkshopSession::getOneYearFutureSession();
