@@ -4,7 +4,7 @@ const delay = 7000; // Delay in milliseconds
 let databaseImg = null;
 
 function init() {
-    fetch(`/database/api/image-dir.php?path=${imageDirectory}`)
+    fetch(`/api/image-dir?path=${imageDirectory}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
