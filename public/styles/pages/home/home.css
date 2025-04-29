@@ -178,4 +178,14 @@ body::before {
   .space-empty p {
     font-size: 1em;
   }
+  .big-h2 {
+    text-align: center;
+    font-size: 1em;
+  }
+  .info-cadre {
+    width: 100%;
+  }
+  .info-cadre > * {
+    margin: 17px;
+  }
 }/*# sourceMappingURL=home.css.map */
