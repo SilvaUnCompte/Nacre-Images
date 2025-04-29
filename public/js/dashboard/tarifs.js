@@ -11,7 +11,7 @@ window.onload = (event) => {
 
 function updateDatatable() {
     tarifContainer.innerHTML = `<div class="spinner spinner-centered"></div>`;
-    fetch('/database/api/get-all-price.php')
+    fetch('/api/get-all-price')
         .then(response => response.json())
         .then(data => {
             createTarifRows(data);
@@ -74,7 +74,7 @@ function deletePrice(price_id, label) {
         return;
     }
 
-    fetch('/database/api/delete-price.php?id=' + price_id)
+    fetch('/api/delete-price?id=' + price_id)
         .then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -103,7 +103,7 @@ function updatePrice(id, itself) {
         return;
     }
 
-    fetch('/database/api/update-price.php', {
+    fetch('/api/update-price', {
         method: 'POST',
         headers: {
             'Accept': 'application/x-www-form-urlencoded',
@@ -141,7 +141,7 @@ function addPrice() {
         return;
     }
 
-    fetch('/database/api/add-price.php', {
+    fetch('/api/add-price', {
         method: 'POST',
         headers: {
             'Accept': 'application/x-www-form-urlencoded',

@@ -6,7 +6,7 @@ window.onload = (event) => {
 
 function updateDatatable() {
     tarifContainer.innerHTML = `<div class="spinner spinner-centered"></div>`;
-    fetch('/database/api/get-faq.php')
+    fetch('/api/get-faq')
         .then(response => response.json())
         .then(data => {
             createFaqRows(data);
@@ -64,7 +64,7 @@ function deleteQuestion(id, question) {
         return;
     }
 
-    fetch('/database/api/delete-question.php?id=' + id)
+    fetch('/api/delete-question?id=' + id)
         .then(response => {
             if (response.status != 200) {
                 new_popup("Erreur lors de la suppression", "error");
@@ -96,7 +96,7 @@ function updateQuestion(id, itself) {
         return;
     }
 
-    fetch('/database/api/update-question.php', {
+    fetch('/api/update-question', {
         method: 'POST',
         headers: {
             'Accept': 'application/x-www-form-urlencoded',
@@ -133,7 +133,7 @@ function addQuestion() {
         return;
     }
 
-    fetch('/database/api/add-question.php', {
+    fetch('/api/add-question', {
         method: 'POST',
         headers: {
             'Accept': 'application/x-www-form-urlencoded',

@@ -30,7 +30,7 @@ window.onload = function () {
 }
 
 function getAllPrice() {
-	fetch('/database/api/get-all-price.php')
+	fetch('/api/get-all-price')
 		.then(response => {
 			if (response.ok) {
 				return response.json();
@@ -61,7 +61,7 @@ function toogleView() {
 
 function deleteWorkshop(workshopId) {
 	if (confirm("Supprimer le stage ?")) {
-		fetch(`/database/api/delete-workshop.php?id=${workshopId}`)
+		fetch(`/api/delete-workshop?id=${workshopId}`)
 			.then((response) => {
 				if (response.status === 200) {
 					backToList(0);
@@ -93,7 +93,7 @@ function updateWorkshop(workshopId) {
 		return;
 	}
 
-	fetch('/database/api/update-workshop.php', {
+	fetch('/api/update-workshop', {
 		method: 'POST',
 		headers: {
 			'Accept': 'application/x-www-form-urlencoded',
@@ -146,7 +146,7 @@ function createWorkshop() {
 		return;
 	}
 
-	fetch('/database/api/add-workshop.php', {
+	fetch('/api/add-workshop', {
 		method: 'POST',
 		headers: {
 			'Accept': 'application/x-www-form-urlencoded',

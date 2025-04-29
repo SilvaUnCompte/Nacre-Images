@@ -11,7 +11,7 @@ window.onload = (event) => {
 
 function updateDatatable() {
     serviceContainer.innerHTML = `<div class="spinner spinner-centered"></div>`;
-    fetch('/database/api/get-all-service.php')
+    fetch('/api/get-all-service')
         .then(response => response.json())
         .then(data => {
             createServiceRows(data);
@@ -76,7 +76,7 @@ function deleteService(service_id, label) {
         return;
     }
 
-    fetch('/database/api/delete-service.php?id=' + service_id)
+    fetch('/api/delete-service?id=' + service_id)
         .then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -104,7 +104,7 @@ function updateService(id, itself) {
         return;
     }
 
-    fetch('/database/api/update-service.php', {
+    fetch('/api/update-service', {
         method: 'POST',
         headers: {
             'Accept': 'application/x-www-form-urlencoded',
@@ -146,7 +146,7 @@ function addService() {
         return;
     }
 
-    fetch('/database/api/add-service.php', {
+    fetch('/api/add-service', {
         method: 'POST',
         headers: {
             'Accept': 'application/x-www-form-urlencoded',

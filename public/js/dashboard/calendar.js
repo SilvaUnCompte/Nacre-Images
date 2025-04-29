@@ -9,7 +9,7 @@ window.onload = (event) => {
 
 function updateDatatable() {
     calendarContainer.innerHTML = `<div class="spinner spinner-centered"></div>`;
-    fetch('/database/api/get-sessions-by-date.php?start_date=' + observationDate.value)
+    fetch('/api/get-sessions-by-date?start_date=' + observationDate.value)
         .then(response => response.json())
         .then(data => {
             createSessionCards(data);
@@ -67,7 +67,7 @@ function deleteSession(session_id, name, date) {
         return;
     }
 
-    fetch('/database/api/delete-session.php?session_id=' + session_id)
+    fetch('/api/delete-session?session_id=' + session_id)
         .then(response => response.json())
         .then(data => {
             if (data.success) {
@@ -86,7 +86,7 @@ function deleteSession(session_id, name, date) {
 function updateSession(session_id, itself) {
     var additional_information = itself.parentNode.parentNode.querySelector(".additional-information-input").value;
 
-    fetch('/database/api/update-info-session.php', {
+    fetch('/api/update-info-session', {
         method: 'POST',
         headers: {
             'Accept': 'application/x-www-form-urlencoded',
@@ -121,7 +121,7 @@ function addSession() {
         return;
     }
 
-    fetch('/database/api/add-session.php', {
+    fetch('/api/add-session', {
         method: 'POST',
         headers: {
             'Accept': 'application/x-www-form-urlencoded',
