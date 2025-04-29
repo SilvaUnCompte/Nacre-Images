@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/prices.php');
+require_once(ROOT_DIR . '/database/tables/prices.php');
 
 $page_name = 'Chèque cadeau';
 $description = 'Chèque cadeau photo. Offrez un chèque cadeau pour un stage photo avec Nacre-Images. Vous pouvez choisir le montant du chèque cadeau et le personnaliser.';
@@ -11,8 +11,8 @@ $header_text = "Pour Noël, un anniversaire ou toute autre occasion, offrez un c
 
 $prices = Prices::getAll();
 
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/helpers/header.php");
-// include($_SERVER['DOCUMENT_ROOT'] . "/public/html/helpers/second-header.php");
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/gift.html");
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/price.php");
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/helpers/footer.html");
+include(ROOT_DIR . "/public/html/helpers/header.php");
+// include(ROOT_DIR . "/public/html/helpers/second-header.php");
+include(ROOT_DIR . "/public/html/gift.html");
+include(ROOT_DIR . "/public/html/price.php");
+include(ROOT_DIR . "/public/html/helpers/footer.html");

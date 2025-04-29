@@ -7,8 +7,8 @@ if (!isset($_SESSION['email'])) {
     exit();
 }
 
-require($_SERVER['DOCUMENT_ROOT'] . '/database/connexion.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/services.php');
+require(ROOT_DIR . '/database/connexion.php');
+require_once(ROOT_DIR . '/database/tables/services.php');
 
 if (!isset($_POST['price']) || !isset($_POST['label']) || !isset($_POST['description']) || !isset($_POST['type']) || !isset($_POST['link']) || !isset($_POST['url'])) {
     echo json_encode(['success' => false, 'error' => 'Missing parameters']);

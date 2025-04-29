@@ -1,7 +1,7 @@
 <?php
 
-$request = $_SERVER['REQUEST_URI'];
-// $_SERVER['DOCUMENT_ROOT'] = __DIR__;
+define('ROOT_DIR', __DIR__);
+$request = strtok($_SERVER['REQUEST_URI'], '?');
 
 switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topics
     case '':
@@ -101,9 +101,13 @@ switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topi
         require __DIR__ . '/controler/dashboard/services.php';
         break;
 
+    case '/dashboard/liste-des-stages/edit':
+        require __DIR__ . '/controler/dashboard/stage-editor.php';
+        break;
+
     default:
         if (str_starts_with($request, '/stage/')) {
-            require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/workshop_type.php');
+            require_once(ROOT_DIR . '/database/tables/workshop_type.php');
             $workshop_types = WorkshopType::getAll();
 
             $url = substr($request, 7);
@@ -120,8 +124,10 @@ switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topi
             return;
         }
 
-        if (str_starts_with($request, '/dashboard/liste-des-stages/edit')) {
-            require __DIR__ . '/controler/dashboard/stage-editor.php';
+        if (str_starts_with($request, '/api/')) {
+            $url = substr($request, 5);
+            require_once(__DIR__ . '/database/api/' . $url . '.php');
+
             return;
         }
 

@@ -7,8 +7,8 @@ if (!isset($_SESSION['email'])) {
     exit();
 }
 
-require($_SERVER['DOCUMENT_ROOT'] . '/database/connexion.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/workshop_session.php');
+require(ROOT_DIR . '/database/connexion.php');
+require_once(ROOT_DIR . '/database/tables/workshop_session.php');
 
 if (!isset($_POST['date']) || !isset($_POST['topic']) || !isset($_POST['additional_information'])) {
     echo json_encode(['error' => 'date, topic and additional_information parameters are required']);

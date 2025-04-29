@@ -96,7 +96,7 @@
 
 
 <div id="showcast" class="wedding-container">
-    <?php include($_SERVER['DOCUMENT_ROOT'] . "/public/html/carrousel.php"); ?>
+    <?php include(ROOT_DIR . "/public/html/carrousel.php"); ?>
 </div>
 
 <div class="contact-section">

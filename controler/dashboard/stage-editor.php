@@ -17,9 +17,9 @@ $edition = ($id >= 0);
 $workshop_type = null;
 
 if ($edition) {
-    require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/workshop_type.php');
+    require_once(ROOT_DIR . '/database/tables/workshop_type.php');
     $workshop_type = new WorkshopType($id);
 }
 
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/dashboad/dashboard-header.php");
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/dashboad/stage-editor.php");
+include(ROOT_DIR . "/public/html/dashboad/dashboard-header.php");
+include(ROOT_DIR . "/public/html/dashboad/stage-editor.php");

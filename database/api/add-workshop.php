@@ -7,8 +7,8 @@ if (!isset($_SESSION['email'])) {
     exit();
 }
 
-require($_SERVER['DOCUMENT_ROOT'] . '/database/connexion.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/workshop_type.php');
+require(ROOT_DIR . '/database/connexion.php');
+require_once(ROOT_DIR . '/database/tables/workshop_type.php');
 
 
 if (!isset($_POST['page_name']) || !isset($_POST['name']) || !isset($_POST['url']) || !isset($_POST['regularity']) || !isset($_POST['image_name']) || !isset($_POST['image_calendar']) || !isset($_POST['image_alt']) || !isset($_POST['big_title']) || !isset($_POST['small_title']) || !isset($_POST['paragraph']) || !isset($_POST['seo_desc'])) {

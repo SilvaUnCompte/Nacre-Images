@@ -5,7 +5,7 @@ if (!isset($_GET['ids'])) {
     exit;
 }
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/database/connexion.php');
+require_once(ROOT_DIR . '/database/connexion.php');
 
 
 $ids = array_map('intval', explode(',', $_GET['ids']));

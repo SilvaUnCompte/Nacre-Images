@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/database/connexion.php');
+require_once(ROOT_DIR . '/database/connexion.php');
 
 class FAQ
 {

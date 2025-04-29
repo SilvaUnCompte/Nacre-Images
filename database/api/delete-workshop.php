@@ -7,8 +7,8 @@ if (!isset($_SESSION['email'])) {
     exit();
 }
 
-require($_SERVER['DOCUMENT_ROOT'] . '/database/connexion.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/workshop_type.php');
+require(ROOT_DIR . '/database/connexion.php');
+require_once(ROOT_DIR . '/database/tables/workshop_type.php');
 
 
 if (!isset($_GET["id"])) {

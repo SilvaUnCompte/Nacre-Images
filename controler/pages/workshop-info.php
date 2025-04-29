@@ -1,8 +1,8 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/workshop_type.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/workshop_session.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/prices.php');
+require_once(ROOT_DIR . '/database/tables/workshop_type.php');
+require_once(ROOT_DIR . '/database/tables/workshop_session.php');
+require_once(ROOT_DIR . '/database/tables/prices.php');
 
 $page_name = 'Liste des stages';
 $description = 'Découvrez la liste des stages photo proposés par Nacre-Images. Vous pouvez choisir le stage qui vous convient le mieux en fonction de vos besoins et de votre niveau.';
@@ -16,11 +16,11 @@ $workshopTypes = WorkshopType::getAll();
 $workshopSessions = WorkshopSession::getOneYearFutureSession();
 $prices = Prices::getAll();
 
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/helpers/header.php");
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/helpers/second-header.php");
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/workshop-info.php");
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/price.php");
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/helpers/footer.html");
+include(ROOT_DIR . "/public/html/helpers/header.php");
+include(ROOT_DIR . "/public/html/helpers/second-header.php");
+include(ROOT_DIR . "/public/html/workshop-info.php");
+include(ROOT_DIR . "/public/html/price.php");
+include(ROOT_DIR . "/public/html/helpers/footer.html");
 
 
 // Note type :

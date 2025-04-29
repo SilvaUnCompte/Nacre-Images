@@ -1,7 +1,7 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/database/connexion.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/faq.php');
+require_once(ROOT_DIR . '/database/connexion.php');
+require_once(ROOT_DIR . '/database/tables/faq.php');
 
 $result = FAQ::getAll();
 

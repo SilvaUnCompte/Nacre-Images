@@ -7,8 +7,8 @@ if (!isset($_SESSION['email'])) {
     exit();
 }
 
-require($_SERVER['DOCUMENT_ROOT'] . '/database/connexion.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/faq.php');
+require(ROOT_DIR . '/database/connexion.php');
+require_once(ROOT_DIR . '/database/tables/faq.php');
 
 
 if (!isset($_POST["id"]) || !isset($_POST['question']) || !isset($_POST['answer']) || !isset($_POST['rank'])) {

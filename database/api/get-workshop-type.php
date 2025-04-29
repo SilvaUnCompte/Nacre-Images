@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-require($_SERVER['DOCUMENT_ROOT'] . '/database/connexion.php');
+require(ROOT_DIR . '/database/connexion.php');
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];

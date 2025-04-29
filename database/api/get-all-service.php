@@ -1,7 +1,7 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/database/connexion.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/services.php');
+require_once(ROOT_DIR . '/database/connexion.php');
+require_once(ROOT_DIR . '/database/tables/services.php');
 
 $result = Services::getAll();
 

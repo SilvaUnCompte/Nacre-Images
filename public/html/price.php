@@ -12,13 +12,13 @@
     <?php
 
     $prices_groupe = array_filter($prices, function ($price) {
-        return $price['type'] === 0;
+        return $price['type'] == 0;
     });
     $prices_individuel = array_filter($prices, function ($price) {
-        return $price['type'] === 1;
+        return $price['type'] == 1;
     });
     $prices_special = array_filter($prices, function ($price) {
-        return $price['type'] === 2;
+        return $price['type'] == 2;
     });
 
     $priceMatrix = [

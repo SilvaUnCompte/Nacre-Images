@@ -1,11 +1,11 @@
 <?php
 $image_directory = '/assets/images/' . $carrousel_img_dir;
 
-if (!is_dir($_SERVER['DOCUMENT_ROOT'] . $image_directory)) {
+if (!is_dir(ROOT_DIR . $image_directory)) {
     return;
 }
 
-$images = array_diff(scandir($_SERVER['DOCUMENT_ROOT'] . $image_directory), ['..', '.']);
+$images = array_diff(scandir(ROOT_DIR . $image_directory), ['..', '.']);
 
 if (empty($images)) {
     return;

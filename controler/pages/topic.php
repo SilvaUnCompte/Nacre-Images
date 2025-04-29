@@ -1,11 +1,11 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/workshop_type.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/prices.php');
+require_once(ROOT_DIR . '/database/tables/workshop_type.php');
+require_once(ROOT_DIR . '/database/tables/prices.php');
 
 if (!isset($topic_id)) {
     http_response_code(404);
-    require $_SERVER['DOCUMENT_ROOT'] . '/controler/404.php';
+    require ROOT_DIR . '/controler/404.php';
     return;
 }
 
@@ -49,11 +49,11 @@ $paragraph = preg_replace_callback('/\{(\d+(\+|\_|\*))\}/', function ($matches) 
 }, $workshop_type->getParagraph());
 
 
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/helpers/header.php");
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/topic.php");
+include(ROOT_DIR . "/public/html/helpers/header.php");
+include(ROOT_DIR . "/public/html/topic.php");
 
 
-$checkdir = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/' . $carrousel_img_dir;
+$checkdir = ROOT_DIR . '/assets/images/' . $carrousel_img_dir;
 if (is_dir($checkdir)) {
     $images = array_diff(scandir($checkdir), ['..', '.']);
 
@@ -61,10 +61,10 @@ if (is_dir($checkdir)) {
         echo '<h2 class="title-photo-example">Photo qu\'on pourrait faire</h2>';
     }
 }
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/carrousel.php");
+include(ROOT_DIR . "/public/html/carrousel.php");
 
 
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/next-session.php");
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/contact-button.php");
+include(ROOT_DIR . "/public/html/next-session.php");
+include(ROOT_DIR . "/public/html/contact-button.php");
 echo '</main>';
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/helpers/footer.html");
+include(ROOT_DIR . "/public/html/helpers/footer.html");

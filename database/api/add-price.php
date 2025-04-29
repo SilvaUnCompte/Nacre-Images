@@ -7,8 +7,8 @@ if (!isset($_SESSION['email'])) {
     exit();
 }
 
-require($_SERVER['DOCUMENT_ROOT'] . '/database/connexion.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/prices.php');
+require(ROOT_DIR . '/database/connexion.php');
+require_once(ROOT_DIR . '/database/tables/prices.php');
 
 if (!isset($_POST['price']) || !isset($_POST['label']) || !isset($_POST['description']) || !isset($_POST['type'])) {
     echo json_encode(['error' => 'price, label, description and type parameters are required']);

@@ -40,7 +40,7 @@
         </div>
     </div>
 
-    <?php include($_SERVER['DOCUMENT_ROOT'] . "/public/html/carrousel.php"); ?>
+    <?php include(ROOT_DIR . "/public/html/carrousel.php"); ?>
 
     <div class="contact-section">
         <p>Vous souhaitez une séance différente, sur mesure ou l'offrir... contactez moi !</p><br>

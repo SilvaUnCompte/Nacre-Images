@@ -1,6 +1,6 @@
 <?php
-
-require_once($_SERVER['DOCUMENT_ROOT'] . '/database/tables/user.php');
+define('ROOT_DIR', __DIR__ . '/../../..');
+require_once(ROOT_DIR . '/database/tables/user.php');
 
 if (isset($_POST['input_email']) && isset($_POST['input_password'])) {
 

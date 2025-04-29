@@ -1,3 +1,3 @@
 <?php
 
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/dashboad/login-page.php");
+include(ROOT_DIR . "/public/html/dashboad/login-page.php");

@@ -9,7 +9,7 @@ $header_text = "Mise en valeur professionnelle de vos produits. Je vous propose 
 $carrousel_img_dir = 'carrousel-packshot';
 
 
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/helpers/header.php");
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/helpers/second-header.php");
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/packshot.php");
-include($_SERVER['DOCUMENT_ROOT'] . "/public/html/helpers/footer.html");
+include(ROOT_DIR . "/public/html/helpers/header.php");
+include(ROOT_DIR . "/public/html/helpers/second-header.php");
+include(ROOT_DIR . "/public/html/packshot.php");
+include(ROOT_DIR . "/public/html/helpers/footer.html");
