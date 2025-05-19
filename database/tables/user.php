@@ -105,13 +105,15 @@ class User
         $salt = $result['salt'];
         $hash = $result['password'];
 
-        if (is_null($hash)) { // If account has no password, set it
+        if (is_null($hash) || $hash == "") { // If account has no password, set it
             $user = new User($email);
 
             $new_password = User::createPassword($password);
             $user->setPassword($new_password['hash']);
             $user->setSalt($new_password['salt']);
             $user->update();
+
+            echo "Création du mot de passe";
         }
         
         return self::checkPassword($password, $salt, $hash);
