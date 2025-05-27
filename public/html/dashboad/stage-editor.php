@@ -34,7 +34,7 @@
                 <input type="text" id="workshop-name" class="form-input" value="<?php echo $edition ? $workshop_type->getTopicName() : ''; ?>" placeholder="Nom dans le calendrier">
             </div>
             <div class="form-group">
-                <label for="workshop-url" class="form-label">URL de la page web (et nom du fichier des images)</label>
+                <label for="workshop-url" class="form-label">URL de la page web (et nom du dossier des images)</label>
                 <input type="text" id="workshop-url" class="form-input" value="<?php echo $edition ? $workshop_type->getUrl() : ''; ?>" placeholder="URL de la page web">
             </div>
             <div class="form-group">

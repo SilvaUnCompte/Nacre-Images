@@ -23,8 +23,8 @@
 
     $priceMatrix = [
         ["groupe", "En groupe", $prices_groupe],
-        ["solo", "Individuel", $prices_individuel],
-        ["special", "Spécials", $prices_special]
+        ["solo", "En Individuel ou sur mesure", $prices_individuel],
+        ["special", "Tarifs spéciaux", $prices_special]
     ];
 
     foreach ($priceMatrix as $priceType) {
