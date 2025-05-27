@@ -18,7 +18,7 @@
             });
             $workshopType = reset($workshopType);
 
-            $dayMonth = IntlDateFormatter::formatObject(new DateTimeImmutable($session['date']), 'd MMMM', 'fr');
+            $dayMonth = IntlDateFormatter::formatObject(new DateTimeImmutable($session['date']), 'eee d MMMM', 'fr');
             $newMonthYear = ucfirst(IntlDateFormatter::formatObject(new DateTimeImmutable($session['date']), 'MMMM YYYY', 'fr')); // TODO extension=php_intl.dll
 
 

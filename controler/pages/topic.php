@@ -58,7 +58,7 @@ if (is_dir($checkdir)) {
     $images = array_diff(scandir($checkdir), ['..', '.']);
 
     if (!empty($images)) {
-        echo '<h2 class="title-photo-example">Photo qu\'on pourrait faire</h2>';
+        echo '<h2 class="title-photo-example">Types de photos réalisables durant une session</h2>';
     }
 }
 include(ROOT_DIR . "/public/html/carrousel.php");

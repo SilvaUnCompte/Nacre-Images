@@ -9,6 +9,13 @@
     <br> <br> <br> <br>
 </div>
 
+<div class="center-container">
+<div id="bulle" class="bulle-flottante">
+    <div class="triangle"></div>
+    <div class="texte">Plus d'info</div>
+    <div class="triangle"></div>
+</div></div>
+
 <div class="triangle-mid"></div>
 
 <main class="grey-section animation-wrapper">
@@ -57,8 +64,7 @@
     <br>
 
     <div class="center-container">
-        <p class="big-h2">Avant de choisir un photographe pour un cours, il faut aller voir ses photos !</p>
-
+        <p class="big-h2">Avant de choisir un photographe pour un cours, il faut aller voir ses photos ! <a target="_blank" href="https://photos.google.com/share/AF1QipN0NRXliATKSgTysPWjIGiudKj2PXAU2mvN7LA7EAdHeYF4TT2RhquZVUP6AluDZA?key=MktYb01hUUlXM0Y4MTkybTg3cEFZbEJiMWZVb2R3">[Plus ici]</a></p>
         <?php include(ROOT_DIR . "/public/html/carrousel.php"); ?>
     </div>
 
@@ -67,7 +73,7 @@
             <h2 class="big-h2">Qui suis-je ?</h2>
 
             <p class="paragraph">
-                Gilles, le daltonien<br>
+                Gilles Quesnot<br>
                 Né en 1973, je suis un ex-biologiste. Ma carrière a débuté dans la gestion de milieux naturels et après un bref passage dans l'enseignement, je suis allé acquérir des compétences de formateur dans le commerce.
                 Après avoir débuté la photo par une approche très scientifique et descriptive des fleurs et insectes qui nous entourent, je me suis tourné vers la photographie davantage empreinte de rêve et de poésie. Adepte des couleurs éclatantes, des ciels chargés et du minimalisme ; sous le pseudo de Dalt, j'oscille entre macro-photos, paysages et photographies animalières pour vous faire découvrir le monde par mes yeux de daltonien.
             </p>
@@ -81,7 +87,7 @@
         <a href="/faq" class="bottom-button bottom-button-1">FAQ</a>
         <a href="/infos-stage" class="bottom-button bottom-button-2">List des thèmes</a>
         <a href="/prestations" class="bottom-button bottom-button-3">Prestations</a>
-        <a href="https://www.facebook.com/nacreimages/" target="_blank" class="bottom-button bottom-button-4">Facebook</a>
+        <a href="https://www.facebook.com/Dalt.Gilles/" target="_blank" class="bottom-button bottom-button-4">Facebook</a>
         <a href="/stage/tarifs" class="bottom-button bottom-button-5">Tarifs</a>
     </div>
 

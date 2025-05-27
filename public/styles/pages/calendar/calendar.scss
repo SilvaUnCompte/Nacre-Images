@@ -185,6 +185,8 @@ $container-width: 1000px;
     width: 100%;
 
     p {
+        margin-right: auto;
+        margin-left: $spacing-md;
         font-size: $font-size-small;
         color: rgb(255, 255, 255);
     }

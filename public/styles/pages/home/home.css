@@ -168,6 +168,52 @@ body::before {
   transform: translateY(1px);
 }
 
+.bulle-flottante {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  animation: float 2s ease-in-out infinite;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 90vh;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+.bulle-flottante:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+.bulle-flottante.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -50%) translateY(-20px);
+}
+.bulle-flottante .triangle {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 10px solid white;
+}
+.bulle-flottante .texte {
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
 @media all and (max-width: 1200px) {
   .space-empty {
     height: 50vh;
