@@ -4,6 +4,11 @@
   position: fixed;
   bottom: 110px;
   right: 4%;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+.bubble-text-container.hidden {
+  opacity: 0;
+  transform: translate(20%, 20%) translateY(-20px);
 }
 
 .bubble-text p {

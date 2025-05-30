@@ -190,7 +190,7 @@ body {
     }
 }
 
-// Bulle flottante
+// Bulle flottante (info button)
 
 .bulle-flottante {
     background: rgba(0, 0, 0, 0.5);
@@ -245,6 +245,10 @@ body {
         }
     }
 }
+
+// .bubble-text-container {
+// 	left: 2% !important;
+// }
 
 @media all and (max-width: 1200px) {
     .space-empty {

@@ -91,11 +91,21 @@
         <a href="/stage/tarifs" class="bottom-button bottom-button-5">Tarifs</a>
     </div>
 
+    <br>
+    <br>
 
-    <br>
-    <br>
+    <a id="gift-bubble" class="hidden bubble-text-container" href="/cheque-cadeau">
+        <div class="bubble-text">
+            <p>
+                <!-- Un thème non listé vous<br>intéresse ? Demandez moi et<br>dans la mesure du possible, je<br>tacherai de vous satisfaire ! -->
+                Vous voulez offrir un stage photo ? Par ici !
+            </p>
+        </div>
+    </a>
 </main>
 
 <link rel="stylesheet" href="/public/styles/generics/star.css">
+<link rel="stylesheet" href="/public/styles/generics/bubble-text.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap">
 <script src="/public/js/scroll-trigger.js" defer></script>
 <script src="/public/js/random-background.js" defer></script>
