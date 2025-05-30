@@ -25,6 +25,7 @@
 			<ul id="ul-header">
 				<li><a href="/">ACCUEIL</a></li>
 				<li><a href="/infos-stage">INFOS STAGES</a></li>
+				<li><a href="/stage/tarifs">TARIFS</a></li>
 				<li><a href="/prestations">PRESTATIONS</a></li>
 				<li><a href="/cheque-cadeau">CHÈQUE CADEAU</a></li>
 				<li><a href="/calendrier">CALENDRIER STAGES</a></li>
@@ -38,6 +39,7 @@
 		<div class="corner"></div>
 		<li><a href="/">Accueil</a></li>
 		<li><a href="/infos-stage">Infos stages</a></li>
+		<li><a href="/stage/tarifs">Tarifs</a></li>
 		<li><a href="/prestations">Prestations</a></li>
 		<li><a href="/cheque-cadeau">Chèque cadeau</a></li>
 		<li><a href="/calendrier">Calendrier stages</a></li>

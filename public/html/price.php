@@ -6,7 +6,7 @@
 <div class="pricing-section">
     <div class="pricing-header">
         <h1>Les tarifs des stages</h1>
-        <p>N'hésitez pas si vous avez une demande précise</p>
+        <p>Contactez moi si besoin</p>
     </div>
 
     <?php
@@ -62,7 +62,7 @@
 
 <!-- Contact Section - Professional Style -->
 <div class="contact-section">
-    <p class="contact-text">Vous avez besoin d'un plan personnalisé ou vous avez des questions sur nos options tarifaires ?</p>
+    <p class="contact-text">Vous avez besoin d'un plan personnalisé ou vous avez des questions sur mes options tarifaires ?</p>
     <a href="/contact" class="contact-button">
         Me contacter
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

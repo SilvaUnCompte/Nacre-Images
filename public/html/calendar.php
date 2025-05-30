@@ -20,11 +20,12 @@
 
             $dayMonth = IntlDateFormatter::formatObject(new DateTimeImmutable($session['date']), 'eee d MMMM', 'fr');
             $newMonthYear = ucfirst(IntlDateFormatter::formatObject(new DateTimeImmutable($session['date']), 'MMMM YYYY', 'fr')); // TODO extension=php_intl.dll
-
+            $newMonthYearTag = strtolower(str_replace(' ', '-', $newMonthYear));
 
             if ($newMonthYear !== $monthYear && $monthYear !== '') {
-                echo '</div>
-                    </section>';
+                echo '<div id="' . $newMonthYearTag . '"></div>
+                    </div>
+                </section>';
             }
             if ($newMonthYear !== $monthYear) {
                 echo '<section class="month-section">
