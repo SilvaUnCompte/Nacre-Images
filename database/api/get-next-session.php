@@ -1,7 +1,6 @@
 <?php
-header('Content-Type: application/json');
 
-require(ROOT_DIR . '/database/connexion.php');
+require_once(ROOT_DIR . '/database/connexion.php');
 
 // Get the current date
 $current_date = date('Y-m-d');

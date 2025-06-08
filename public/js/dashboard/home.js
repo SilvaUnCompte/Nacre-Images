@@ -2,7 +2,7 @@ function onload() {
 
     // Next session
 
-    fetch('/database/api/get-next-session.php')
+    fetch('/api/get-next-session')
         .then(response => response.json())
         .then(session_data => {
             if (session_data) {
