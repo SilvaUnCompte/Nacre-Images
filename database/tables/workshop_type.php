@@ -16,20 +16,21 @@ class WorkshopType
     private $paragraph;
     private $url;
     private $regularity_type;
+    private $rank;
 
     public function __construct($id)
     {
         global $db;
-        
+
         $query = $db->prepare('SELECT * FROM workshop_type WHERE id = :id');
         $query->execute(['id' => $id]);
         $result = $query->fetch();
-
+        
         if (!$result) {
-            echo header("HTTP/1.1 401");
+            echo header("HTTP/1.1 404");
             exit;
         }
-
+        
         $this->id = $result['id'];
         $this->topic_name = $result['topic_name'];
         $this->page_name = $result['page_name'];
@@ -42,6 +43,7 @@ class WorkshopType
         $this->paragraph = $result['paragraph'];
         $this->url = $result['url'];
         $this->regularity_type = $result['regularity_type'];
+        $this->rank = $result['rank'];
     }
     public function __destruct()
     {
@@ -52,7 +54,7 @@ class WorkshopType
     {
         global $db;
 
-        $query = $db->query('SELECT * FROM workshop_type');
+        $query = $db->query('SELECT * FROM workshop_type ORDER BY `rank` ASC');
         $result = $query->fetchAll();
 
         return $result;
@@ -69,11 +71,12 @@ class WorkshopType
         return $result;
     }
 
-    public function update()
+    public function update($prevRank)
     {
         global $db;
-        
-        $query = $db->prepare('UPDATE workshop_type SET topic_name = :topic_name, page_name = :page_name, seo_desc = :seo_desc, img_name = :img_name, img_calendar = :img_calendar, img_alt = :img_alt, big_title = :big_title, small_title = :small_title, paragraph = :paragraph, `url` = :url, regularity_type = :regularity_type WHERE id = :id');
+        WorkshopType::updateRangeRank($prevRank, $this->rank);
+
+        $query = $db->prepare('UPDATE workshop_type SET topic_name = :topic_name, page_name = :page_name, seo_desc = :seo_desc, img_name = :img_name, img_calendar = :img_calendar, img_alt = :img_alt, big_title = :big_title, small_title = :small_title, paragraph = :paragraph, `url` = :url, regularity_type = :regularity_type, `rank` = :rank WHERE id = :id');
 
         $query->execute([
             'id' => $this->id,
@@ -87,13 +90,15 @@ class WorkshopType
             'small_title' => $this->small_title,
             'paragraph' => $this->paragraph,
             'url' => $this->url,
-            'regularity_type' => $this->regularity_type
+            'regularity_type' => $this->regularity_type,
+            'rank' => $this->rank
         ]);
     }
 
     public function delete()
     {
         global $db;
+        WorkshopType::updateGreaterRank($this->rank, -1);
 
         $query = $db->prepare('DELETE FROM workshop_type WHERE id = :id');
         $query->execute(['id' => $this->id]);
@@ -101,17 +106,17 @@ class WorkshopType
 
     public static function delete_by_id($id_to_delete)
     {
-        global $db;
-
-        $query = $db->prepare('DELETE FROM workshop_type WHERE id = :id');
-        $query->execute(['id' => $id_to_delete]);
+        $workshop = new WorkshopType($id_to_delete);
+        $workshop->delete();
     }
 
-    public static function create($topic_name, $page_name, $seo_desc, $img_name, $img_calendar, $img_alt, $big_title, $small_title, $paragraph, $url, $regularity_type)
+    public static function create($topic_name, $page_name, $seo_desc, $img_name, $img_calendar, $img_alt, $big_title, $small_title, $paragraph, $url, $regularity_type, $rank)
     {
         global $db;
-        
-        $query = $db->prepare('INSERT INTO workshop_type (topic_name, page_name, seo_desc, img_name, img_calendar, img_alt, big_title, small_title, paragraph, `url`, regularity_type) VALUES (:topic_name, :page_name, :seo_desc, :img_name, :img_calendar, :img_alt, :big_title, :small_title, :paragraph, :url, :regularity_type)');
+
+        WorkshopType::updateGreaterRank($rank, 1);
+
+        $query = $db->prepare('INSERT INTO workshop_type (topic_name, page_name, seo_desc, img_name, img_calendar, img_alt, big_title, small_title, paragraph, `url`, regularity_type, `rank`) VALUES (:topic_name, :page_name, :seo_desc, :img_name, :img_calendar, :img_alt, :big_title, :small_title, :paragraph, :url, :regularity_type, :rank)');
         $query->execute([
             'topic_name' => $topic_name,
             'page_name' => $page_name,
@@ -123,9 +128,41 @@ class WorkshopType
             'small_title' => $small_title,
             'paragraph' => $paragraph,
             'url' => $url,
-            'regularity_type' => $regularity_type
+            'regularity_type' => $regularity_type,
+            'rank' => $rank
         ]);
     }
+
+    // Static methods for rank management
+
+    public static function updateGreaterRank($rank, $count) // count = -1 or +1
+    {
+        global $db;
+
+        $query = $db->prepare('UPDATE workshop_type SET `rank` = `rank` + :count WHERE `rank` >= :rank');
+        $query->execute([
+            'rank' => $rank,
+            'count' => $count
+        ]);
+    }
+
+    public static function updateRangeRank($oldRank, $newRank)
+    {
+        if ($oldRank == $newRank) {
+            return;
+        }
+        $count = $oldRank < $newRank ? -1 : 1;
+
+        global $db;
+        $query = $db->prepare('UPDATE workshop_type SET `rank` = `rank` + :count WHERE `rank` >= :smallerRank AND `rank` <= :biggerRank');
+        $query->execute([
+            'smallerRank' => min($oldRank, $newRank),
+            'biggerRank' => max($oldRank, $newRank),
+            'count' => $count
+        ]);
+    }
+
+    // Getters and Setters
 
     public function getId()
     {
@@ -175,6 +212,10 @@ class WorkshopType
     {
         return $this->regularity_type;
     }
+    public function getRank()
+    {
+        return $this->rank;
+    }
     public function setTopicName($topic_name)
     {
         $this->topic_name = $topic_name;
@@ -218,5 +259,9 @@ class WorkshopType
     public function setRegularityType($regularity_type)
     {
         $this->regularity_type = $regularity_type;
+    }
+    public function setRank($rank)
+    {
+        $this->rank = $rank;
     }
 }

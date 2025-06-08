@@ -47,6 +47,10 @@
                     <option value="3" <?php echo $edition && $workshop_type->getRegularityType() == 3 ? 'selected' : ''; ?>>Séjour photo</option>
                 </select>
             </div>
+            <div class="form-group">
+                <label for="workshop-rank" class="form-label">Rang</label>
+                <input type="number" id="workshop-rank" class="form-number" placeholder="3" value="<?php echo $edition ? $workshop_type->getRank() : ''; ?>">
+            </div>
         </div>
         <br>
 

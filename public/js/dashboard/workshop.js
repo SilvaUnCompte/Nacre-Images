@@ -13,6 +13,7 @@ const workshopPageName = document.getElementById("workshop-page-name");
 const workshopName = document.getElementById("workshop-name");
 const workshopUrl = document.getElementById("workshop-url");
 const workshopRegularity = document.getElementById("workshop-regularity");
+const workshopRank = document.getElementById("workshop-rank");
 
 const workshopImageName = document.getElementById("workshop-image-name");
 const workshopImageCalendar = document.getElementById("workshop-image-calendar");
@@ -87,7 +88,8 @@ function updateWorkshop(workshopId) {
 		workshopBigTitle.value === "" ||
 		workshopSmallTitle.value === "" ||
 		workshopParagraph.value === "" ||
-		workshopSeoDesc.value === ""
+		workshopSeoDesc.value === "" ||
+		workshopRank.value === ""
 	) {
 		new_popup("Veuillez remplir tous les champs", "error");
 		return;
@@ -111,7 +113,8 @@ function updateWorkshop(workshopId) {
 			big_title: workshopBigTitle.value,
 			small_title: workshopSmallTitle.value,
 			paragraph: textToBalise(workshopParagraph.value),
-			seo_desc: workshopSeoDesc.value
+			seo_desc: workshopSeoDesc.value,
+			rank: workshopRank.value
 		})
 	})
 		.then(response => response.json())
@@ -140,11 +143,14 @@ function createWorkshop() {
 		workshopBigTitle.value === "" ||
 		workshopSmallTitle.value === "" ||
 		workshopParagraph.value === "" ||
-		workshopSeoDesc.value === ""
+		workshopSeoDesc.value === "" ||
+		workshopRank.value === ""
 	) {
 		new_popup("Veuillez remplir tous les champs", "error");
 		return;
 	}
+
+	console.log(workshopRegularity.value);
 
 	fetch('/api/add-workshop', {
 		method: 'POST',
@@ -163,7 +169,8 @@ function createWorkshop() {
 			big_title: workshopBigTitle.value,
 			small_title: workshopSmallTitle.value,
 			paragraph: textToBalise(workshopParagraph.value),
-			seo_desc: workshopSeoDesc.value
+			seo_desc: workshopSeoDesc.value,
+			rank: workshopRank.value
 		})
 	})
 		.then(response => response.json())
