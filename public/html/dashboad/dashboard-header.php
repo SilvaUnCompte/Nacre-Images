@@ -20,6 +20,7 @@
                 <li><a href="/dashboard">DASHBOARD</a></li>
                 <li><a href="/dashboard/calendrier">CALENDRIER</a></li>
                 <li><a href="/dashboard/tarifs">TARIFS</a></li>
+                <li><a href="/dashboard/news">NEWS</a></li>
                 <li><a href="/dashboard/faq">FAQ</a></li>
                 <li><a href="/dashboard/liste-des-stages">STAGES</a></li>
                 <li><a href="/dashboard/prestations">PRESTATIONS</a></li>

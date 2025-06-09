@@ -20,7 +20,7 @@ class News
         $result = $query->fetch();
 
         if (!$result) {
-            echo header("HTTP/1.1 401");
+            echo header("HTTP/1.1 404 Not Found");
             exit;
         }
 
@@ -34,6 +34,20 @@ class News
     public function __destruct()
     {
         exit;
+    }
+
+    public static function create($title, $info, $startDate, $endDate, $visible)
+    {
+        global $db;
+
+        $query = $db->prepare('INSERT INTO news (title, info, start_date, end_date, visible) VALUES (:title, :info, :start_date, :end_date, :visible)');
+        $query->execute([
+            'title' => $title,
+            'info' => $info,
+            'start_date' => $startDate,
+            'end_date' => $endDate,
+            'visible' => $visible
+        ]);
     }
 
     public function update()
@@ -79,6 +93,14 @@ class News
         }
 
         return $results;
+    }
+
+    public static function delete_by_id($id_to_delete)
+    {
+        global $db;
+
+        $query = $db->prepare('DELETE FROM news WHERE id = :id');
+        $query->execute(['id' => $id_to_delete]);
     }
 
     // Getters and Setters

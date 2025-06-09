@@ -109,6 +109,48 @@
             }
             ?>
         </a>
+
+        <a class="display-block" href="/dashboard/prestations">
+            <h1 class="title-lg">Liste des prestations</h1>
+
+            <?php
+            if (count($all_service) == 0) {
+                echo '<div class="alert alert-warning">
+                        <div class="alert-icon">!</div>
+                        <div class="alert-content">
+                            <h4 class="alert-title">Warning</h4>
+                            <p class="alert-message">Aucune prestation trouvé</p>
+                        </div>
+                    </div>';
+            } else {
+                echo '<div class="alert alert-info">
+                    <div class="alert-icon">!</div>
+                    <div class="alert-content">
+                        <h4 class="alert-title">Info</h4>
+                        <p class="alert-message">' . count($all_service) . ' prestations</p>
+                    </div>
+                </div>';
+
+                echo '<table>
+                        <thead>
+                            <tr>
+                                <th class="text-regular">Label</th>
+                                <th class="text-regular">Description</th>
+                                <th class="text-regular">Prix</th>
+                            </tr>
+                        </thead><tbody>';
+
+                foreach ($all_service as $service) {
+                    echo '<tr>
+                            <td class="text-regular">' . $service['label'] . '</td>
+                            <td class="text-regular">' . $service['desc'] . '</td>
+                            <td class="text-regular">' . $service['price'] . '</td>
+                        </tr>';
+                }
+                echo '</tbody></table>';
+            }
+            ?>
+        </a>
     </section>
 
     <!-- Col 2 -->
@@ -212,16 +254,16 @@
             ?>
         </a>
 
-        <a class="display-block" href="/dashboard/prestations">
-            <h1 class="title-lg">Liste des prestations</h1>
+        <a class="display-block" href="/dashboard/news">
+            <h1 class="title-lg">Liste des news</h1>
 
             <?php
-            if (count($all_service) == 0) {
+            if (count($all_news) == 0) {
                 echo '<div class="alert alert-warning">
                         <div class="alert-icon">!</div>
                         <div class="alert-content">
                             <h4 class="alert-title">Warning</h4>
-                            <p class="alert-message">Aucune prestation trouvé</p>
+                            <p class="alert-message">Aucune news n\'est actuellement affichée</p>
                         </div>
                     </div>';
             } else {
@@ -229,24 +271,24 @@
                     <div class="alert-icon">!</div>
                     <div class="alert-content">
                         <h4 class="alert-title">Info</h4>
-                        <p class="alert-message">' . count($all_service) . ' prestations</p>
+                        <p class="alert-message">' . count($all_news) . ' news</p>
                     </div>
                 </div>';
 
                 echo '<table>
                         <thead>
                             <tr>
-                                <th class="text-regular">Label</th>
-                                <th class="text-regular">Description</th>
-                                <th class="text-regular">Prix</th>
+                                <th class="text-regular">Titre</th>
+                                <th class="text-regular">Date</th>
+                                <th class="text-regular">Texte</th>
                             </tr>
                         </thead><tbody>';
 
-                foreach ($all_service as $service) {
+                foreach ($all_news as $news) {
                     echo '<tr>
-                            <td class="text-regular">' . $service['label'] . '</td>
-                            <td class="text-regular">' . $service['desc'] . '</td>
-                            <td class="text-regular">' . $service['price'] . '</td>
+                            <td class="text-regular">' . $news['title'] . '</td>
+                            <td class="text-regular">' . IntlDateFormatter::formatObject(new DateTimeImmutable($news['start_date']), 'dd MMMM YYYY', 'fr') . '</td>
+                            <td class="text-regular">' . $news['info'] . '</td>
                         </tr>';
                 }
                 echo '</tbody></table>';

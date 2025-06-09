@@ -11,6 +11,7 @@ $description = 'Bienvenue sur votre espace de gestion. Vous pouvez ici gérer vo
 
 
 require_once(ROOT_DIR . '/database/tables/faq.php');
+require_once(ROOT_DIR . '/database/tables/news.php');
 require_once(ROOT_DIR . '/database/tables/prices.php');
 require_once(ROOT_DIR . '/database/tables/services.php');
 require_once(ROOT_DIR . '/database/tables/workshop_type.php');
@@ -21,6 +22,7 @@ $all_tarifs = Prices::getAll();
 $all_service = Services::getAll();
 $all_workshop_type = WorkshopType::getAll();
 $all_future_session = WorkshopSession::getFutureSessionByDate(Date('Y-m-d'));
+$all_news = News::getVisibleNews();
 
 include(ROOT_DIR . "/public/html/dashboad/dashboard-header.php");
 include(ROOT_DIR . "/public/html/dashboad/dashboard-home.php");

@@ -97,6 +97,10 @@ switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topi
         require __DIR__ . '/controler/dashboard/faq.php';
         break;
 
+    case '/dashboard/news':
+        require __DIR__ . '/controler/dashboard/news.php';
+        break;
+
     case '/dashboard/prestations':
         require __DIR__ . '/controler/dashboard/services.php';
         break;
