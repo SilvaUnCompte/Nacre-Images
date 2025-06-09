@@ -49,7 +49,7 @@ function createNewsRows(data) {
                                 <td class="text-regular"> <textarea type="textarea" class="question-textarea form-textarea news-info" maxlength ="350" placeholder="Une question ?">${news.info}</textarea></td>
                                 <td class="text-regular"> <input type="date" class="form-input news-start" placeholder="Label" value="${news.start_date}"></td>
                                 <td class="text-regular"> <input type="date" class="form-input news-end" placeholder="Description" value="${news.end_date}"></td>
-                                <td class="text-regular"> <input type="checkbox" class="form-checkbox news-visible" ${news.visible ? 'checked' : ''}> </td>
+                                <td class="text-regular"> <input type="checkbox" class="form-checkbox news-visible" ${news.visible == 1 ? 'checked' : ''}> </td>
                                 <td class="text-regular">
                                     <img src="/assets/images/icons/save.png" class="card-button" alt="save" onclick="updateNews('${news.id}',this)">
                                     <img src="/assets/images/icons/trash.png" class="card-button" alt="delete" onclick="deleteNews('${news.id}','${news.title}')">
