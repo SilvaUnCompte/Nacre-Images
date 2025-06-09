@@ -10,11 +10,12 @@
 </div>
 
 <div class="center-container">
-<div id="bulle" class="bulle-flottante">
-    <div class="triangle"></div>
-    <div class="texte">Plus d'info</div>
-    <div class="triangle"></div>
-</div></div>
+    <div id="bulle" class="bulle-flottante">
+        <div class="triangle"></div>
+        <div class="texte">Plus d'info</div>
+        <div class="triangle"></div>
+    </div>
+</div>
 
 <div class="triangle-mid"></div>
 
@@ -61,6 +62,29 @@
         </div>
     </div>
 
+    <?php if (!empty($visibleNews)) : ?>
+        <div class="container inline-container scroll-trigger info-cadre news-strip" id="news-strip">
+            <div>
+                <h2 class="big-h2">Nouveau !</h2>
+                <div class="news-panel">
+                    <div class="news-header">
+                        <div class="news-dot"></div>
+                        <div class="news-date" id="news-date">24 Avril 2025</div>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-title" id="news-title">Chargement...</div>
+                        <div class="news-text" id="news-text">Chargement des actualités... </div>
+                        <div id="news-raw-data" class="hide"><?php echo json_encode($visibleNews) ?></div>
+                    </div>
+                    <?php if (count($visibleNews) > 1) : ?>
+                    <div class="news-nav" id="news-nav"></div>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <img class='illustration' src="/assets/images/illustrations/mont.jpg" loading="lazy" alt="illustration de cascade">
+        </div>
+    <?php endif; ?>
+
     <br>
 
     <div class="center-container">
@@ -91,8 +115,7 @@
         <a href="/stage/tarifs" class="bottom-button bottom-button-5">Tarifs</a>
     </div>
 
-    <br>
-    <br>
+    <br> <br> <br> <br> <br> <br> <br> <br>
 
     <a id="gift-bubble" class="hidden bubble-text-container" href="/cheque-cadeau">
         <div class="bubble-text">
@@ -106,6 +129,8 @@
 
 <link rel="stylesheet" href="/public/styles/generics/star.css">
 <link rel="stylesheet" href="/public/styles/generics/bubble-text.css">
+<link rel="stylesheet" href="/public/styles/pages/home/news.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo+2:400,800&display=swap">
 <script src="/public/js/scroll-trigger.js" defer></script>
+<script src="/public/js/news-panel.js" defer></script>
 <script src="/public/js/random-background.js" defer></script>

@@ -1,0 +1,129 @@
+<?php
+
+require_once(ROOT_DIR . '/database/connexion.php');
+
+class News
+{
+    private $id;
+    private $title;
+    private $info;
+    private $startDate;
+    private $endDate;
+    private $visible;
+
+    public function __construct($id)
+    {
+        global $db;
+
+        $query = $db->prepare('SELECT * FROM news WHERE id = :id');
+        $query->execute(['id' => $id]);
+        $result = $query->fetch();
+
+        if (!$result) {
+            echo header("HTTP/1.1 401");
+            exit;
+        }
+
+        $this->id = $result['id'];
+        $this->title = $result['title'];
+        $this->info = $result['info'];
+        $this->startDate = $result['start_date'];
+        $this->endDate = $result['end_date'];
+        $this->visible = $result['visible'];
+    }
+    public function __destruct()
+    {
+        exit;
+    }
+
+    public function update()
+    {
+        global $db;
+
+        $query = $db->prepare('UPDATE news SET title = :title, info = :info, start_date = :start_date, end_date = :end_date, visible = :visible WHERE id = :id');
+        $query->execute([
+            'id' => $this->id,
+            'title' => $this->title,
+            'info' => $this->info,
+            'start_date' => $this->startDate,
+            'end_date' => $this->endDate,
+            'visible' => $this->visible
+        ]);
+    }
+
+    public static function getAllNews()
+    {
+        global $db;
+
+        $query = $db->prepare('SELECT * FROM news');
+        $query->execute();
+        $results = $query->fetchAll();
+
+        if (!$results) {
+            return [];
+        }
+
+        return $results;
+    }
+
+    public static function getVisibleNews()
+    {
+        global $db;
+
+        $query = $db->prepare('SELECT * FROM news WHERE visible = 1 AND `start_date` <= NOW() AND `end_date` >= NOW() ORDER BY `start_date` DESC');
+        $query->execute();
+        $results = $query->fetchAll();
+
+        if (!$results) {
+            return [];
+        }
+
+        return $results;
+    }
+
+    // Getters and Setters
+    public function getId()
+    {
+        return $this->id;
+    }
+    public function getTitle()
+    {
+        return $this->title;
+    }
+    public function getInfo()
+    {
+        return $this->info;
+    }
+    public function getStartDate()
+    {
+        return $this->startDate;
+    }
+    public function getEndDate()
+    {
+        return $this->endDate;
+    }
+    public function getVisible()
+    {
+        return $this->visible;
+    }
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+    public function setInfo($info)
+    {
+        $this->info = $info;
+    }
+    public function setStartDate($startDate)
+    {
+        $this->startDate = $startDate;
+    }
+    public function setEndDate($endDate)
+    {
+        $this->endDate = $endDate;
+    }
+    public function setVisible($visible)
+    {
+        $this->visible = $visible;
+    }
+}
