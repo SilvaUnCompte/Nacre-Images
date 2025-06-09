@@ -64,7 +64,7 @@
 
     <?php if (!empty($visibleNews)) : ?>
         <div class="container inline-container scroll-trigger info-cadre news-strip" id="news-strip">
-            <div>
+            <div class="news-container">
                 <h2 class="big-h2">Nouveau !</h2>
                 <div class="news-panel">
                     <div class="news-header">
