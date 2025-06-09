@@ -7,7 +7,9 @@ $description = 'La liste des tarifs des stages photo. Les prix sont en fonction 
 
 $header_title_p1 = 'Tarifs des ';
 $header_title_p2 = 'Stages Photo';
-$header_text = "Vous trouverez ici la liste des tarifs des stages photo que je propose. Les prix sont en fonction du type de stage. Contactez moi si vous avez des questions ou si vous souhaitez un devis personnalisé pour une prestation spécifique.";
+$header_text = "Vous trouverez ci-dessous la liste des tarifs des sessions de stages et des forfaits que je propose.… et ils sont nombreux.
+Les prix varient en fonction du type de stage. Chaque fiche de stage à thème vous indiquent son tarif précis. 
+Contactez moi si vous avez des questions ou si vous souhaitez un devis personnalisé pour une prestation spécifique.";
 
 $prices = Prices::getAll();
 

@@ -5,7 +5,7 @@
 
 <div class="space-empty">
     <h1>NACRE IMAGES</h1>
-    <p>Stage photo et prestations en Normandie</p> <!-- TODO: choisir si mettre sous titre -->
+    <p>Stages photos en Normandie autour de Caen</p>
     <br> <br> <br> <br>
 </div>
 
@@ -81,7 +81,7 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <img class='illustration' src="/assets/images/illustrations/mont.jpg" loading="lazy" alt="illustration de cascade">
+            <!-- <img class='illustration' src="/assets/images/logo/logo-no-bg.png" loading="lazy" alt="Logo de Nacre Images"> -->
         </div>
     <?php endif; ?>
 

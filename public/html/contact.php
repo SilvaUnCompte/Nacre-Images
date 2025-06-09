@@ -31,7 +31,7 @@
         <div>
             <h1 class="big-h1">Qui suis-je ?</h1><br>
 
-            <h2 class="big-h2">Gilles, le daltonien</h2>
+            <h2 class="big-h2">Gilles Quesnot</h2>
 
             <p class="paragraph">
                 Né en 1973, je suis un ex-biologiste. Ma carrière a débuté dans la gestion de milieux naturels et après un bref passage dans l'enseignement,
