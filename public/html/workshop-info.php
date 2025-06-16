@@ -6,8 +6,8 @@
     <div id="workshop-container">
 
         <?php
-        $workshopTitle = ['Les stages classiques', 'Les thèmes exceptionnels', 'Thèmes sur demande', 'Stage séjour photo'];
-        $workshopSubtitle = ['Ces thèmes sont abordés très régulièrement.', 'Ces thèmes sont abordés un peu moins souvent ou sur demande.', 'Ces thèmes sont sur demande uniquement.', 'Séjour en groupe d\'une semaine.'];
+        $workshopTitle = ['Les stages classiques', 'Les thèmes exceptionnels', 'Thèmes sur demande', 'Séjours photo'];
+        $workshopSubtitle = ['Ces thèmes sont abordés très régulièrement.', 'Ces thèmes sont abordés un peu moins souvent ou sur demande.', 'Ces thèmes sont sur demande uniquement.', 'Séjours en groupe sur plusieurs jours.'];
 
 
         for ($i = 0; $i < 4; $i++) {

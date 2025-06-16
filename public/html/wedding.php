@@ -17,7 +17,7 @@
 
 <section class="approach">
     <div class="wedding-container">
-        <h2 class="glow">Notre Approche</h2>
+        <h2 class="glow">Mon Approche</h2>
         <div class="approach-content">
             <p class="wedding-p">Profiter des services d'un professionnel vous évite d'avoir à vous soucier de cette phase importante de la journée et vous garantit la qualité des images. Pour votre satisfaction, il est primordial d'apprécier en amont le travail du photographe <a href="#showcast">(visualisez mon travail ici)</a> et de rencontrer la personne avec qui vous allez partager un ou plusieurs moments d'intimité, le feeling doit passer.</p>
 

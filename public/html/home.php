@@ -109,7 +109,7 @@
 
     <div class="button-container">
         <a href="/faq" class="bottom-button bottom-button-1">FAQ</a>
-        <a href="/infos-stage" class="bottom-button bottom-button-2">List des thèmes</a>
+        <a href="/infos-stage" class="bottom-button bottom-button-2">Liste des thèmes</a>
         <a href="/prestations" class="bottom-button bottom-button-3">Prestations</a>
         <a href="https://www.facebook.com/Dalt.Gilles/" target="_blank" class="bottom-button bottom-button-4">Facebook</a>
         <a href="/stage/tarifs" class="bottom-button bottom-button-5">Tarifs</a>

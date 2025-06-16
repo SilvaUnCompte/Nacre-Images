@@ -61,7 +61,19 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.paragraph a {
+  color: #7dbdd3;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.paragraph a:hover {
+  color: #507885;
+}
+
 @media all and (max-width: 1000px) {
+  .text-container {
+    width: 100%;
+  }
   .main-section {
     padding-top: 10px;
   }
@@ -69,13 +81,16 @@
     width: 70%;
     margin: 0;
   }
-  .main-section .container, .main-section #title-container {
+  .main-section .container,
+  .main-section #title-container {
     width: 80%;
   }
-  .main-section .container > *, .main-section #title-container > * {
+  .main-section .container > *,
+  .main-section #title-container > * {
     padding: 10px 0;
   }
-  .main-section .container img, .main-section #title-container img {
+  .main-section .container img,
+  .main-section #title-container img {
     width: 100%;
   }
 }/*# sourceMappingURL=topics.css.map */

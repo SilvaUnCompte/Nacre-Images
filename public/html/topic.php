@@ -7,7 +7,7 @@
     </div>
     <div class="inline-container container">
         <img src="<?php echo $image ?>" alt=<?php echo $alt_image ?>>
-        <div>
+        <div class="text-container">
             <h2 class="big-h2">
                 <?php echo $title ?>
             </h2>

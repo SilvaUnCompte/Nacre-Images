@@ -35,6 +35,7 @@ $dark-gray: #1b1d20;
         padding: 0;
         margin-bottom: 35px;
         width: 70%;
+
         >* {
             padding: 0 30px;
         }
@@ -59,7 +60,7 @@ $dark-gray: #1b1d20;
 
         .session {
             background-color: rgba(65, 110, 146, 0.068);
-            color : $light-gray;
+            color: $light-gray;
             backdrop-filter: blur(5px);
             border-radius: 10px;
             padding: 5px 1rem;
@@ -73,7 +74,24 @@ $dark-gray: #1b1d20;
     }
 }
 
+    .paragraph {
+        a {
+            color: #7dbdd3;
+            text-decoration: none;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: #507885;
+            }
+        }
+    }
+
+
 @media all and (max-width: 1000px) {
+    .text-container {
+        width: 100%;
+    }
+
     .main-section {
         padding-top: 10px;
 
@@ -82,8 +100,10 @@ $dark-gray: #1b1d20;
             margin: 0;
         }
 
-        .container, #title-container {
+        .container,
+        #title-container {
             width: 80%;
+
             >* {
                 padding: 10px 0;
             }
