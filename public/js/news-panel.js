@@ -8,6 +8,7 @@ function initNewsStrip(newsItems) {
     const titleElement = document.getElementById(`news-title`);
     const textElement = document.getElementById(`news-text`);
     const dateElement = document.getElementById(`news-date`);
+    const imgElement = document.getElementById(`news-image`);
     const navElement = document.getElementById(`news-nav`);
     let navDots = [];
 
@@ -30,6 +31,7 @@ function initNewsStrip(newsItems) {
         // Animation de sortie
         titleElement.classList.add('fade-out');
         textElement.classList.add('fade-out');
+        imgElement.classList.add('fade-out');
 
         setTimeout(() => {
             // Changer le contenu
@@ -43,6 +45,15 @@ function initNewsStrip(newsItems) {
             titleElement.textContent = currentNews.title;
             textElement.textContent = currentNews.info;
             dateElement.textContent = stringDate;
+
+            if (currentNews.img) {
+                imgElement.classList.remove('hide');
+                imgElement.src = "/assets/images/illustrations/" + currentNews.img;
+            }
+            else {
+                imgElement.classList.add('hide');
+            }
+
             currentIndex = index;
 
             // Mettre à jour les points de navigation
@@ -53,6 +64,7 @@ function initNewsStrip(newsItems) {
             // Animation d'entrée
             titleElement.classList.remove('fade-out');
             textElement.classList.remove('fade-out');
+            imgElement.classList.remove('fade-out');
         }, 150);
 
         startAutoSwitch();

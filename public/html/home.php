@@ -81,7 +81,7 @@
                     <?php endif; ?>
                 </div>
             </div>
-            <!-- <img class='illustration' src="/assets/images/logo/logo-no-bg.png" loading="lazy" alt="Logo de Nacre Images"> -->
+            <img id="news-image" class='illustration hide' src="" loading="lazy" alt="Chargement des actualités...">
         </div>
     <?php endif; ?>
 

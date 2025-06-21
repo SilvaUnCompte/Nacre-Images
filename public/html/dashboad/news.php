@@ -5,14 +5,18 @@
             <input type="text" id="add-news-title" class="form-input" placeholder="Titre impactant">
         </div>
         <div class="form-group">
-            <label for="add-news-info" class="form-label">Texte (350 char max)</label>
-            <textarea id="add-news-info" class="form-textarea" maxlength ="350" placeholder="Une super news !"></textarea>
+            <label for="add-news-info" class="form-label">Texte (350 char max, pour des raisons esthétiques)</label>
+            <textarea id="add-news-info" class="form-textarea" maxlength="350" placeholder="Une super news !"></textarea>
         </div>
         <div class="form-group">
             <label for="add-news-start-date" class="form-label">Date affichée</label>
             <input type="date" id="add-news-start-date" class="form-date">
             <label for="add-news-end-date" class="form-label">Date de fin d'affichage</label>
             <input type="date" id="add-news-end-date" class="form-date">
+        </div>
+        <div class="form-group">
+            <label for="add-news-img" class="form-label">Image optionnel (dans le dossier illustrations)</label>
+            <input type="text" id="add-news-img" class="form-input" placeholder="unjolieville.jpg">
         </div>
         <div class="form-group">
             <label for="add-news-image" class="form-label">Visible</label>

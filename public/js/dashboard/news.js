@@ -38,7 +38,8 @@ function createNewsRows(data) {
                             <th class="text-regular">Infos</th>
                             <th class="text-regular">Date de début</th>
                             <th class="text-regular">Date de fin</th>
-                            <th class="text-regular">Affiché</th>
+                            <th class="text-regular">Image</th>
+                            <th class="text-regular">Visible</th>
                             <th class="text-regular">Actions</th>
                         </tr>
                     </thead><tbody>`;
@@ -49,6 +50,7 @@ function createNewsRows(data) {
                                 <td class="text-regular"> <textarea type="textarea" class="question-textarea form-textarea news-info" maxlength ="350" placeholder="Une question ?">${news.info}</textarea></td>
                                 <td class="text-regular"> <input type="date" class="form-input news-start" placeholder="Label" value="${news.start_date}"></td>
                                 <td class="text-regular"> <input type="date" class="form-input news-end" placeholder="Description" value="${news.end_date}"></td>
+                                <td class="text-regular"> <input type="text" class="form-input news-img" placeholder="image.png" value="${news.img}"></td>
                                 <td class="text-regular"> <input type="checkbox" class="form-checkbox news-visible" ${news.visible == 1 ? 'checked' : ''}> </td>
                                 <td class="text-regular">
                                     <img src="/assets/images/icons/save.png" class="card-button" alt="save" onclick="updateNews('${news.id}',this)">
@@ -87,6 +89,7 @@ function updateNews(id, itself) {
     var description = itself.parentNode.parentNode.querySelector(".news-info").value;
     var start_date = itself.parentNode.parentNode.querySelector(".news-start").value;
     var end_date = itself.parentNode.parentNode.querySelector(".news-end").value;
+    var img = itself.parentNode.parentNode.querySelector(".news-img").value;
     var visible = itself.parentNode.parentNode.querySelector(".news-visible").checked ? 1 : 0;
 
     console.log("Updating news with ID:", start_date, end_date);
@@ -108,7 +111,8 @@ function updateNews(id, itself) {
             info: description,
             start_date: start_date,
             end_date: end_date,
-            visible: visible
+            visible: visible,
+            img: img
         })
     })
         .then(response => response.json())
@@ -130,6 +134,7 @@ function addNews() {
     const newsInfo = document.getElementById('add-news-info').value;
     const newsStartDate = document.getElementById('add-news-start-date').value;
     const newsEndDate = document.getElementById('add-news-end-date').value;
+    const newsImg = document.getElementById('add-news-img').value;
     const newsVisible = document.getElementById('add-news-visible').checked;
 
     if (newsTitle == "" || newsInfo == "" || newsStartDate == "" || newsEndDate == "") {
@@ -148,6 +153,7 @@ function addNews() {
             info: newsInfo,
             start_date: newsStartDate,
             end_date: newsEndDate,
+            img: newsImg,
             visible: newsVisible ? 1 : 0
         })
     })

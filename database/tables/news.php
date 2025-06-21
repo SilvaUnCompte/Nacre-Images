@@ -10,6 +10,7 @@ class News
     private $startDate;
     private $endDate;
     private $visible;
+    private $img;
 
     public function __construct($id)
     {
@@ -30,23 +31,25 @@ class News
         $this->startDate = $result['start_date'];
         $this->endDate = $result['end_date'];
         $this->visible = $result['visible'];
+        $this->img = $result['img'];
     }
     public function __destruct()
     {
         exit;
     }
 
-    public static function create($title, $info, $startDate, $endDate, $visible)
+    public static function create($title, $info, $startDate, $endDate, $visible, $img)
     {
         global $db;
 
-        $query = $db->prepare('INSERT INTO news (title, info, start_date, end_date, visible) VALUES (:title, :info, :start_date, :end_date, :visible)');
+        $query = $db->prepare('INSERT INTO news (title, info, start_date, end_date, visible, img) VALUES (:title, :info, :start_date, :end_date, :visible, :img)');
         $query->execute([
             'title' => $title,
             'info' => $info,
             'start_date' => $startDate,
             'end_date' => $endDate,
-            'visible' => $visible
+            'visible' => $visible,
+            'img' => $img
         ]);
     }
 
@@ -54,14 +57,15 @@ class News
     {
         global $db;
 
-        $query = $db->prepare('UPDATE news SET title = :title, info = :info, start_date = :start_date, end_date = :end_date, visible = :visible WHERE id = :id');
+        $query = $db->prepare('UPDATE news SET title = :title, info = :info, start_date = :start_date, end_date = :end_date, visible = :visible, img = :img WHERE id = :id');
         $query->execute([
             'id' => $this->id,
             'title' => $this->title,
             'info' => $this->info,
             'start_date' => $this->startDate,
             'end_date' => $this->endDate,
-            'visible' => $this->visible
+            'visible' => $this->visible,
+            'img' => $this->img
         ]);
     }
 
@@ -128,6 +132,10 @@ class News
     {
         return $this->visible;
     }
+    public function getImg()
+    {
+        return $this->img;
+    }
     public function setTitle($title)
     {
         $this->title = $title;
@@ -147,5 +155,9 @@ class News
     public function setVisible($visible)
     {
         $this->visible = $visible;
+    }
+    public function setImg($img)
+    {
+        $this->img = $img;
     }
 }

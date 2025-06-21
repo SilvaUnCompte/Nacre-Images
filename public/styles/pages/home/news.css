@@ -82,6 +82,10 @@
 .news-strip .news-container .news-panel .news-nav .nav-dot:hover {
   background-color: #398bff;
 }
+.news-strip #news-image {
+  max-height: 250px;
+  width: auto;
+}
 
 /* Responsive */
 @media (max-width: 640px) {
