@@ -43,7 +43,7 @@ function initNewsStrip(newsItems) {
             });
 
             titleElement.textContent = currentNews.title;
-            textElement.textContent = currentNews.info;
+            textElement.innerHTML = currentNews.info.replace(/\n/g, '<br>');
             dateElement.textContent = stringDate;
 
             if (currentNews.img) {
