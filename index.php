@@ -3,7 +3,7 @@
 define('ROOT_DIR', __DIR__);
 $request = strtok($_SERVER['REQUEST_URI'], '?');
 
-switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topics
+switch ($request) {
     case '':
     case '/':
     case '/index.htm':
@@ -25,8 +25,11 @@ switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topi
         break;
 
     case '/calendrier':
-    case '/calendrier.htm':
         require __DIR__ . '/controler/pages/calendar.php';
+        break;
+
+    case '/calendrier.htm':
+        header('Location: /calendrier');
         break;
 
     case '/infos-stage':
@@ -69,6 +72,10 @@ switch ($request) { // TODO: dans la site map avoir l'ensemble des pages de topi
     case '/tarifs.htm':
     case '/stage/tarifs':
         require __DIR__ . '/controler/pages/tarif.php';
+        break;
+    
+    case '/plan-du-site':
+        require __DIR__ . '/controler/pages/sitemap.php';
         break;
 
     case '/dashboard':

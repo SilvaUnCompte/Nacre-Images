@@ -2,8 +2,8 @@
 
 require_once(ROOT_DIR . '/database/tables/news.php');
 
-$page_name = 'Page d\'accueil';
-$description = 'Depuis 2009, autour de Caen, spécialisé dans la formation, je vous accueille pour vous former à la photographie durant une ou plusieurs sessions de cours photos. Les stages photos en groupe ou en individuel abordent de nombreux thèmes. Ludiques et pédagogiques, ils sont à la portée de tous.';
+$page_name = 'Stage photo & Prestations';
+$description = 'Photographe depuis 2009, autour de Caen, spécialisé dans la formation. Je vous accueille pour vous former à la photographie durant une ou plusieurs sessions de cours photos. Les stages photos en groupe ou en individuel abordent de nombreux thèmes. Ludiques et pédagogiques, ils sont à la portée de tous.';
 $carrousel_img_dir = 'carrousel-home';
 
 $visibleNews = News::getVisibleNews();

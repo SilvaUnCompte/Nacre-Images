@@ -11,6 +11,8 @@
 	<link rel="stylesheet" href="/public/styles/header/header.css">
 	<link rel="stylesheet" href="/public/styles/generics/generics.css">
 	<title><?php echo 'Nacre-Images - ' . $page_name ?></title>
+	<?php require_once(ROOT_DIR . '/controler/breadcrumbs.php'); ?>
+
 </head>
 
 <script src="/public/js/navbar.js" type="text/javascript" defer></script>

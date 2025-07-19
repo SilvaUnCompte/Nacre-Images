@@ -5,7 +5,7 @@ if (!isset($_SESSION['email'])) {
     header("Location: /dashboard/login");
     exit();
 }
-if (!isset($_GET['id']) || empty($_GET['id']) || !is_numeric($_GET['id'])) {
+if ($_GET['id'] != "0" && !isset($_GET['id']) || !is_numeric($_GET['id'])) {
     header("Location: /dashboard/liste-des-stages");
     exit();
 }
