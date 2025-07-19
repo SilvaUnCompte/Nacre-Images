@@ -33,6 +33,7 @@ switch ($request) {
         break;
 
     case '/infos-stage':
+    case '/stage':
     case '/themes.htm':
         require __DIR__ . '/controler/pages/workshop-info.php';
         break;
@@ -131,7 +132,7 @@ switch ($request) {
                 }
             }
 
-            header('Location: /infos-stage');
+            header('Location: /stage');
             return;
         }
 

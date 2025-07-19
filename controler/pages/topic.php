@@ -17,8 +17,8 @@ $price_types_name = [
     2 => 'Spécial'
 ];
 
-$page_name = $workshop_type->getPageName();
-$description = $workshop_type->getSeoDesc();
+$page_name = "Stage photo - " . $workshop_type->getPageName();
+$description = $workshop_type->getSeoDesc() . ". Formation photo " . $workshop_type->getPageName();
 $image = '/assets/images/illustrations/' . $workshop_type->getImgName();
 $alt_image = $workshop_type->getImgAlt();
 $topic = $workshop_type->getBigTitle();

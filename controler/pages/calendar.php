@@ -4,7 +4,7 @@ require_once(ROOT_DIR . '/database/tables/workshop_type.php');
 require_once(ROOT_DIR . '/database/tables/workshop_session.php');
 
 $page_name = 'Calendrier des stages';
-$description = 'Le calendrier des stages photo à venir. Réservez ou faite une demande particulière votre par mail ou téléphone. Contactez Gilles Quesnot pour plus d\'informations.';
+$description = 'Le calendrier des stages photo à venir. Stage autour de Caen et en Normandie. Réservez ou faite une demande particulière par mail ou téléphone. Contactez Gilles Quesnot pour plus \'informations.';
 
 $header_title_p1 = 'Calendrier des ';
 $header_title_p2 = 'stages';

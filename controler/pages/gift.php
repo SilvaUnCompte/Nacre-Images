@@ -3,7 +3,7 @@
 require_once(ROOT_DIR . '/database/tables/prices.php');
 
 $page_name = 'Chèque cadeau';
-$description = 'Chèque cadeau photo. Offrez un chèque cadeau pour un stage photo avec Nacre-Images. Vous pouvez choisir le montant du chèque cadeau et le personnaliser.';
+$description = 'Chèque cadeau stage photo. Offrez un chèque cadeau pour un stage photo avec Nacre-Images. Vous pouvez choisir le montant du chèque cadeau et le personnaliser.';
 
 $header_title_p1 = 'Comment obtenir un ';
 $header_title_p2 = 'chèque cadeau ?';
