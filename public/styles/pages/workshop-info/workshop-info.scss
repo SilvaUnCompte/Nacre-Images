@@ -11,6 +11,8 @@ $accent-pink: #ff6b81;
 $accent-green: #20bf3b;
 $accent-orange: #ff9f43;
 
+$subtext-color: #e0e0e0;
+
 // Breakpoints
 $breakpoint-tablet: 1200px;
 $breakpoint-mobile: 780px;
@@ -69,8 +71,8 @@ $breakpoint-mobile: 780px;
                 margin-bottom: 0.5rem;
             }
 
-            .p {
-                color: var(--text-muted);
+            p {
+                color: $subtext-color;
                 font-size: 1.1rem;
                 font-weight: 300;
             }
@@ -81,7 +83,7 @@ $breakpoint-mobile: 780px;
                     font-size: 2rem;
                 }
 
-                .p {
+                p {
                     font-size: 1rem;
                 }
             }

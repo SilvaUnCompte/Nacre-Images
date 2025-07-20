@@ -21,8 +21,8 @@
   margin-top: 70px;
   margin-bottom: 0.5rem;
 }
-#workshop-info #workshop-container .workshop-title .p {
-  color: var(--text-muted);
+#workshop-info #workshop-container .workshop-title p {
+  color: #e0e0e0;
   font-size: 1.1rem;
   font-weight: 300;
 }
@@ -31,7 +31,7 @@
     margin-top: 50px;
     font-size: 2rem;
   }
-  #workshop-info #workshop-container .workshop-title .p {
+  #workshop-info #workshop-container .workshop-title p {
     font-size: 1rem;
   }
 }

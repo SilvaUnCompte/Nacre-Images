@@ -19,7 +19,7 @@ $prices = Prices::getAll();
 include(ROOT_DIR . "/public/html/helpers/header.php");
 include(ROOT_DIR . "/public/html/helpers/second-header.php");
 include(ROOT_DIR . "/public/html/workshop-info.php");
-include(ROOT_DIR . "/public/html/price.php");
+include(ROOT_DIR . "/public/html/contact-button.php");
 include(ROOT_DIR . "/public/html/helpers/footer.html");
 
 
