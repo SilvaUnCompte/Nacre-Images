@@ -51,6 +51,10 @@ switch ($request) {
         require __DIR__ . '/controler/pages/packshot.php';
         break;
 
+    case '/Packshot.htm':
+        header('Location: /prestations/packshot');
+        break;
+
     case '/prestations/mariage':
         require __DIR__ . '/controler/pages/wedding.php';
         break;
