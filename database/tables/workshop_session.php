@@ -130,4 +130,8 @@ class WorkshopSession
     {
         $this->additional_information = $additional_information;
     }
+    public function setDate($date)
+    {
+        $this->date = $date;
+    }
 }

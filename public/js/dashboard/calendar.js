@@ -47,12 +47,19 @@ function createSessionCards(data) {
                     </thead><tbody>`;
 
         data.forEach(session => {
+            select_template = document.getElementById('session-topic').innerHTML;
+
             calendar_data += `<tr>
-                            <td class="text-regular">${new Date(session.date).toLocaleDateString('fr-FR')}</td>
-                            <td class="text-regular">${session.topic_name}</td>
-                            <td class="text-regular"><input type="text" class="additional-information-input form-input" placeholder="Informations supplémentaires" value="${session.additional_information}"></td>
                             <td class="text-regular">
-                            <img src="/assets/images/icons/save.png" class="card-button" alt="save" onclick="updateSession('${session.id}',this)">
+                                <input type="date" class="form-input session-date-input" value="${new Date(session.date).toISOString().split('T')[0]}">
+                            </td>
+                            <td class="text-regular">${session.topic_name}</td>
+                            <td class="text-regular">
+                                <input type="text" class="additional-information-input form-input" placeholder="Informations supplémentaires" value="${session.additional_information}">
+                            </td>
+                            <td class="text-regular">
+                                <img src="/assets/images/icons/save.png" class="card-button" alt="save" onclick="updateSession('${session.id}',this)">
+                                <img src="/assets/images/icons/copie.png" class="card-button" alt="copie" onclick="duplicateSession('${session.id}')">
                                 <img src="/assets/images/icons/trash.png" class="card-button" alt="delete" onclick="deleteSession('${session.id}','${session.topic_name}','${new Date(session.date).toLocaleDateString('fr-FR')}')">
                             </td>
                         </tr>`;
@@ -85,7 +92,7 @@ function deleteSession(session_id, name, date) {
 
 function updateSession(session_id, itself) {
     var additional_information = itself.parentNode.parentNode.querySelector(".additional-information-input").value;
-
+    var date = itself.parentNode.parentNode.querySelector(".session-date-input").value;
     fetch('/api/update-info-session', {
         method: 'POST',
         headers: {
@@ -94,6 +101,7 @@ function updateSession(session_id, itself) {
         },
         body: new URLSearchParams({
             session_id: session_id,
+            date: date,
             additional_information: additional_information
         })
     })
@@ -145,5 +153,32 @@ function addSession() {
         .catch(error => {
             console.error("Erreur :", error);
             new_popup("Erreur 500 de l'ajout de la session", "error");
+        });
+}
+
+function duplicateSession(session_id) {
+
+    fetch('/api/duplicate-session', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/x-www-form-urlencoded',
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({
+            id: session_id
+        })
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                new_popup("Session dupliqué avec succès", "success");
+                updateDatatable();
+            } else {
+                new_popup("Erreur lors de la duplication de la session", "error");
+            }
+        })
+        .catch(error => {
+            console.error("Erreur :", error);
+            new_popup("Erreur 500 de la duplication de la session", "error");
         });
 }
