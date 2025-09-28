@@ -1,12 +1,38 @@
-# 🇬🇧 Nacre-Images - Photography Website
+# Nacre-Images - Photography Website
 
 A professional website for **Nacre-Images**, a photographer specialized in photography workshops and photographic services in Normandy (Caen region).
 
+<div align="center">
+<img width="1000" style="max-width: 100%; height: auto;" alt="Homepage preview" src="https://github.com/user-attachments/assets/155d5eed-85cd-4d8c-a367-a716624e9168" />
+</div>
+
 ## About the project
+
+<table style="border: none; border-collapse: collapse;">
+<tr>
+<td width="60%" style="border: none; padding: 0; vertical-align: top;">
 
 Nacre-Images is the website of Gilles Quesnot, a professional photographer since 2009. The site presents his photography training services, various types of workshops and services, as well as a complete management system for the administrator.
 
+</td>
+<td width="40%" style="border: none; padding: 0; vertical-align: top;">
+
+<img width="350" alt="About section preview" src="https://github.com/user-attachments/assets/547a90b6-e3b3-4b09-8530-aa7b0c147789" />
+
+</td>
+</tr>
+</table>
+
 ### Main features
+
+<table style="border: none; border-collapse: collapse;">
+<tr>
+<td width="40%" style="border: none; padding: 0; vertical-align: top;">
+
+<img width="350" alt="Features preview" src="https://github.com/user-attachments/assets/9541e492-f68b-4efc-9b00-49f91b6a4a92" />
+
+</td>
+<td width="60%" style="border: none; padding: 0; vertical-align: top;">
 
 - **Showcase website** with service presentation
 - **Workshop presentation** with description pages and calendar
@@ -14,6 +40,10 @@ Nacre-Images is the website of Gilles Quesnot, a professional photographer since
 - **REST API** for CRUD operations
 - **Responsive design** adaptive
 - **SEO optimized** with sitemap and metadata
+
+</td>
+</tr>
+</table>
 
 ## Project architecture
 
@@ -43,12 +73,25 @@ Nacre-Images/
 
 ### Technical architecture
 
+<table style="border: none; border-collapse: collapse;">
+<tr>
+<td width="40%" style="border: none; padding: 0; vertical-align: top;">
+
+<img width="350" alt="Technical architecture" src="https://github.com/user-attachments/assets/c87220d6-e3f8-4bff-a45e-e2caca952d34" />
+
+</td>
+<td width="60%" style="border: none; padding: 0; vertical-align: top;">
+
 - **Frontend**: HTML5, CSS3/SCSS, _vanilla_ JavaScript
 - **Backend**: PHP 8+ with MVC approach
 - **Database**: MariaDB with PDO
 - **Authentication**: PHP Sessions (Should change to JWT in the future)
 - **API**: REST with JSON responses
 - **Design**: Responsive, mobile-first
+
+</td>
+</tr>
+</table>
 
 ## Prerequisites
 
@@ -87,7 +130,6 @@ Create the necessary tables:
 chmod 755 -R ./
 chmod 644 -R ./assets/images/
 ```
-
 ## Usage
 
 ### Public interface
